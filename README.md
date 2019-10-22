@@ -2,6 +2,11 @@
 Headless Peregrine CMS integration with VueStorefront  
 [Peregrine](https://www.peregrine-cms.com/content/sites/peregrine.html) is an 'Apache Sling' based content management system embracing head optional and API driven approach.
 
+## Requirements
+
+[Vue Storefront 1.10.3](https://github.com/DivanteLtd/vue-storefront/releases/tag/v1.10.3)
+
+
 ## Installation
 
 Copy `peregrine-cms` to `vue-storefront/src/modules`.
