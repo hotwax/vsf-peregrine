@@ -17,9 +17,7 @@ Add the following to `vue-storefront/src/modules/index.ts`
 import { extendModule } from '@vue-storefront/core/lib/module'
 ...
 import { PeregrineStore } from './peregrine-cms';
-
-extendModule(urlExtend)
-
+...
 export const registerModules: VueStorefrontModule[] = [
   ...
   PeregrineStore
