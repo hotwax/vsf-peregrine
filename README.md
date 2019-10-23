@@ -9,7 +9,12 @@ Headless Peregrine CMS integration with VueStorefront
 
 ## Installation
 
-Copy `peregrine-cms` to `vue-storefront/src/modules`.
+Create `peregrine-cms` folder under `vue-storefront/src/modules` and copy the entire content to it  
+OR
+use command 
+`git clone https://github.com/hotwax/vsf-peregrine.git peregrine-cms`
+
+Note: as per the below instruction the Peredrin CMS modules are considered to be in `peregrine-cms` folder
 
 Add the following to `vue-storefront/src/modules/index.ts`
 
@@ -43,6 +48,16 @@ Add cmsPeregrine config values under ```localForage``` > ```defaultDrivers```
     }
   },
 ```
+
+### Using CMS components
+
+
+Change route path of your CMS pages in `src/themes/default/router/index.js`  
+For example:  
+
+`const Home = () => import(/* webpackChunkName: "vsf-home" */ 'src/modules/peregrine-cms/pages/Home.vue')`
+
+In the above example, we have changed `Home` page with the cms component.
 
 
 ## Contributing
