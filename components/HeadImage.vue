@@ -1,6 +1,6 @@
 <template>
 <no-ssr v-if="componentData">
-  <section class="head-image w-100 bg-cl-th-accent cl-white">
+  <section class="head-image w-100 bg-cl-th-accent cl-white pointer" @click="checkLinkType(componentData.data)" >
     <div class="container w-100 h-100 cl-black" v-lazy:background-image="banner_image" v-if="banner_image">
       <div class="head-image-content">
         <h1 class="title" data-testid="mainSliderTitle" v-html="banner_title">
@@ -26,6 +26,8 @@
 <script>
 import config from 'config'
 import NoSSR from 'vue-no-ssr'
+import CheckLinkTypeMixin from '../mixins/CheckLinkTypeMixin'
+
 export default {
   components: {
     // ButtonOutline
@@ -52,7 +54,8 @@ export default {
       return this.componentData['data']['text'] ? this.componentData['data']['text'] : ''
     }
 
-  }
+  },
+  mixins:[CheckLinkTypeMixin]
 }
 </script>
 
