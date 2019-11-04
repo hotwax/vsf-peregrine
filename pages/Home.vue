@@ -65,10 +65,10 @@ export default {
       return onlineHelper.isOnline
     }
   },
-  created () {
+   async created () {
     // Load personal and shipping details for Checkout page from IndexedDB
     this.$store.dispatch('checkout/load')
-    this.$store.dispatch('cmsstore/getCmsHomeComponents')
+    await this.$store.dispatch('cmsstore/getCmsHomeComponents')
   },
   async beforeMount () {
     if (this.$store.state.__DEMO_MODE__) {
