@@ -4,7 +4,7 @@
       {{ $t('Size Guide') }}
     </div>
     <div slot="content" class="container">
-      <CmsRenderer :cmsObject="cmsComponents"/>
+      <ComponentRenderer :cmsObject="cmsComponents"/>
     </div>
   </modal>
 </template>
@@ -13,7 +13,7 @@
 import { mapState, mapGetters } from 'vuex'
 import Modal from 'theme/components/core/Modal'
 import SimpleText from '../components/SimpleText'
-import CmsRenderer from '../components/CmsRenderer'
+import ComponentRenderer from '../components/ComponentRenderer'
 
 export default {
   name: 'SizeGuide',
@@ -22,16 +22,16 @@ export default {
       activeElem: state => state.ui.authElem
     }),
      ...mapGetters({
-      cmsComponents: 'cmsPeregrine/getComponents'
+      cmsComponents: 'cmsstore/getComponents'
     })
   },
   components: {
     Modal,
     SimpleText,
-    CmsRenderer
+    ComponentRenderer
   },
   created () {
-    this.$store.dispatch('cmsPeregrine/getCmsComponents', {title: 'size-guide'})
+    this.$store.dispatch('cmsstore/getCmsComponents', {title: 'size-guide'})
   },
   methods: {
     close (e) {
