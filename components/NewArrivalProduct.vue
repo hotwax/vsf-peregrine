@@ -29,15 +29,19 @@ export default {
       type: Object
     }
   },
-  data(){
-   return { everythingNewCollection :[]}
-  },
   async created() {
 	let productList = []
+	if(this.$store.state.homepage.new_collection.length == 0){
 	await fetch(this.componentData.data.url,{method:'GET'}).then(data => data.json()).then(resp=> productList = resp['hits']['hits'])
-	this.everythingNewCollection = productList.map(ele => ele._source);
-	this.$store.state.homepage.new_collection = productList;
+	this.$store.state.homepage.new_collection = productList.map(ele => ele._source);
+	}
+ },
+ computed : {
+	 everythingNewCollection(){
+		 return this.$store.state.homepage.new_collection
+	 }
  }
+
 }
 </script>
 <style lang="scss" scoped>
