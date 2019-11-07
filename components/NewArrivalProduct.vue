@@ -18,7 +18,7 @@
 <script>
 import NoSSR from 'vue-no-ssr';
 import fetch from 'isomorphic-fetch';
-import ProductListing from './ProductListing'
+import ProductListing from 'theme/components/core/ProductListing'
 export default {
   components: {
 	'no-ssr': NoSSR,
@@ -44,4 +44,7 @@ export default {
   @import '~theme/css/variables/colors';
   @import '~theme/css/helpers/functions/color';
   $border-primary: color(primary, $colors-border);
+  .row{
+	  width: 100%
+  }
 </style>
