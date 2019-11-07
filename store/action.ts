@@ -3,6 +3,7 @@ import { ActionTree } from 'vuex'
 import { CmsState } from '../types/CmsState'
 import config from 'config'
 import Vue from 'vue'
+import fetch from 'isomorphic-fetch'
 
 export const actions: ActionTree<CmsState, any> = {
 
