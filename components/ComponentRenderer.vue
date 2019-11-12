@@ -15,8 +15,8 @@ const RichText = ()=> import('./RichText')
 const HeadImage = ()=> import('./HeadImage')
 const PromotedOffers = ()=> import('./PromotedOffers')
 const MainSlider= ()=> import('./MainSlider')
-const ProductListing= ()=> import('./ProductListing')
 const TileLinks= ()=> import('./TileLinks')
+const NewArrivalProducts = () => import('./NewArrivalProduct')
 import NoSSR from 'vue-no-ssr'
 
 export default {
@@ -39,8 +39,8 @@ export default {
         'teaservertical': HeadImage,
         'cardthreeimages': PromotedOffers,
         'carousel': MainSlider,
-        // 'product':ProductListing,
-        'cards':TileLinks
+        'cards':TileLinks,
+        'newarrivalproducts': NewArrivalProducts
       }
     }
   },

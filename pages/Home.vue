@@ -2,18 +2,6 @@
   <div id="home">
     <div v-if="cmsHomeComponents">
       <ComponentRenderer :cmsObject="cmsHomeComponents"/>
-      <section class="new-collection container px15" v-if="everythingNewCollection && everythingNewCollection.length">
-        <div>
-          <header class="col-md-12">
-            <h2 class="align-center cl-accent">
-              {{ $t('Everything new') }}
-            </h2>
-          </header>
-        </div>
-        <div class="row center-xs">
-          <product-listing columns="4" :products="everythingNewCollection" />
-        </div>
-      </section>
       <Onboard />
     </div>
   </div>
@@ -26,9 +14,6 @@ import { isServer, onlineHelper } from '@vue-storefront/core/helpers'
 
 // Core pages
 import Home from '@vue-storefront/core/pages/Home'
-
-// Theme core components
-import ProductListing from 'theme/components/core/ProductListing'
 // Theme local components
 import Onboard from 'theme/components/theme/blocks/Home/Onboard'
 import TileLinks from 'theme/components/theme/blocks/TileLinks/TileLinks'
@@ -41,7 +26,6 @@ export default {
   mixins: [Home],
   components: {
     Onboard,
-    ProductListing,
     TileLinks,
     ComponentRenderer
   },
