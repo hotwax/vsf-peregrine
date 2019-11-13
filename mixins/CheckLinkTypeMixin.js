@@ -1,6 +1,6 @@
 export default {
   methods: {
-    checkLinkType (componentData) {
+    link (componentData) {
       if (componentData.linkType === 'link' || componentData.linkType === 'internalLink') {
         let splittedlink = componentData.link.split('/');
         let linkRoute = splittedlink[splittedlink.length - 1];
