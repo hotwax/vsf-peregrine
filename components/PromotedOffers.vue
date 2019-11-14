@@ -4,7 +4,7 @@
     <div class="row">
       <div
         class="offer-container col-xs-12 col-sm-6 pb15 pointer"
-         @click="checkLinkType(componentData.data.cards.cards0)"
+         @click="link(componentData.data.cards.cards0)"
       >
           <div
             class="offer"
@@ -23,7 +23,7 @@
       <div class="col-xs-12 col-sm-6">
         <div
           class="offer-container pb15 pointer"
-          @click="checkLinkType(componentData.data.cards.cards1)"
+          @click="link(componentData.data.cards.cards1)"
         >
             <div
               class="offer offer-small border-box p5 flex bg-cl-th-accent"
@@ -39,7 +39,7 @@
         </div>
         <div
           class="offer-container pb15 pointer"
-          @click="checkLinkType(componentData.data.cards.cards2)"
+          @click="link(componentData.data.cards.cards2)"
         >
             <div
               class="offer offer-small border-box p5 flex bg-cl-th-accent"
@@ -62,7 +62,7 @@
 <script>
 import config from 'config'
 import NoSSR from 'vue-no-ssr'
-import CheckLinkTypeMixin from '../mixins/CheckLinkTypeMixin'
+import LinkMixin from '../mixins/LinkMixin'
 export default {
   name: 'PromotedOffers',
   components: {
@@ -73,7 +73,7 @@ export default {
       type:Object,
     }
   },
-  mixins: [CheckLinkTypeMixin],
+  mixins: [LinkMixin],
   computed : {
     main_banner () {
       let banner = {

@@ -9,7 +9,7 @@
           </header>
         </div>  
     <div class="row center-xs">
-    <div class="col-sm-4 pb15" v-for="(tile, index) in social_tiles" :key="index" @click="checkLinkType(tile)">
+    <div class="col-sm-4 pb15" v-for="(tile, index) in social_tiles" :key="index" @click="link(tile)">
       <div class="tile center-xs middle-xs pointer">
         <img class="tile-image" v-lazy="tile.image" :alt="tile.alt">
       </div>
@@ -22,7 +22,7 @@
 <script>
 import NoSSR from 'vue-no-ssr'
 import config from 'config'
-import CheckLinkTypeMixin from '../mixins/CheckLinkTypeMixin'
+import LinkMixin from '../mixins/LinkMixin'
 
 export default {
   name: 'TileLinks',
@@ -34,7 +34,7 @@ export default {
       type: Object
     }
   },
-  mixins: [CheckLinkTypeMixin],
+  mixins: [LinkMixin],
   computed: {
     social_tiles () {
       let content = this.componentData['data']['cards']
