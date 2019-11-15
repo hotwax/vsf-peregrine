@@ -9,8 +9,8 @@
           </header>
         </div>  
     <div class="row center-xs">
-    <div class="col-sm-4 pb15" v-for="(tile, index) in social_tiles" :key="index">
-      <div class="tile center-xs middle-xs">
+    <div class="col-sm-4 pb15" v-for="(tile, index) in social_tiles" :key="index" @click="link(tile)">
+      <div class="tile center-xs middle-xs pointer">
         <img class="tile-image" v-lazy="tile.image" :alt="tile.alt">
       </div>
     </div>
@@ -22,6 +22,7 @@
 <script>
 import NoSSR from 'vue-no-ssr'
 import config from 'config'
+import LinkMixin from '../mixins/LinkMixin'
 
 export default {
   name: 'TileLinks',
@@ -33,10 +34,11 @@ export default {
       type: Object
     }
   },
+  mixins: [LinkMixin],
   computed: {
     social_tiles () {
       let content = this.componentData['data']['cards']
-      let cards = Object.keys(content).filter(el => typeof (content[el]) === 'object').map(e => { return {'image': config.cms_peregrine.image_endpoint + content[e]['image'], 'alt': content[e]['imagealttext']} })
+      let cards = Object.keys(content).filter(el => typeof (content[el]) === 'object').map(e => { return {'image': config.cms_peregrine.image_endpoint + content[e]['image'], 'alt': content[e]['imagealttext'],'linkType':content[e]['linkType'],'link':content[e]['link']} })
       return cards
     }
   }

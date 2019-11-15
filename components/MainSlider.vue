@@ -2,8 +2,8 @@
  <no-ssr v-if="componentData">
   <section class="main-slider w-100 bg-cl-th-accent cl-white">
       <carousel :per-page="1" pagination-active-color="#ffffff" pagination-color="#e0e0e0">
-        <slide v-for="(slide, index) in slides" :key="index">
-          <div class="container w-100" v-lazy:background-image="slide.imagepath">
+        <slide v-for="(slide, index) in slides" :key="index" >
+          <div class="container w-100 pointer" v-lazy:background-image="slide.imagepath" @click.prevent="link(slide)">
             <div class="row middle-xs center-xs">
               <div class="col-md-12 px10p">
                 <p
@@ -27,6 +27,7 @@ import NoSSR from 'vue-no-ssr'
 import sliderData from 'theme/resource/slider.json'
 import ButtonOutline from 'theme/components/theme/ButtonOutline'
 import config from 'config'
+import LinkMixin from '../mixins/LinkMixin'
 
 export default {
   data () {
@@ -60,7 +61,8 @@ export default {
     setInterval(() => {
       this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
     }, 5000);
-  }
+  },
+  mixins: [LinkMixin]
 };
 </script>
 <style lang="scss">
