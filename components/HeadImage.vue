@@ -45,7 +45,11 @@ export default {
   computed: {
 
     banner_image: function () {
-      return config.cms_peregrine.image_endpoint + this.componentData['data']['bgimage']
+      let url = ''
+      if(this.componentData['data'].imageLinkType){
+      url =  this.componentData['data'].imageLinkType === 'internalLink'? config.cms_peregrine.image_endpoint + this.componentData['data']['bgimage'] : this.componentData['data']['bgimage']
+      }
+      return url
     },
     banner_title: function () {
       return this.componentData['data']['title'] ? this.componentData['data']['title'] : ''

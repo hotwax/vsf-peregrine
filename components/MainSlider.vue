@@ -53,8 +53,8 @@ export default {
       .filter(el => typeof this.componentData["data"].slides[el] == "object")
       .map(ob => {
         this.componentData["data"].slides[ob]["imagepath"] =
-          config.cms_peregrine.image_endpoint +
-          this.componentData["data"].slides[ob]["imagepath"];
+         this.componentData["data"].slides[ob]["imageLinkType"] === 'internalLink' ? config.cms_peregrine.image_endpoint +
+          this.componentData["data"].slides[ob]["imagepath"] :  this.componentData["data"].slides[ob]["imagepath"];
         return this.componentData["data"].slides[ob];
       });
     this.totalSlides = this.slides.length;

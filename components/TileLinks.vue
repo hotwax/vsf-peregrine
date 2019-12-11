@@ -38,7 +38,7 @@ export default {
   computed: {
     social_tiles () {
       let content = this.componentData['data']['cards']
-      let cards = Object.keys(content).filter(el => typeof (content[el]) === 'object').map(e => { return {'image': config.cms_peregrine.image_endpoint + content[e]['image'], 'alt': content[e]['imagealttext'],'linkType':content[e]['linkType'],'link':content[e]['link']} })
+      let cards = Object.keys(content).filter(el => typeof (content[el]) === 'object').map(e => { return {'image': content[e]['imageLinkType'] === 'internalLink' ?   config.cms_peregrine.image_endpoint + content[e]['image'] : content[e]['image'], 'alt': content[e]['imagealttext'], 'linkType': content[e]['linkType'], 'link': content[e]['link']} })
       return cards
     }
   }
