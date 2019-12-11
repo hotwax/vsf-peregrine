@@ -77,25 +77,25 @@ export default {
   computed : {
     main_banner () {
       let banner = {
-        "image":config.cms_peregrine.image_endpoint + this.componentData['data']['cards']['cards0']['image'],
-        "title":this.componentData['data']['cards']['cards0']['title'],
-        "subtitle":this.componentData['data']['cards']['cards0']['text']
+        "image": this.componentData["data"]["cards"]["cards0"]["imageLinkType"] ==="internalLink" ? config.cms_peregrine.image_endpoint + this.componentData["data"]["cards"]["cards0"]["image"] : this.componentData["data"]["cards"]["cards0"]["image"],
+        "title": this.componentData["data"]["cards"]["cards0"]["title"],
+        "subtitle": this.componentData["data"]["cards"]["cards0"]["text"]
       }
       return banner
     },
     small_banner1 () {
       let banner = {
-        "image":config.cms_peregrine.image_endpoint + this.componentData['data']['cards']['cards1']['image'],
-        "title":this.componentData['data']['cards']['cards1']['title'],
-        "subtitle":this.componentData['data']['cards']['cards1']['text']
+        "image": this.componentData["data"]["cards"]["cards1"]["imageLinkType"] ==="internalLink" ?  config.cms_peregrine.image_endpoint + this.componentData["data"]["cards"]["cards1"]["image"] : this.componentData["data"]["cards"]["cards1"]["image"],
+        "title": this.componentData["data"]["cards"]["cards1"]["title"],
+        "subtitle": this.componentData["data"]["cards"]["cards1"]["text"]
       }
       return banner
     },
     small_banner2 () {
       let banner = {
-        "image":config.cms_peregrine.image_endpoint + this.componentData['data']['cards']['cards2']['image'],
-        "title":this.componentData['data']['cards']['cards2']['title'],
-        "subtitle":this.componentData['data']['cards']['cards2']['text']
+        "image": this.componentData["data"]["cards"]["cards2"]["imageLinkType"] ==="internalLink" ? config.cms_peregrine.image_endpoint + this.componentData["data"]["cards"]["cards2"]["image"] : this.componentData["data"]["cards"]["cards2"]["image"],
+        "title": this.componentData["data"]["cards"]["cards2"]["title"],
+        "subtitle": this.componentData["data"]["cards"]["cards2"]["text"]
       }
       return banner
     }
