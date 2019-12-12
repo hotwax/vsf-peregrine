@@ -17,6 +17,8 @@ const PromotedOffers = ()=> import('./PromotedOffers')
 const MainSlider= ()=> import('./MainSlider')
 const TileLinks= ()=> import('./TileLinks')
 const NewArrivalProducts = () => import('./NewArrivalProduct')
+const BestSeller = () => import('./BestSeller')
+
 import NoSSR from 'vue-no-ssr'
 
 export default {
@@ -40,7 +42,8 @@ export default {
         'cardthreeimages': PromotedOffers,
         'carousel': MainSlider,
         'cards':TileLinks,
-        'newarrivalproducts': NewArrivalProducts
+        'newarrivalproducts': NewArrivalProducts,
+        'bestseller': BestSeller
       }
     }
   },
