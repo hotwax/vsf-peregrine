@@ -7,7 +7,7 @@ export default {
         this.$router.push(this.localizedRoute(`/${linkRoute}`))
       } else {
         let url = componentData.link.match(/^https?:/) ? componentData.link : 'https://' + componentData.link;
-        window.open(url, '_blank');
+        window.open(url, '_self');
         // window.open('https://' + componentData.link, '_blank');
       }
     }
