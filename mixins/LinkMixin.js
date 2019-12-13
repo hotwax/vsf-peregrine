@@ -6,8 +6,10 @@ export default {
         let linkRoute = splittedlink[splittedlink.length - 1];
         this.$router.push(this.localizedRoute(`/${linkRoute}`))
       } else {
-        let url = componentData.link.match(/^https?:/) ? componentData.link : 'https://' + componentData.link;
-        window.open(url, '_self');
+        if (componentData.link) {
+          let url = componentData.link.match(/^https?:/) ? componentData.link : 'https://' + componentData.link;
+          window.open(url, '_self');
+        }
         // window.open('https://' + componentData.link, '_blank');
       }
     }
