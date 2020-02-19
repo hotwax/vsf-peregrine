@@ -12,7 +12,7 @@ export const actions: ActionTree<CmsState, any> = {
     cmsComponents = await Vue.prototype.$db.cmsStaticCollection.getItem(url.title);
     commit(types.GET_CMS_COMPONENTS, cmsComponents);
   
-    await fetch(config.cms_peregrine.endpoint + '/' + url.title + '.20.json', { method: 'GET'
+    await fetch(`${config.cms_peregrine.endpoint}/${url.title}.data.json`, { method: 'GET'
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(
         (data) => {
@@ -29,8 +29,7 @@ export const actions: ActionTree<CmsState, any> = {
     let cmsHomeComponents = {};
     cmsHomeComponents =  await Vue.prototype.$db.cmsHomeCollection.getItem('index');
     commit(types.GET_CMS_HOME_COMPONENTS, cmsHomeComponents);
-
-    await fetch(config.cms_peregrine.endpoint + '/index.20.json', { method: 'GET'
+    await fetch(`${config.cms_peregrine.endpoint}/index.data.json`, { method: 'GET'
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(
         (data: any) => {
@@ -49,11 +48,13 @@ export const actions: ActionTree<CmsState, any> = {
 
 let cmsJsonParser=(resp)=>{
   return new Promise((resolve, reject) => {
-    let cmsParsedComponents = { 'title': resp['jcr:content']['jcr:title'],
-      'components': Object.keys(resp['jcr:content']).filter(el => typeof resp['jcr:content'][el] === 'object').map(ob => {
+    let cmsParsedComponents = { 
+      'title': resp['title'] || '',
+      'components': resp.children.map((ob: any )=> {
+        let componentName = ob.component.split('-')
         let obj = {
-          type: resp['jcr:content'][ob]['sling:resourceType'].substring(resp['jcr:content'][ob]['sling:resourceType'].lastIndexOf('/') + 1),
-          data: resp['jcr:content'][ob]
+          type: componentName[componentName.length-1],
+          data: ob
         }
         return obj;
       })
