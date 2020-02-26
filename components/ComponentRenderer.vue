@@ -1,26 +1,26 @@
 <template>
-<no-ssr>
-<div v-if="cmsObject">
-  <div v-for="(component, index) in cmsObject.components" :key="index">
-    <component v-bind:is="cmsComponent[component.type]" :componentData ="component" v-if="component.type !=='simpletext'"></component>
-  </div>
-  </div>
+  <no-ssr>
+    <div v-if="cmsObject">
+      <div v-for="(component, index) in cmsObject.components" :key="index">
+        <component v-bind:is="cmsComponent[component.type]" :componentData ="component" v-if="component.type !=='simpletext'" />
+      </div>
+    </div>
   </no-ssr>
 </template>
 
 <script>
+import NoSSR from 'vue-no-ssr'
+
 import i18n from '@vue-storefront/i18n'
-const SimpleText = ()=> import('./SimpleText')
-const RichText = ()=> import('./RichText')
-const HeadImage = ()=> import('./HeadImage')
+const SimpleText = () => import('./SimpleText')
+const RichText = () => import('./RichText')
+const HeadImage = () => import('./HeadImage')
 const BannerLeft = () => import('./BannerLeft')
-const PromotedOffers = ()=> import('./PromotedOffers')
-const MainSlider= ()=> import('./MainSlider')
-const TileLinks= ()=> import('./TileLinks')
+const PromotedOffers = () => import('./PromotedOffers')
+const MainSlider = () => import('./MainSlider')
+const TileLinks = () => import('./TileLinks')
 const NewArrivalProducts = () => import('./NewArrivalProduct')
 const BestSeller = () => import('./BestSeller')
-
-import NoSSR from 'vue-no-ssr'
 
 export default {
   components: {
@@ -28,14 +28,14 @@ export default {
   },
   computed: {
   },
-  props:{
-    cmsObject:{
+  props: {
+    cmsObject: {
       type: Object
     }
   },
   data () {
     return {
-      comp:{},
+      comp: {},
       cmsComponent: {
         'simpletext': SimpleText,
         'richtext': RichText,
@@ -43,14 +43,13 @@ export default {
         'bannerleft': BannerLeft,
         'cardthreeimages': PromotedOffers,
         'carousel': MainSlider,
-        'cards':TileLinks,
+        'cards': TileLinks,
         'newarrivalproducts': NewArrivalProducts,
         'bestseller': BestSeller
       }
     }
   },
   method: {
-    
   }
 }
 </script>
@@ -87,5 +86,3 @@ $border-primary: color(primary, $colors-border);
   }
 }
 </style>
-
-

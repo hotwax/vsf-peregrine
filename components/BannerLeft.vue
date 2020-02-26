@@ -17,11 +17,6 @@
               {{ componentData.data.buttontext }}
             </button-full>
           </div>
-        <!-- <div class="align-center inline-flex">
-          <button-outline :link="currentImage.link" color="light">
-            {{ currentImage.button_text }}
-          </button-outline>
-        </div> -->
         </div>
       </div>
     </section>
@@ -36,12 +31,10 @@ import ButtonFull from 'theme/components/theme/ButtonFull.vue'
 
 export default {
   components: {
-    // ButtonOutline
     'no-ssr': NoSSR,
     ButtonFull
   },
   props: {
-    // eslint-disable-next-line vue/require-default-prop
     componentData: {
       type: Object
     }
