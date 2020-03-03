@@ -7,13 +7,13 @@
             {{ banner_title }}
           </h1>
           <p
-            class="subtitle mb0 serif h3"
+            class="subtitle mb0 serif h3 fs-medium"
             data-testid="mainSliderSubtitle" v-html="banner_subtitle"
           >
             {{ banner_subtitle }}
           </p>
           <div class="button">
-            <button-full v-if="componentData.data.showbutton == 'true' ">
+            <button-full v-if="componentData.data.showbutton == 'true' " class="button-content">
               {{ componentData.data.buttontext }}
             </button-full>
           </div>
@@ -66,20 +66,30 @@ export default {
 
 <style lang="scss" scoped>
 .head-image {
-
+@media (max-width: 767px)
+{
+  display: none;
+}
   .head-image-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 15%;
+    margin-left: 11.29%;
+    height: 400px;
     @media (max-width: 767px) {
       margin-left: 0%;
       align-items: center;
     }
 
     .title {
-      font-size: 3.4rem;
-      margin-bottom: 30px;
+      font-family: 'Playfair Display';
+      font-weight: normal;
+      font-style: normal;
+      position: static;
+      margin: 102px 0px 0px 0px;
+      line-height: 77px;
+      height: 57px;
+      color: #1D1F22;
       @media (max-width: 767px) {
         background-color: rgba(255,255,255,0.4);
         padding: 0.5rem;
@@ -89,29 +99,46 @@ export default {
     }
 
     .subtitle {
-      font-size: 0.8rem;
-      max-width: 340px;
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.2rem;
-      margin-bottom: 20px;
+      max-width: 555px;
+      font-family: 'Playfair Display';
+      line-height: 29px;
+      margin-top: 40px;
+      min-height: 57px;
+      color: #1D1F22;
       @media (max-width: 767px) {
         background-color: rgba(255,255,255,0.4);
         padding: 0.5rem;
+      }
+    }
+
+    .button {
+      margin-top: 20px;
+      .button-content {
+        height: 51px;
+        width: 195px;
+        background-color: #1D1F22;
+        padding: 16px 0px;
+        font-family: 'Playfair Display';
+        font-size: 14px;
+        line-height: 19px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-style: normal;
       }
     }
   }
 }
 
 .head-image {
-  height: 640px;
+  height: 400px;
 }
 .container {
   background-size: cover;
-  background-position: bottom center;
+  background-position: top left;
   background-repeat: no-repeat;
 }
 .row {
-  height: 640px;
+  height: 400px;
 }
 @media (max-width: 75em) {
   .head-image {
