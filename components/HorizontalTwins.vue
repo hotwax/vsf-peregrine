@@ -1,8 +1,8 @@
 <template>
   <no-ssr v-if="componentData">
-    <section class="twins w-100 h-100 cl-white pointer">
-      <div class="row m0">
-        <div class="container w-50 cl-black p0" @click="link(componentData.data.cards.cards0) ">
+    <section class="twins cl-white pointer">
+      <div class="row">
+        <div class="container col-sm-6 col-xs-6 cl-black" @click="link(componentData.data.cards.cards0) ">
           <div class="card-image" v-lazy:background-image="cards0.image">
             <div class="card-content">
               <h1 class="title" data-testid="cardTitle" v-html="cards0.title" />
@@ -10,7 +10,7 @@
             </div>
           </div>
         </div>
-        <div class="container w-50 cl-black p0" @click="link(componentData.data.cards.cards1) ">
+        <div class="container col-sm-6 col-xs-6 cl-black" @click="link(componentData.data.cards.cards1) ">
           <div class="card-image" v-lazy:background-image="cards1.image">
             <div class="card-content">
               <h1 class="title" data-testid="cardTitle" v-html="cards1.title" />
@@ -67,18 +67,18 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  width: 590px;
-  margin-left: 30px;
-  margin-right: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  @media (max-width: 767px) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 
   .card-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 80px;
-    @media (max-width: 767px) {
-      align-items: center;
-    }
+    margin-left: 14%;
 
     .title {
       font-family: 'Playfair Display';
@@ -89,10 +89,9 @@ export default {
       font-weight: normal;
       color: #1D1F22;
       @media (max-width: 767px) {
-        background-color: rgba(255,255,255,0.4);
-        padding: 0.5rem;
-        line-height: 2.4rem;
-        font-size: 36px;
+        margin-top: 40px;
+        line-height: 29px;
+        font-size: 18px;
       }
     }
     .button {
@@ -106,6 +105,10 @@ export default {
       line-height: 19px;
       font-weight: bold;
       font-style: normal;
+      @media (max-width: 767px)
+      {
+        display: none;
+      }
     }
   }
 }
@@ -113,35 +116,41 @@ export default {
 .card-image {
   height: 472px;
   background-size: cover;
+  background-position: left center;
 }
 .twins {
   height: 472px;
+  @media (max-width: 767px) {
+    height: 198px;
+  }
 }
-.row {
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 @media (max-width: 75em) {
   .twins {
     height: 472px;
   }
-  .title {
-    font-size: 50px;
-  }
   .row {
     height: 472px;
   }
-}
-@media (max-width: 64em) {
-  .twins {
-    height: 359px;
+  .card-image {
+    height: 472px;
   }
-  .title {
-    font-size: 48px;
+  .container {
+    height: 472px;
+  }
+}
+@media (max-width: 767px) {
+  .twins {
+    height: 198px;
   }
   .row {
-    height: 359px;
+    height: 198px;
+  }
+  .card-image {
+    height: 198px;
+  }
+  .container {
+    height: 198px;
   }
 }
 </style>
