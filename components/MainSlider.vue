@@ -1,8 +1,8 @@
 <template>
- <no-ssr v-if="componentData">
-  <section class="main-slider w-100 bg-cl-th-accent cl-white">
+  <no-ssr v-if="componentData">
+    <section class="main-slider w-100 bg-cl-th-accent cl-white">
       <carousel :per-page="1" pagination-active-color="#ffffff" pagination-color="#e0e0e0">
-        <slide v-for="(slide, index) in slides" :key="index" >
+        <slide v-for="(slide, index) in slides" :key="index">
           <div class="container w-100 pointer" v-lazy:background-image="slide.imagepath" @click.prevent="link(slide)">
             <div class="row middle-xs center-xs">
               <div class="col-md-12 px10p">
@@ -10,15 +10,18 @@
                   class="subtitle mb0 serif uppercase h3 align-center"
                   data-testid="mainSliderSubtitle"
                   v-html="slide.text"
-                >{{ slide.text }}</p>
+                >
+                  {{ slide.text }}
+                </p>
                 <h1 class="title mt0 mb30 align-center" data-testid="mainSliderTitle" v-html="slide.title">
-                  {{ slide.title }}</h1>
+                  {{ slide.title }}
+                </h1>
               </div>
             </div>
           </div>
         </slide>
       </carousel>
-  </section>
+    </section>
   </no-ssr>
 </template>
 
@@ -28,7 +31,6 @@ import sliderData from 'theme/resource/slider.json'
 import ButtonOutline from 'theme/components/theme/ButtonOutline'
 import config from 'config'
 import LinkMixin from '../mixins/LinkMixin'
-
 export default {
   data () {
     return {
@@ -39,7 +41,7 @@ export default {
   },
   props: {
     componentData: {
-      type: Object,
+      type: Object
     }
   },
   components: {
@@ -49,13 +51,13 @@ export default {
     'no-ssr': NoSSR
   },
   mounted () {
-    this.slides = Object.keys(this.componentData["data"].slides)
-      .filter(el => typeof this.componentData["data"].slides[el] == "object")
+    this.slides = Object.keys(this.componentData['data'].slides)
+      .filter(el => typeof this.componentData['data'].slides[el] === 'object')
       .map(ob => {
-        this.componentData["data"].slides[ob]["imagepath"] =
-         this.componentData["data"].slides[ob]["imageLinkType"] === 'internalLink' ? config.cms_peregrine.image_endpoint +
-          this.componentData["data"].slides[ob]["imagepath"] :  this.componentData["data"].slides[ob]["imagepath"];
-        return this.componentData["data"].slides[ob];
+        this.componentData['data'].slides[ob]['imagepath'] =
+         this.componentData['data'].slides[ob]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint +
+          this.componentData['data'].slides[ob]['imagepath'] : this.componentData['data'].slides[ob]['imagepath'];
+        return this.componentData['data'].slides[ob];
       });
     this.totalSlides = this.slides.length;
     setInterval(() => {
@@ -73,7 +75,6 @@ $color-white: color(white);
   @media (max-width: 767px) {
     display: none;
   }
-
   .VueCarousel-pagination {
     position: absolute;
     bottom: 15px;

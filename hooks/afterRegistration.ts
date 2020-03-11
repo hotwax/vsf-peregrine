@@ -1,9 +1,9 @@
 /**
- * 
+ *
  * AfterRegistartion hook runs after mutation sets the state in vues store.
  * Here Its checking mutation type (dispatched  from action) and setItem in the local forage
- * 
- * AfterRegistartion hooks also need to be added in Vuex module in index.ts file 
+ *
+ * AfterRegistartion hooks also need to be added in Vuex module in index.ts file
  */
 export function afterRegistration ({ Vue, config, store, isServer }) {
   store.subscribe((mutation, state) => {
