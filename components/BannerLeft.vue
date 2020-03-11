@@ -7,16 +7,16 @@
             {{ banner_title }}
           </h1>
           <p
-            class="subtitle mb0 serif h3"
+            class="subtitle mb0 serif h3 fs-medium"
             data-testid="mainSliderSubtitle" v-html="banner_subtitle"
           >
             {{ banner_subtitle }}
           </p>
-        <!-- <div class="align-center inline-flex">
-          <button-outline :link="currentImage.link" color="light">
-            {{ currentImage.button_text }}
-          </button-outline>
-        </div> -->
+          <div class="button">
+            <button-full v-if="componentData.data.showbutton == 'true' " class="button-content">
+              {{ componentData.data.buttontext }}
+            </button-full>
+          </div>
         </div>
       </div>
     </section>
@@ -27,10 +27,12 @@
 import config from 'config'
 import NoSSR from 'vue-no-ssr'
 import LinkMixin from '../mixins/LinkMixin'
+import ButtonFull from 'theme/components/theme/ButtonFull.vue'
+
 export default {
   components: {
-    // ButtonOutline
-    'no-ssr': NoSSR
+    'no-ssr': NoSSR,
+    ButtonFull
   },
   props: {
     componentData: {
@@ -42,10 +44,11 @@ export default {
     }
   },
   computed: {
+
     banner_image: function () {
       let url = ''
       if (this.componentData['data'].imageLinkType) {
-        url = this.componentData['data'].imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['bgimage'] : this.componentData['data']['bgimage']
+        url = this.componentData['data'].imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['image'] : this.componentData['data']['image']
       }
       return url
     },
@@ -55,6 +58,7 @@ export default {
     banner_subtitle: function () {
       return this.componentData['data']['text'] ? this.componentData['data']['text'] : ''
     }
+
   },
   mixins: [LinkMixin]
 }
@@ -62,37 +66,79 @@ export default {
 
 <style lang="scss" scoped>
 .head-image {
+@media (max-width: 767px)
+{
   display: none;
-  @media (min-width: 767px) {
-    display: inherit;
-  }
+}
   .head-image-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 15%;
-    .title {
-      font-size: 3.4rem;
-      margin-bottom: 0;
+    margin-left: 11.29%;
+    height: 400px;
+    @media (max-width: 767px) {
+      margin-left: 0%;
+      align-items: center;
     }
+
+    .title {
+      font-family: 'Playfair Display';
+      font-weight: normal;
+      font-style: normal;
+      position: static;
+      margin: 102px 0px 0px 0px;
+      line-height: 77px;
+      height: 57px;
+      color: #1D1F22;
+      @media (max-width: 767px) {
+        background-color: rgba(255,255,255,0.4);
+        padding: 0.5rem;
+        line-height: 2.4rem;
+        font-size: 36px;
+      }
+    }
+
     .subtitle {
-      font-size: 0.8rem;
-      max-width: 340px;
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.2rem;
+      max-width: 555px;
+      font-family: 'Playfair Display';
+      line-height: 29px;
+      margin-top: 40px;
+      min-height: 57px;
+      color: #1D1F22;
+      @media (max-width: 767px) {
+        background-color: rgba(255,255,255,0.4);
+        padding: 0.5rem;
+      }
+    }
+
+    .button {
+      margin-top: 20px;
+      .button-content {
+        height: 51px;
+        width: 195px;
+        background-color: #1D1F22;
+        padding: 16px 0px;
+        font-family: 'Playfair Display';
+        font-size: 14px;
+        line-height: 19px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-style: normal;
+      }
     }
   }
 }
+
 .head-image {
-  height: 640px;
+  height: 400px;
 }
 .container {
   background-size: cover;
-  background-position: bottom center;
+  background-position: top left;
   background-repeat: no-repeat;
 }
 .row {
-  height: 640px;
+  height: 400px;
 }
 @media (max-width: 75em) {
   .head-image {
@@ -111,9 +157,6 @@ export default {
 @media (max-width: 64em) {
   .head-image {
     height: 359px;
-  }
-  .container {
-    background-position: left;
   }
   .title {
     font-size: 48px;
