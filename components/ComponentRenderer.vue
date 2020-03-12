@@ -13,6 +13,7 @@ import i18n from '@vue-storefront/i18n'
 const SimpleText = ()=> import('./SimpleText')
 const RichText = ()=> import('./RichText')
 const HeadImage = ()=> import('./HeadImage')
+const VerticalSet = () => import('./VerticalSet')
 const PromotedOffers = ()=> import('./PromotedOffers')
 const MainSlider= ()=> import('./MainSlider')
 const TileLinks= ()=> import('./TileLinks')
@@ -39,6 +40,7 @@ export default {
         'simpletext': SimpleText,
         'richtext': RichText,
         'teaservertical': HeadImage,
+        'verticalset': VerticalSet,
         'cardthreeimages': PromotedOffers,
         'carousel': MainSlider,
         'cards':TileLinks,
