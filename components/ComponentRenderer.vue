@@ -15,6 +15,7 @@ import i18n from '@vue-storefront/i18n'
 const SimpleText = () => import('./SimpleText')
 const RichText = () => import('./RichText')
 const HeadImage = () => import('./HeadImage')
+const HorizontalTwins = () => import('./HorizontalTwins')
 const BannerLeft = () => import('./BannerLeft')
 const PromotedOffers = () => import('./PromotedOffers')
 const MainSlider = () => import('./MainSlider')
@@ -40,6 +41,7 @@ export default {
       cmsComponent: {
         'simpletext': SimpleText,
         'richtext': RichText,
+        'horizontaltwins': HorizontalTwins,
         'teaservertical': HeadImage,
         'bannerleft': BannerLeft,
         'cardthreeimages': PromotedOffers,
