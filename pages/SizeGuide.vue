@@ -4,7 +4,7 @@
       {{ $t('Size Guide') }}
     </div>
     <div slot="content" class="container">
-      <ComponentRenderer :cmsObject="cmsComponents"/>
+      <ComponentRenderer :cmsObject="cmsComponents" />
     </div>
   </modal>
 </template>
@@ -14,14 +14,13 @@ import { mapState, mapGetters } from 'vuex'
 import Modal from 'theme/components/core/Modal'
 import SimpleText from '../components/SimpleText'
 import ComponentRenderer from '../components/ComponentRenderer'
-
 export default {
   name: 'SizeGuide',
   computed: {
     ...mapState({
       activeElem: state => state.ui.authElem
     }),
-     ...mapGetters({
+    ...mapGetters({
       cmsComponents: 'cmsstore/getComponents'
     })
   },

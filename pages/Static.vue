@@ -1,19 +1,19 @@
 <template>
-<no-ssr>
-  <div v-if="cmsComponents">
-    <div v-for="(component, index) in cmsComponents.components" :key="index">
-      <div class="bg-cl-secondary py35 pl20" v-if="component.type=='simpletext'">
-        <div class="container">
-          <breadcrumbs :routes="[{name: 'Homepage', route_link: '/'}]" :active-route="$props.title" />
-          <SimpleText :componentData="component" />
+  <no-ssr>
+    <div v-if="cmsComponents">
+      <div v-for="(component, index) in cmsComponents.components" :key="index">
+        <div class="bg-cl-secondary py35 pl20" v-if="component.type=='simpletext'">
+          <div class="container">
+            <breadcrumbs :routes="[{name: 'Homepage', route_link: '/'}]" :active-route="$props.title" />
+            <SimpleText :componentData="component" />
+          </div>
         </div>
       </div>
+      <div>
+        <ComponentRenderer :cmsObject="cmsComponents" />
+      </div>
     </div>
-    <div>
-      <ComponentRenderer :cmsObject="cmsComponents"/>
-    </div>
-  </div>
-</no-ssr>
+  </no-ssr>
 </template>
 
 <script>
@@ -24,7 +24,6 @@ import { mapGetters } from 'vuex'
 import SimpleText from '../components/SimpleText'
 import ComponentRenderer from '../components/ComponentRenderer'
 import NoSSR from 'vue-no-ssr'
-
 export default {
   components: {
     Breadcrumbs,
@@ -32,9 +31,9 @@ export default {
     ComponentRenderer,
     'no-ssr': NoSSR
   },
-  data(){
-    return{
-      picked:''
+  data () {
+    return {
+      picked: ''
     }
   },
   metaInfo () {
@@ -57,7 +56,6 @@ export default {
     // this.$store.dispatch('cmsstore/getCmsComponents', {title: this.$props.title})
   },
   mounted () {
-
   },
   computed: {
     ...mapGetters({
@@ -71,12 +69,10 @@ export default {
 @import '~theme/css/variables/colors';
 @import '~theme/css/helpers/functions/color';
 $border-primary: color(primary, $colors-border);
-
 .static-menu {
   ul {
     list-style: none;
   }
-
   a::after {
     content: "";
     position: absolute;
@@ -86,13 +82,11 @@ $border-primary: color(primary, $colors-border);
     height: 1px;
     background-color: $border-primary;
   }
-
   a:hover::after,
   .router-link-active::after {
     opacity: 0;
   }
 }
-
 .static-content {
   *:first-of-type {
     margin-top: 0;

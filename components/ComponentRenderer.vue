@@ -10,17 +10,21 @@
 
 <script>
 import NoSSR from 'vue-no-ssr'
+
 import i18n from '@vue-storefront/i18n'
 const SimpleText = () => import('./SimpleText')
 const RichText = () => import('./RichText')
 const HeadImage = () => import('./HeadImage')
-const BannerLeft = () => import('./BannerLeft')
 const BannerRight = () => import('./BannerRight')
+const HorizontalTwins = () => import('./HorizontalTwins')
+const BannerLeft = () => import('./BannerLeft')
 const PromotedOffers = () => import('./PromotedOffers')
 const MainSlider = () => import('./MainSlider')
 const TileLinks = () => import('./TileLinks')
 const NewArrivalProducts = () => import('./NewArrivalProduct')
 const BestSeller = () => import('./BestSeller')
+const VerticalGrid = () => import('./VerticalGrid')
+
 export default {
   components: {
     'no-ssr': NoSSR
@@ -38,6 +42,7 @@ export default {
       cmsComponent: {
         'simpletext': SimpleText,
         'richtext': RichText,
+        'horizontaltwins': HorizontalTwins,
         'teaservertical': HeadImage,
         'bannerleft': BannerLeft,
         'bannerright': BannerRight,
@@ -45,7 +50,8 @@ export default {
         'carousel': MainSlider,
         'cards': TileLinks,
         'newarrivalproducts': NewArrivalProducts,
-        'bestseller': BestSeller
+        'bestseller': BestSeller,
+        'verticalbannergrid': VerticalGrid
       }
     }
   },
