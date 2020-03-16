@@ -21,6 +21,7 @@ const MainSlider = () => import('./MainSlider')
 const TileLinks = () => import('./TileLinks')
 const NewArrivalProducts = () => import('./NewArrivalProduct')
 const BestSeller = () => import('./BestSeller')
+const VerticalGrid = () => import('./VerticalGrid')
 
 export default {
   components: {
@@ -45,7 +46,8 @@ export default {
         'carousel': MainSlider,
         'cards': TileLinks,
         'newarrivalproducts': NewArrivalProducts,
-        'bestseller': BestSeller
+        'bestseller': BestSeller,
+        'verticalbannergrid': VerticalGrid
       }
     }
   },
