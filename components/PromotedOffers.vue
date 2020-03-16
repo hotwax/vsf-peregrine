@@ -10,12 +10,8 @@
             class="offer"
             v-lazy:background-image="main_banner.image"
           >
-            <h2 class="title m0 h1">
-              {{ main_banner.title }}
-            </h2>
-            <p class="subtitle m0 serif h3 uppercase" v-html="main_banner.subtitle">
-              {{ main_banner.subtitle }}
-            </p>
+            <h2 class="title m0 h1" v-html="main_banner.title" />
+            <p class="subtitle m0 serif h3 uppercase" v-html="main_banner.subtitle" />
           </div>
         </div>
 
@@ -28,12 +24,8 @@
               class="offer offer-small border-box p5 flex bg-cl-th-accent"
               v-lazy:background-image="small_banner1.image"
             >
-              <h2 class="title m0 h1">
-                {{ small_banner1.title }}
-              </h2>
-              <p class="subtitle m0 serif h3 uppercase" v-html="small_banner1.subtitle">
-                {{ small_banner1.subtitle }}
-              </p>
+              <h2 class="title m0 h1" v-html="small_banner1.title" />
+              <p class="subtitle m0 serif h3 uppercase" v-html="small_banner1.subtitle" />
             </div>
           </div>
           <div
@@ -44,12 +36,8 @@
               class="offer offer-small border-box p5 flex bg-cl-th-accent"
               v-lazy:background-image="small_banner2.image"
             >
-              <h2 class="title m0 h1">
-                {{ small_banner2.title }}
-              </h2>
-              <p class="subtitle m0 serif h3 uppercase" v-html="small_banner2.subtitle">
-                {{ small_banner2.subtitle }}
-              </p>
+              <h2 class="title m0 h1" v-html="small_banner2.title" />
+              <p class="subtitle m0 serif h3 uppercase" v-html="small_banner2.subtitle" />
             </div>
           </div>
         </div>

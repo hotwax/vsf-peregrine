@@ -1,8 +1,6 @@
 <template>
   <no-ssr v-if="componentData">
-    <h2 class="fs-big" v-html="componentData.data.text">
-      {{componentData.data.text}}
-    </h2>
+    <h2 class="fs-big" v-html="componentData.data.text" />
   </no-ssr>
 </template>
 
