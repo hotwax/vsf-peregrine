@@ -3,15 +3,11 @@
     <section class="head-image w-100 bg-cl-th-accent cl-white pointer" @click="link(componentData.data)">
       <div class="container w-100 h-100 cl-black" v-lazy:background-image="banner_image" v-if="banner_image">
         <div class="head-image-content">
-          <h1 class="title" data-testid="mainSliderTitle" v-html="banner_title">
-            {{ banner_title }}
-          </h1>
+          <h1 class="title" data-testid="mainSliderTitle" v-html="banner_title" />
           <p
             class="subtitle mb0 serif h3"
             data-testid="mainSliderSubtitle" v-html="banner_subtitle"
-          >
-            {{ banner_subtitle }}
-          </p>
+          />
         <!-- <div class="align-center inline-flex">
           <button-outline :link="currentImage.link" color="light">
             {{ currentImage.button_text }}

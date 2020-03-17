@@ -3,9 +3,7 @@
     <section class="new-collection container px15" v-if="everythingNewCollection && everythingNewCollection.length">
       <div>
         <header class="col-md-12">
-          <h2 class="align-center cl-accent">
-            {{ componentData.data.title }}
-          </h2>
+          <h2 class="align-center cl-accent" v-html="componentData.data.title" />
         </header>
       </div>
       <div class="row center-xs">

@@ -3,9 +3,7 @@
     <section class="container pb60 px15">
       <div class="row center-xs">
         <header class="col-md-12">
-          <h2 class="align-center cl-accent">
-            {{ componentData.data.title }}
-          </h2>
+          <h2 class="align-center cl-accent" v-html="componentData.data.title" />
         </header>
       </div>
       <div class="row center-xs">

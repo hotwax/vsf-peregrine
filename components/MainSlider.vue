@@ -10,12 +10,8 @@
                   class="subtitle mb0 serif uppercase h3 align-center"
                   data-testid="mainSliderSubtitle"
                   v-html="slide.text"
-                >
-                  {{ slide.text }}
-                </p>
-                <h1 class="title mt0 mb30 align-center" data-testid="mainSliderTitle" v-html="slide.title">
-                  {{ slide.title }}
-                </h1>
+                />
+                <h1 class="title mt0 mb30 align-center" data-testid="mainSliderTitle" v-html="slide.title" />
               </div>
             </div>
           </div>
