@@ -1,8 +1,6 @@
 <template>
   <no-ssr v-if="componentData">
-    <h2 class="fs-big" v-html="componentData.data.text">
-      {{componentData.data.text}}
-    </h2>
+    <h2 class="fs-big" v-html="componentData.data.text" />
   </no-ssr>
 </template>
 
@@ -13,9 +11,9 @@ export default {
     'no-ssr': NoSSR
   },
   props: {
-     componentData: {
-      type: Object,
-    },
+    componentData: {
+      type: Object
+    }
   }
 }
 </script>
@@ -25,5 +23,3 @@ export default {
   @import '~theme/css/helpers/functions/color';
   $border-primary: color(primary, $colors-border);
 </style>
-
-
