@@ -15,6 +15,7 @@ import i18n from '@vue-storefront/i18n'
 const SimpleText = () => import('./SimpleText')
 const RichText = () => import('./RichText')
 const HeadImage = () => import('./HeadImage')
+const BannerRight = () => import('./BannerRight')
 const HorizontalTwins = () => import('./HorizontalTwins')
 const BannerLeft = () => import('./BannerLeft')
 const PromotedOffers = () => import('./PromotedOffers')
@@ -44,6 +45,7 @@ export default {
         'horizontaltwins': HorizontalTwins,
         'teaservertical': HeadImage,
         'bannerleft': BannerLeft,
+        'bannerright': BannerRight,
         'cardthreeimages': PromotedOffers,
         'carousel': MainSlider,
         'cards': TileLinks,
@@ -62,12 +64,10 @@ export default {
 @import '~theme/css/variables/colors';
 @import '~theme/css/helpers/functions/color';
 $border-primary: color(primary, $colors-border);
-
 .static-menu {
   ul {
     list-style: none;
   }
-
   a::after {
     content: "";
     position: absolute;
@@ -77,13 +77,11 @@ $border-primary: color(primary, $colors-border);
     height: 1px;
     background-color: $border-primary;
   }
-
   a:hover::after,
   .router-link-active::after {
     opacity: 0;
   }
 }
-
 .static-content {
   *:first-of-type {
     margin-top: 0;
