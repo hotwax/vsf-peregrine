@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div v-if="cmsHomeComponents">
-      <ComponentRenderer :cmsObject="cmsHomeComponents"/>
+      <ComponentRenderer :cmsObject="cmsHomeComponents" />
       <Onboard />
     </div>
   </div>
@@ -11,7 +11,6 @@
 // query constructor
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'
 import { isServer, onlineHelper } from '@vue-storefront/core/helpers'
-
 // Core pages
 import Home from '@vue-storefront/core/pages/Home'
 // Theme local components
@@ -21,7 +20,6 @@ import { Logger } from '@vue-storefront/core/lib/logger'
 import { mapGetters } from 'vuex'
 import config from 'config'
 import ComponentRenderer from '../components/ComponentRenderer'
-
 export default {
   mixins: [Home],
   components: {
@@ -34,7 +32,6 @@ export default {
       {cmsHomeComponents: 'cmsstore/getHomeComponents'},
       'user',
       ['isLoggedIn']
-
     ),
     categories () {
       return this.getCategories
@@ -49,7 +46,7 @@ export default {
       return onlineHelper.isOnline
     }
   },
-   async created () {
+  async created () {
     // Load personal and shipping details for Checkout page from IndexedDB
     this.$store.dispatch('checkout/load')
     await this.$store.dispatch('cmsstore/getCmsHomeComponents')
@@ -81,10 +78,8 @@ export default {
   },
   async asyncData ({ store, route }) { // this is for SSR purposes to prefetch data
     Logger.info('Calling asyncData in Home (theme)')()
-
     let newProductsQuery = prepareQuery({ queryConfig: 'newProducts' })
     let coolBagsQuery = prepareQuery({ queryConfig: 'coolBags' })
-
     const newProductsResult = await store.dispatch('product/list', {
       query: newProductsQuery,
       size: 8,
@@ -93,7 +88,6 @@ export default {
     if (newProductsResult) {
       store.state.homepage.new_collection = newProductsResult.items
     }
-
     const coolBagsResult = await store.dispatch('product/list', {
       query: coolBagsQuery,
       size: 4,
@@ -103,7 +97,6 @@ export default {
     if (coolBagsResult) {
       store.state.homepage.coolbags_collection = coolBagsResult.items
     }
-
     await store.dispatch('promoted/updateHeadImage')
     await store.dispatch('promoted/updatePromotedOffers')
   },

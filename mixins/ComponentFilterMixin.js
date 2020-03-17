@@ -3,7 +3,7 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters(
-      {cmsHomeComponents: 'cmsstore/getHomeComponents'}
+      { cmsHomeComponents: 'cmsstore/getHomeComponents' }
     )
   },
   methods: {
