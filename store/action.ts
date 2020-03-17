@@ -11,8 +11,9 @@ export const actions: ActionTree<CmsState, any> = {
     let cmsComponents = {};
     cmsComponents = await Vue.prototype.$db.cmsStaticCollection.getItem(url.title);
     commit(types.GET_CMS_COMPONENTS, cmsComponents);
-  
-    await fetch(`${config.cms_peregrine.endpoint}/${url.title}.data.json`, { method: 'GET'
+
+    await fetch(`${config.cms_peregrine.endpoint}/${url.title}.data.json`, {
+      method: 'GET'
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(
         (data) => {
@@ -27,33 +28,34 @@ export const actions: ActionTree<CmsState, any> = {
   },
   async getCmsHomeComponents ({ commit }) {
     let cmsHomeComponents = {};
-    cmsHomeComponents =  await Vue.prototype.$db.cmsHomeCollection.getItem('index');
+    cmsHomeComponents = await Vue.prototype.$db.cmsHomeCollection.getItem('index');
     commit(types.GET_CMS_HOME_COMPONENTS, cmsHomeComponents);
-    await fetch(`${config.cms_peregrine.endpoint}/index.data.json`, { method: 'GET'
+    await fetch(`${config.cms_peregrine.endpoint}/index.data.json`, {
+      method: 'GET'
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(
         (data: any) => {
-          data.components.push({'type':'product','data':{}})
+          data.components.push({ 'type': 'product', 'data': {} })
           cmsHomeComponents = data
           commit(types.GET_CMS_HOME_COMPONENTS, cmsHomeComponents);
-          }
+        }
       )
     }).catch(
-      (err)=>{
-       console.log(err);
+      (err) => {
+        console.log(err);
       }
     )
   }
 }
 
-let cmsJsonParser=(resp)=>{
+let cmsJsonParser = (resp) => {
   return new Promise((resolve, reject) => {
-    let cmsParsedComponents = { 
+    let cmsParsedComponents = {
       'title': resp['title'] || '',
-      'components': resp.children.map((ob: any )=> {
+      'components': resp.children.map((ob: any) => {
         let componentName = ob.component.split('-')
         let obj = {
-          type: componentName[componentName.length-1],
+          type: componentName[componentName.length - 1],
           data: ob
         }
         return obj;

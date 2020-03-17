@@ -3,7 +3,7 @@
     <div class="container pt10 pb10">
       <div class="row pl10 pt0">
         <h2 class="fs-big p0" v-html="componentData.data.title" v-if="componentData.data.title">
-          {{componentData.data.title}}
+          {{ componentData.data.title }}
         </h2>
         <p v-html="componentData.data.text">
           {{ componentData.data.text }}
@@ -31,5 +31,4 @@ export default {
 @import '~theme/css/variables/colors';
 @import '~theme/css/helpers/functions/color';
 $border-primary: color(primary, $colors-border);
-
 </style>
