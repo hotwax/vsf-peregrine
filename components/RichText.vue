@@ -27,5 +27,4 @@ export default {
 @import '~theme/css/variables/colors';
 @import '~theme/css/helpers/functions/color';
 $border-primary: color(primary, $colors-border);
-
 </style>

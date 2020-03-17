@@ -11,9 +11,9 @@ export default {
     'no-ssr': NoSSR
   },
   props: {
-     componentData: {
-      type: Object,
-    },
+    componentData: {
+      type: Object
+    }
   }
 }
 </script>
@@ -23,5 +23,3 @@ export default {
   @import '~theme/css/helpers/functions/color';
   $border-primary: color(primary, $colors-border);
 </style>
-
-
