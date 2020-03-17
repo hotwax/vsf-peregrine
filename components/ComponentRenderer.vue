@@ -15,6 +15,7 @@ import i18n from '@vue-storefront/i18n'
 const SimpleText = () => import('./SimpleText')
 const RichText = () => import('./RichText')
 const HeadImage = () => import('./HeadImage')
+const TGrid = () => import('./TGrid')
 const BannerRight = () => import('./BannerRight')
 const HorizontalTwins = () => import('./HorizontalTwins')
 const BannerLeft = () => import('./BannerLeft')
@@ -44,6 +45,7 @@ export default {
         'richtext': RichText,
         'horizontaltwins': HorizontalTwins,
         'teaservertical': HeadImage,
+        'tgrid': TGrid,
         'bannerleft': BannerLeft,
         'bannerright': BannerRight,
         'cardthreeimages': PromotedOffers,
