@@ -26,6 +26,7 @@ const TileLinks = () => import('./TileLinks')
 const NewArrivalProducts = () => import('./NewArrivalProduct')
 const BestSeller = () => import('./BestSeller')
 const VerticalGrid = () => import('./VerticalGrid')
+const AppStore = () => import('./AppStore')
 
 export default {
   components: {
@@ -55,7 +56,8 @@ export default {
         'cards': TileLinks,
         'newarrivalproducts': NewArrivalProducts,
         'bestseller': BestSeller,
-        'verticalbannergrid': VerticalGrid
+        'verticalbannergrid': VerticalGrid,
+        'appstore': AppStore
       }
     }
   },
