@@ -56,7 +56,7 @@ export default {
         'cards': TileLinks,
         'newarrivalproducts': NewArrivalProducts,
         'bestseller': BestSeller,
-        'newslatter': Newsletter,
+        'newsletter': Newsletter,
         'verticalbannergrid': VerticalGrid
       }
     }
