@@ -27,6 +27,7 @@ const NewArrivalProducts = () => import('./NewArrivalProduct')
 const BestSeller = () => import('./BestSeller')
 const Newsletter = () => import('./Newsletter')
 const VerticalGrid = () => import('./VerticalGrid')
+const AppStore = () => import('./AppStore')
 
 export default {
   components: {
@@ -57,7 +58,8 @@ export default {
         'newarrivalproducts': NewArrivalProducts,
         'bestseller': BestSeller,
         'newsletter': Newsletter,
-        'verticalbannergrid': VerticalGrid
+        'verticalbannergrid': VerticalGrid,
+        'appstore': AppStore
       }
     }
   },
