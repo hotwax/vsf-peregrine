@@ -55,11 +55,11 @@ export default {
 
 <style lang="scss" scoped>
 .app-store {
-color: #1D1F22;
-@media (max-width: 767px)
-{
-  display: none;
-}
+  color: #1D1F22;
+  @media (max-width: 767px)
+  {
+    display: none;
+  }
   .app-store-content {
     display: flex;
     flex-direction: column;
