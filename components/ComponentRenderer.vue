@@ -25,6 +25,7 @@ const MainSlider = () => import('./MainSlider')
 const TileLinks = () => import('./TileLinks')
 const NewArrivalProducts = () => import('./NewArrivalProduct')
 const BestSeller = () => import('./BestSeller')
+const Newsletter = () => import('./Newsletter')
 const VerticalGrid = () => import('./VerticalGrid')
 const AppStore = () => import('./AppStore')
 
@@ -56,6 +57,7 @@ export default {
         'cards': TileLinks,
         'newarrivalproducts': NewArrivalProducts,
         'bestseller': BestSeller,
+        'newsletter': Newsletter,
         'verticalbannergrid': VerticalGrid,
         'appstore': AppStore
       }
