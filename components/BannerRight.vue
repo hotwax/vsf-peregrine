@@ -9,7 +9,7 @@
             data-testid="mainSliderSubtitle" v-html="banner_subtitle"
           />
           <div class="button">
-            <button-full v-if="componentData.data.showbutton == 'true' " class="button-content" v-html="componentData.data.buttontext" />
+            <button-full v-if="(componentData.data.showbutton == 'true') && (componentData.data.buttonlink != '')" class="button-content" v-html="componentData.data.buttontext" />
           </div>
         </div>
       </div>

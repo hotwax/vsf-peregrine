@@ -1,27 +1,27 @@
 <template>
   <no-ssr v-if="componentData">
-    <section class="tgrid my30 container h-100 px15 cl-white pointer" @click="link(componentData.data.cards)">
+    <section class="tgrid my30 container h-100 px15 cl-white pointer" @click="link(componentData.data.cards.cards0)">
       <div class="tgrid-container w-100 cl-black" v-lazy:background-image="cards0.image">
         <div class="tgrid-content">
           <h1 class="title" data-testid="mainSliderTitle" v-html="cards0.title" />
           <p class="subtitle mb0 serif h3 fs-medium" data-testid="mainSliderSubtitle" v-html="cards0.subtitle" />
-          <button-full class="button uppercase" v-if="componentData.data.showbutton == 'true' " v-html="cards0.buttontext" />
+          <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards0.buttonlink != '')" v-html="cards0.buttontext" />
         </div>
       </div>
       <div class="row p0">
-        <div class="twin-container pr30 col-sm-6 col-xs-6 cl-black " @click="link(componentData.data.cards) ">
+        <div class="twin-container pr30 col-sm-6 col-xs-6 cl-black " @click="link(componentData.data.cards.cards1) ">
           <div class="card-image w-100" v-lazy:background-image="cards1.image">
             <div class="card-content">
               <h1 class="title" data-testid="cardTitle" v-html="cards1.title" />
-              <button-full class="button uppercase" v-if="componentData.data.showbutton == 'true' " v-html="cards1.buttontext" />
+              <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards1.buttonlink != '')" v-html="cards1.buttontext" />
             </div>
           </div>
         </div>
-        <div class="twin-container pl30 col-sm-6 col-xs-6 cl-black" @click="link(componentData.data.cards) ">
+        <div class="twin-container pl30 col-sm-6 col-xs-6 cl-black" @click="link(componentData.data.cards.cards2) ">
           <div class="card-image w-100" v-lazy:background-image="cards2.image">
             <div class="card-content">
               <h1 class="title" data-testid="cardTitle" v-html="cards2.title" />
-              <button-full class="button uppercase" v-if="componentData.data.showbutton == 'true' " v-html="cards2.buttontext" />
+              <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards2.buttonlink != '')" v-html="cards2.buttontext" />
             </div>
           </div>
         </div>
@@ -55,6 +55,7 @@ export default {
         'image': this.componentData['data']['cards'][0]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][0]['image'] : this.componentData['data']['cards'][0]['image'],
         'title': this.componentData['data']['cards'][0]['title'],
         'subtitle': this.componentData['data']['cards'][0]['text'],
+        'buttonlink': this.componentData['data']['cards'][0]['buttonlink'],
         'buttontext': this.componentData['data']['cards'][0]['buttontext']
       }
       return banner
@@ -63,6 +64,7 @@ export default {
       let banner = {
         'image': this.componentData['data']['cards'][1]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][1]['image'] : this.componentData['data']['cards'][1]['image'],
         'title': this.componentData['data']['cards'][1]['title'],
+        'buttonlink': this.componentData['data']['cards'][1]['buttonlink'],
         'buttontext': this.componentData['data']['cards'][1]['buttontext']
       }
       return banner
@@ -71,6 +73,7 @@ export default {
       let banner = {
         'image': this.componentData['data']['cards'][2]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][2]['image'] : this.componentData['data']['cards'][2]['image'],
         'title': this.componentData['data']['cards'][2]['title'],
+        'buttonlink': this.componentData['data']['cards'][2]['buttonlink'],
         'buttontext': this.componentData['data']['cards'][2]['buttontext']
       }
       return banner

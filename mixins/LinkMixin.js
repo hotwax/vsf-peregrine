@@ -12,6 +12,18 @@ export default {
         }
         // window.open('https://' + componentData.link, '_blank');
       }
+    },
+    buttonlink (componentData) {
+      if (componentData.buttonLinkType === 'internalLink') {
+        let splittedlink = componentData.buttonlink.split('/');
+        let linkRoute = splittedlink[splittedlink.length - 1];
+        this.$router.push(this.localizedRoute(`/${linkRoute}`))
+      } else {
+        if (componentData.buttonlink) {
+          let url = componentData.buttonlink.match(/^https?:/) ? componentData.buttonlink : 'https://' + componentData.buttonlink;
+          window.open(url, '_self');
+        }
+      }
     }
   }
 }
