@@ -1,6 +1,6 @@
 <template>
   <no-ssr v-if="componentData">
-    <section class="container vertical-grid px15 cl-white pointer">
+    <section class="container my30 vertical-grid px15 cl-white pointer">
       <div class="row">
         <div class="col-sm-3 vertical-thin pr20">
           <div class="thin-container cl-black" v-lazy:background-image="cards0.image" @click="link(cards0.link)">
@@ -8,7 +8,7 @@
               <h1 class="title h1" data-testid="cardTitle" v-html="cards0.title" />
               <p class="subtitle mb0 serif h3 fs-medium" data-testid="mainSliderSubtitle" v-html="cards0.subtitle" />
               <div class="button-link" @click.stop="buttonlink(cards0.link)">
-                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true')" v-html="cards0.buttontext" />
+                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards0.link.buttonlink !== '')" v-html="cards0.buttontext" />
               </div>
             </div>
           </div>
@@ -18,8 +18,8 @@
             <div class="card-content">
               <h1 class="title h1" data-testid="cardTitle" v-html="cards1.title" />
               <p class="subtitle mb0 serif h3 fs-medium" data-testid="mainSliderSubtitle" v-html="cards1.subtitle" />
-              <div class="button-link" @click="buttonlink(cards1.link)">
-                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true')" @click="buttonlink(cards1.buttonlink)" v-html="cards1.buttontext" />
+              <div class="button-link" @click.stop="buttonlink(cards1.link)">
+                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards1.link.buttonlink !== '')" v-html="cards1.buttontext" />
               </div>
             </div>
           </div>
