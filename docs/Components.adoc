@@ -1,6 +1,6 @@
-= CMS Components
-
 :toc:
+
+= CMS Components
 
 == Banner Left
 
