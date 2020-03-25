@@ -7,7 +7,7 @@
 image::BannerLeft.png[BannerLeft]
 
 === JSON
-[source,JSON]
+[source,json]
 ----
 {
   "experiences":null,
