@@ -1,0 +1,51 @@
+:toc:
+
+= CMS Components
+
+== Banner Left
+
+image::BannerLeft.png[Banner Left]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "title":"COCKTAIL & PARTY",
+  "link":"/content/sites/vuestorefront/returns",
+  "image":"/content/assets/themecleanflex/vuestorefront/image3.png",
+  "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
+  "showbutton":"true",
+  "buttontext":"BUTTON",
+  "buttonlink":"/content/sites/vuestorefront/privacy",
+  "linkType":"internalLink",
+  "imageLinkType":"internalLink",
+  "buttonLinkType":"internalLink",
+  "component":"vuestorefront-components-bannerleft",
+  "path":"/jcr:content/n15ae3062-4978-4836-ab0b-78894710a76a"
+}
+----
+
+== Banner Right
+
+image::BannerRight.png[Banner Right]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "title":"ECO SANDALS",
+  "image":"/content/assets/themecleanflex/vuestorefront/Banner3.png",
+  "link":"",
+  "text":"The collection features formal and casual comfort shoes with a Danish design focus. Made from premium leathers and comfort.",
+  "showbutton":"true",
+  "buttontext":"View",
+  "buttonlink":"",
+  "linkType":"internalLink",
+  "imageLinkType":"internalLink",
+  "buttonLinkType":"internalLink",
+  "component":"vuestorefront-components-bannerright",
+  "path":"/jcr:content/n355852fd-2d41-4112-a666-582efcc3fa69"
+}
+----
