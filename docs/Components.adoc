@@ -1,0 +1,21 @@
+= CMS components
+
+== BannerLeft
+The component is having a image on the right side and title, subtitle and a button on the left hand side.
+
+image::BannerLeft.png[BannerLeft]
+
+* JSON :
++
+[source,JSON]
+----
+"experiences":null,
+"title":"COCKTAIL & PARTY",
+"link":"/content/sites/vuestorefront/returns",
+"image":"/content/assets/themecleanflex/vuestorefront/image3.png",
+"text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.","showbutton":"true",
+"buttontext":"BUTTON",
+"buttonlink":"/content/sites/vuestorefront/privacy","linkType":"internalLink",
+"imageLinkType":"internalLink","buttonLinkType":"internalLink","component":"vuestorefront-components-bannerleft",
+"path":"/jcr:content/n15ae3062-4978-4836-ab0b-78894710a76a"
+----
