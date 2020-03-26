@@ -223,3 +223,24 @@ image::images/Newsletter.png[Newsletter]
   "buttonLinkType":"internalLink"
 }
 ----
+
+== App Store
+
+image::images/AppStore.png[App Store]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "title":"Download our application to your mobile",
+  "image":"/content/assets/themecleanflex/vuestorefront/mobile.png",
+  "playstoreurl":"",
+  "applestoreurl":"",
+  "imageLinkType":"internalLink",
+  "playStoreImage":"/content/assets/themecleanflex/vuestorefront/playstore.png",
+  "appleStoreImage":"/content/assets/themecleanflex/vuestorefront/applestore.png",
+  "component":"vuestorefront-components-appstore",
+  "path":"/jcr:content/n4e5ae06b-612e-427a-92ad-51f878c994c9"
+}
+----
