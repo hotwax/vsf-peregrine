@@ -197,3 +197,29 @@ image::images/TGrid.png[T Grid]
   "path":"/jcr:content/ndf68d954-e8dd-4e99-93a5-39e9a528561e"
 }
 ----
+
+== Newsletter
+
+image::images/Newsletter.png[Newsletter]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "author":null,
+  "collection":null,
+  "component":"vuestorefront-components-newsletter",
+  "path":"/jcr:content/n4d688d43-5ffb-40b3-93d7-5709f292e5f3",
+  "jcr:primaryType":"nt:unstructured",
+  "imageLinkType":"internalLink",
+  "jcr:lastModifiedBy":"admin",
+  "text":"Be aware of upcoming sales and events. Receive gifts and special offers!",
+  "image":"/content/assets/themecleanflex/vuestorefront/newsletter.png",
+  "title":"Subscribe to Newsletters",
+  "buttontext":"Subscribe",
+  "jcr:lastModified":1584506288055,
+  "sling:resourceType":"vuestorefront/components/newsletter",
+  "buttonLinkType":"internalLink"
+}
+----
