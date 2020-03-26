@@ -1,6 +1,6 @@
 <template>
   <no-ssr v-if="componentData">
-    <section class="container vertical-set px15 cl-white pointer">
+    <section class="container my30 vertical-set px15 cl-white pointer">
       <div class="row ">
         <div class="col-sm-4 vertical-tall pr20" @click="link(cards0.link)">
           <div class="tall-container cl-black" v-lazy:background-image="cards0.image">
@@ -76,7 +76,7 @@ export default {
         'image': this.componentData['data']['cards'][0]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][0]['image'] : this.componentData['data']['cards'][0]['image'],
         'title': this.componentData['data']['cards'][0]['title'],
         'subtitle': this.componentData['data']['cards'][0]['text'],
-        'link': this.compomemtData['data']['cards'][0],
+        'link': this.componentData['data']['cards'][0],
         'buttontext': this.componentData['data']['cards'][0]['buttontext']
       }
       return banner
@@ -85,7 +85,7 @@ export default {
       let banner = {
         'image': this.componentData['data']['cards'][1]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][1]['image'] : this.componentData['data']['cards'][1]['image'],
         'title': this.componentData['data']['cards'][1]['title'],
-        'link': this.compomemtData['data']['cards'][1],
+        'link': this.componentData['data']['cards'][1],
         'buttontext': this.componentData['data']['cards'][1]['buttontext']
       }
       return banner
@@ -94,7 +94,7 @@ export default {
       let banner = {
         'image': this.componentData['data']['cards'][2]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][2]['image'] : this.componentData['data']['cards'][2]['image'],
         'title': this.componentData['data']['cards'][2]['title'],
-        'link': this.compomemtData['data']['cards'][2],
+        'link': this.componentData['data']['cards'][2],
         'buttontext': this.componentData['data']['cards'][2]['buttontext']
       }
       return banner
@@ -103,12 +103,13 @@ export default {
       let banner = {
         'image': this.componentData['data']['cards'][3]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][3]['image'] : this.componentData['data']['cards'][3]['image'],
         'title': this.componentData['data']['cards'][3]['title'],
-        'link': this.compomemtData['data']['cards'][3],
+        'link': this.componentData['data']['cards'][3],
         'buttontext': this.componentData['data']['cards'][3]['buttontext']
       }
       return banner
     }
-  }
+  },
+  mixins: [LinkMixin]
 }
 </script>
 
