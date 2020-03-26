@@ -292,3 +292,87 @@ image::images/HorizontalTwins.png[Horizontal Twins]
   "path":"/jcr:content/n61696585-96dc-432b-bdff-eff58817c58c"
 }
 ----
+
+== Four Card Layout
+
+image::images/FourCardLayout.png[Four Card Layout]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "showbutton":"true",
+  "cards":[
+  {
+    "name":"cards0",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a/cards/cards0",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
+    "image":"/content/assets/themecleanflex/vuestorefront/image3.1.png",
+    "title":"COCKTAIL & PARTY",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585203059589,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards1",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a/cards/cards1",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image2.4.png",
+    "title":"LINEN DRESSES",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585203059590,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards2",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a/cards/cards2",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/VerticalBanner2.png",
+    "title":"YOUR OFFICE",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585203059591,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards3",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a/cards/cards3",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image.png",
+    "title":"ECO SANDALS",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585203059591,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  }],
+  "component":"vuestorefront-components-verticalset",
+  "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a"
+}
+----
