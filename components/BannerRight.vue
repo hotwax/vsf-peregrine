@@ -1,6 +1,6 @@
 <template>
   <no-ssr v-if="componentData">
-    <section class="head-image w-100 bg-cl-th-accent cl-white pointer" @click="link(componentData.data)">
+    <section class="head-image my30 w-100 bg-cl-th-accent cl-white pointer" @click="link(componentData.data)">
       <div class="container w-100 h-100 cl-black" v-lazy:background-image="banner_image" v-if="banner_image">
         <div class="head-image-content">
           <h1 class="title" data-testid="mainSliderTitle" v-html="banner_title" />
@@ -8,8 +8,8 @@
             class="subtitle mb0 serif h3 fs-medium"
             data-testid="mainSliderSubtitle" v-html="banner_subtitle"
           />
-          <div class="button">
-            <button-full v-if="componentData.data.showbutton == 'true' " class="button-content" v-html="componentData.data.buttontext" />
+          <div class="button" @click.stop="buttonlink(componentData.data)">
+            <button-full v-if="(componentData.data.showbutton == 'true') && (componentData.data.buttonlink !== '')" class="button-content" v-html="componentData.data.buttontext" />
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@ export default {
 }
 .container {
   background-size: cover;
-  background-position: bottom center;
+  background-position: bottom left;
   background-repeat: no-repeat;
 }
 .row {
@@ -147,23 +147,6 @@ export default {
   }
   .row {
     height: 400px;
-  }
-}
-@media (max-width: 64em) {
-  .head-image {
-    height: 359px;
-  }
-  .title {
-    font-size: 48px;
-  }
-  .subtitle {
-    font-size: 18px;
-  }
-  .button {
-    font-size: 16px;
-  }
-  .row {
-    height: 359px;
   }
 }
 </style>

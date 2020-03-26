@@ -1,27 +1,33 @@
 <template>
   <no-ssr v-if="componentData">
-    <section class="tgrid my30 container h-100 px15 cl-white pointer" @click="link(componentData.data.cards)">
-      <div class="tgrid-container w-100 cl-black" v-lazy:background-image="cards0.image">
+    <section class="tgrid my30 container h-100 px15 cl-white pointer">
+      <div class="tgrid-container w-100 cl-black" v-lazy:background-image="cards0.image" @click="link(cards0.link)">
         <div class="tgrid-content">
           <h1 class="title" data-testid="mainSliderTitle" v-html="cards0.title" />
           <p class="subtitle mb0 serif h3 fs-medium" data-testid="mainSliderSubtitle" v-html="cards0.subtitle" />
-          <button-full class="button uppercase" v-if="componentData.data.showbutton == 'true' " v-html="cards0.buttontext" />
+          <div class="button-link" @click.stop="buttonlink(cards0.link)">
+            <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards0.link.buttonlink != '')" v-html="cards0.buttontext" />
+          </div>
         </div>
       </div>
       <div class="row p0">
-        <div class="twin-container pr30 col-sm-6 col-xs-6 cl-black " @click="link(componentData.data.cards) ">
-          <div class="card-image w-100" v-lazy:background-image="cards1.image">
+        <div class="twin-container pr30 col-sm-6 col-xs-6 cl-black ">
+          <div class="card-image-left w-100" v-lazy:background-image="cards1.image" @click="link(cards1.link)">
             <div class="card-content">
               <h1 class="title" data-testid="cardTitle" v-html="cards1.title" />
-              <button-full class="button uppercase" v-if="componentData.data.showbutton == 'true' " v-html="cards1.buttontext" />
+              <div class="button-link" @click.stop="buttonlink(cards1.link)">
+                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards1.link.buttonlink != '')" v-html="cards1.buttontext" />
+              </div>
             </div>
           </div>
         </div>
-        <div class="twin-container pl30 col-sm-6 col-xs-6 cl-black" @click="link(componentData.data.cards) ">
-          <div class="card-image w-100" v-lazy:background-image="cards2.image">
+        <div class="twin-container pl30 col-sm-6 col-xs-6 cl-black">
+          <div class="card-image-right w-100" v-lazy:background-image="cards2.image" @click="link(cards2.link)">
             <div class="card-content">
               <h1 class="title" data-testid="cardTitle" v-html="cards2.title" />
-              <button-full class="button uppercase" v-if="componentData.data.showbutton == 'true' " v-html="cards2.buttontext" />
+              <div class="button-link" @click.stop="buttonlink(cards2.link)">
+                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards2.link.buttonlink != '')" v-html="cards2.buttontext" />
+              </div>
             </div>
           </div>
         </div>
@@ -55,6 +61,7 @@ export default {
         'image': this.componentData['data']['cards'][0]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][0]['image'] : this.componentData['data']['cards'][0]['image'],
         'title': this.componentData['data']['cards'][0]['title'],
         'subtitle': this.componentData['data']['cards'][0]['text'],
+        'link': this.componentData['data']['cards'][0],
         'buttontext': this.componentData['data']['cards'][0]['buttontext']
       }
       return banner
@@ -63,6 +70,7 @@ export default {
       let banner = {
         'image': this.componentData['data']['cards'][1]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][1]['image'] : this.componentData['data']['cards'][1]['image'],
         'title': this.componentData['data']['cards'][1]['title'],
+        'link': this.componentData['data']['cards'][1],
         'buttontext': this.componentData['data']['cards'][1]['buttontext']
       }
       return banner
@@ -71,6 +79,7 @@ export default {
       let banner = {
         'image': this.componentData['data']['cards'][2]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][2]['image'] : this.componentData['data']['cards'][2]['image'],
         'title': this.componentData['data']['cards'][2]['title'],
+        'link': this.componentData['data']['cards'][2],
         'buttontext': this.componentData['data']['cards'][2]['buttontext']
       }
       return banner
@@ -152,7 +161,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 14%;
+        margin-left: 13%;
         @media (max-width: 767px) {
           margin-left: 20px;
         }
@@ -217,14 +226,24 @@ export default {
   }
 }
 
-.card-image {
+.card-image-left {
   height: 472px;
   background-size: cover;
-  background-position: bottom left;
+  background-position: left center;
   background-repeat: no-repeat;
   @media (max-width: 767px) {
     height: 198px;
-    background-position: left bottom;
+    background-position: right;
+  }
+}
+.card-image-right {
+  height: 472px;
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  @media (max-width: 767px) {
+    height: 198px;
+    background-position: left;
   }
 }
 </style>

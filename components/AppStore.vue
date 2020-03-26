@@ -1,6 +1,6 @@
 <template>
   <no-ssr v-if="componentData">
-    <section class="app-store w-100 cl-white pointer" @click="link(componentData.data)">
+    <section class="container app-store my30 cl-white">
       <div class="container w-100 h-100 cl-black" v-lazy:background-image="appstore.image">
         <div class="app-store-content">
           <h1 class="title h2" data-testid="mainSliderTitle" v-html="appstore.title" />

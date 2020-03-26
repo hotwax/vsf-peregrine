@@ -1,14 +1,14 @@
 <template>
   <no-ssr v-if="componentData">
-    <section class="container px15 cl-white pointer">
-      <div class="newsletter" @click="link(componentData.data)">
+    <section class="container my30 px15 cl-white">
+      <div class="newsletter">
         <div class="newsletter-container" v-lazy:background-image="newsletter.image">
           <div class="row m0">
             <div class="newsletter-content col-md-8 col-xs-12">
               <h1 class="title h2" data-testid="newsletterTitle" v-html="newsletter.title" />
               <p class="subtitle mb0 h4 fs-medium" data-testid="newsletterSubtitle" v-html="newsletter.subtitle" />
             </div>
-            <div class="btn-container col-md-4 col-xs-12">
+            <div class="btn-container col-md-4 col-xs-12" @click="buttonlink(componentData.data)">
               <button-full class="button uppercase h5" v-html="newsletter.buttontext" />
             </div>
           </div>
@@ -44,7 +44,8 @@ export default {
       }
       return newsletter
     }
-  }
+  },
+  mixins: [LinkMixin]
 }
 </script>
 
