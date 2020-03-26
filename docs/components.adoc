@@ -4,7 +4,7 @@
 
 == Banner Left
 
-image::BannerLeft.png[Banner Left]
+image::images/BannerLeft.png[Banner Left]
 
 === JSON
 [source,json]
@@ -28,7 +28,7 @@ image::BannerLeft.png[Banner Left]
 
 == Banner Right
 
-image::BannerRight.png[Banner Right]
+image::images/BannerRight.png[Banner Right]
 
 === JSON
 [source,json]
@@ -47,5 +47,89 @@ image::BannerRight.png[Banner Right]
   "buttonLinkType":"internalLink",
   "component":"vuestorefront-components-bannerright",
   "path":"/jcr:content/n355852fd-2d41-4112-a666-582efcc3fa69"
+}
+----
+
+== Vertical Banner Grid
+
+image::images/VerticalGrid.png[Vertical Banner Grid]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "showbutton":"true",
+  "cards":[
+  {
+    "name":"cards0",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c/cards/cards0",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"/content/sites/vuestorefront/about-us",
+    "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
+    "image":"/content/assets/themecleanflex/vuestorefront/image3.1.png",
+    "title":"COCKTAIL & PARTY",
+    "buttonlink":"/content/sites/vuestorefront/returns",
+    "buttontext":"Button",
+    "jcr:lastModified":1584941617242,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards1",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c/cards/cards1",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
+    "image":"/content/assets/themecleanflex/vuestorefront/image2.4.png",
+    "title":"LINEN DRESSES",
+    "buttonlink":"",
+    "buttontext":"Button",
+    "jcr:lastModified":1584941617243,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards2",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c/cards/cards2",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"/content/sites/vuestorefront/size-guide",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/Banner3.1.png",
+    "title":"THE OFFICE LIFE",
+    "buttonlink":"",
+    "buttontext":"Button",
+    "jcr:lastModified":1584941617245,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards3",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c/cards/cards3",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"/content/sites/vuestorefront/privacy",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/Banner1.1.png",
+    "title":"ECO SANDALS",
+    "buttonlink":"",
+    "buttontext":"Button",
+    "jcr:lastModified":1584941617246,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  }],
+  "component":"vuestorefront-components-verticalbannergrid",
+  "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c"
 }
 ----
