@@ -244,3 +244,51 @@ image::images/AppStore.png[App Store]
   "path":"/jcr:content/n4e5ae06b-612e-427a-92ad-51f878c994c9"
 }
 ----
+
+== Horizontal Twins
+
+image::images/HorizontalTwins.png[Horizontal Twins]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "showbutton":"true",
+  "cards":[
+  {
+    "name":"cards0",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/n61696585-96dc-432b-bdff-eff58817c58c/cards/cards0",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image2.png",
+    "title":"THE OFFICE LIFE",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1584693277252,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards1",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/n61696585-96dc-432b-bdff-eff58817c58c/cards/cards1",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image5.1.png",
+    "title":"ECO SANDALS",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1584693277253,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  }],
+  "component":"vuestorefront-components-horizontaltwins",
+  "path":"/jcr:content/n61696585-96dc-432b-bdff-eff58817c58c"
+}
+----
