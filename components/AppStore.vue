@@ -1,15 +1,15 @@
 <template>
   <no-ssr v-if="componentData">
     <section class="container app-store my30 cl-white">
-      <div class="container w-100 h-100 cl-black" v-lazy:background-image="appstore.image">
+      <div class="container w-100 h-100 cl-black" v-lazy:background-image="componentData['data']['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + componentData['data']['image'] : componentData['data']['image']">
         <div class="app-store-content">
-          <h1 class="title h2" data-testid="mainSliderTitle" v-html="appstore.title" />
+          <h1 class="title h2" data-testid="mainSliderTitle" v-html="componentData['data']['title']" />
           <div class="links">
-            <a :href="appstore.applestoreurl" class="store-link">
-              <img class="apple-store-image mr20" :src="appstore.appleStoreImage">
+            <a :href="componentData['data']['applestoreurl']" class="store-link">
+              <img class="apple-store-image mr20" :src="config.cms_peregrine.image_endpoint + componentData['data']['appleStoreImage']">
             </a>
-            <a :href="appstore.playstoreurl" class="store-link">
-              <img class="play-store-image" :src="appstore.playStoreImage">
+            <a :href="componentData['data']['playstoreurl']" class="store-link">
+              <img class="play-store-image" :src="config.cms_peregrine.image_endpoint + componentData['data']['playStoreImage']">
             </a>
           </div>
         </div>
@@ -34,19 +34,7 @@ export default {
   },
   data () {
     return {
-    }
-  },
-  computed: {
-    appstore () {
-      let appstore = {
-        'image': this.componentData['data']['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['image'] : this.componentData['data']['image'],
-        'title': this.componentData['data']['title'],
-        'appleStoreImage': config.cms_peregrine.image_endpoint + this.componentData['data']['appleStoreImage'],
-        'playStoreImage': config.cms_peregrine.image_endpoint + this.componentData['data']['playStoreImage'],
-        'applestoreurl': this.componentData['data']['applestoreurl'],
-        'playstoreurl': this.componentData['data']['playstoreurl']
-      }
-      return appstore
+      config: config
     }
   },
   mixins: [LinkMixin]
