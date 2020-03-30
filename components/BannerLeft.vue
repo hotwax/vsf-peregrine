@@ -1,15 +1,15 @@
 <template>
   <no-ssr v-if="componentData">
     <section class="head-image my30 w-100 bg-cl-th-accent cl-white pointer" @click="link(componentData.data)">
-      <div class="container w-100 h-100 cl-black" v-lazy:background-image="banner_image" v-if="banner_image">
+      <div class="container w-100 h-100 cl-black" v-lazy:background-image="componentData['data'].imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + componentData['data']['image'] : componentData['data']['image']">
         <div class="head-image-content">
-          <h1 class="title" data-testid="mainSliderTitle" v-html="banner_title" />
+          <h1 class="title" data-testid="mainSliderTitle" v-html="componentData['data']['title']" />
           <p
             class="subtitle mb0 serif h3 fs-medium"
-            data-testid="mainSliderSubtitle" v-html="banner_subtitle"
+            data-testid="mainSliderSubtitle" v-html="componentData['data']['text']"
           />
           <div class="button" @click.stop="buttonlink(componentData.data)">
-            <button-full v-if="(componentData.data.showbutton == 'true') && (componentData.data.buttonlink !== '')" class="button-content" v-html="componentData.data.buttontext" />
+            <button-full v-if="(componentData.data.showbutton == 'true') && (componentData.data.buttonlink !== '')" class="button-content" v-html="componentData['data']['buttontext']" />
           </div>
         </div>
       </div>
@@ -35,22 +35,7 @@ export default {
   },
   data () {
     return {
-    }
-  },
-  computed: {
-
-    banner_image: function () {
-      let url = ''
-      if (this.componentData['data'].imageLinkType) {
-        url = this.componentData['data'].imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['image'] : this.componentData['data']['image']
-      }
-      return url
-    },
-    banner_title: function () {
-      return this.componentData['data']['title'] ? this.componentData['data']['title'] : ''
-    },
-    banner_subtitle: function () {
-      return this.componentData['data']['text'] ? this.componentData['data']['text'] : ''
+      config: config
     }
   },
   mixins: [LinkMixin]
