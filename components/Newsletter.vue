@@ -2,14 +2,14 @@
   <no-ssr v-if="componentData">
     <section class="container my30 px15 cl-white">
       <div class="newsletter">
-        <div class="newsletter-container" v-lazy:background-image="newsletter.image">
+        <div class="newsletter-container" v-lazy:background-image="componentData['data']['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + componentData['data']['image'] : componentData['data']['image']">
           <div class="row m0">
             <div class="newsletter-content col-md-8 col-xs-12">
-              <h1 class="title h2" data-testid="newsletterTitle" v-html="newsletter.title" />
-              <p class="subtitle mb0 h4 fs-medium" data-testid="newsletterSubtitle" v-html="newsletter.subtitle" />
+              <h1 class="title h2" data-testid="newsletterTitle" v-html="componentData['data']['title']" />
+              <p class="subtitle mb0 h4 fs-medium" data-testid="newsletterSubtitle" v-html="componentData['data']['text']" />
             </div>
             <div class="btn-container col-md-4 col-xs-12" @click="buttonlink(componentData.data)">
-              <button-full class="button uppercase h5" v-html="newsletter.buttontext" />
+              <button-full class="button uppercase h5" v-html="componentData['data']['buttontext']" />
             </div>
           </div>
         </div>
@@ -29,20 +29,14 @@ export default {
     'no-ssr': NoSSR,
     ButtonFull
   },
+  data () {
+    return {
+      config: config
+    }
+  },
   props: {
     componentData: {
       type: Object
-    }
-  },
-  computed: {
-    newsletter () {
-      let newsletter = {
-        'image': this.componentData['data']['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['image'] : this.componentData['data']['image'],
-        'title': this.componentData['data']['title'],
-        'subtitle': this.componentData['data']['text'],
-        'buttontext': this.componentData['data']['buttontext']
-      }
-      return newsletter
     }
   },
   mixins: [LinkMixin]
