@@ -1,32 +1,32 @@
 <template>
   <no-ssr v-if="componentData">
     <section class="tgrid my30 container h-100 px15 cl-white pointer">
-      <div class="tgrid-container w-100 cl-black" v-lazy:background-image="cards0.image" @click="link(cards0.link)">
+      <div class="tgrid-container w-100 cl-black" v-lazy:background-image="cards0.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + cards0.image : cards0.image" @click="link(cards0)">
         <div class="tgrid-content">
           <h1 class="title" data-testid="mainSliderTitle" v-html="cards0.title" />
-          <p class="subtitle mb0 serif h3 fs-medium" data-testid="mainSliderSubtitle" v-html="cards0.subtitle" />
-          <div class="button-link" @click.stop="buttonlink(cards0.link)">
-            <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards0.link.buttonlink != '')" v-html="cards0.buttontext" />
+          <p class="subtitle mb0 serif h3 fs-medium" data-testid="mainSliderSubtitle" v-html="cards0.text" />
+          <div class="button-link" @click.stop="buttonlink(cards0)">
+            <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards0.buttonlink != '')" v-html="cards0.buttontext" />
           </div>
         </div>
       </div>
       <div class="row p0">
         <div class="twin-container pr30 col-sm-6 col-xs-6 cl-black ">
-          <div class="card-image-left w-100" v-lazy:background-image="cards1.image" @click="link(cards1.link)">
+          <div class="card-image-left w-100" v-lazy:background-image="cards1.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + cards1.image : cards1.image" @click="link(cards1)">
             <div class="card-content">
               <h1 class="title" data-testid="cardTitle" v-html="cards1.title" />
-              <div class="button-link" @click.stop="buttonlink(cards1.link)">
-                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards1.link.buttonlink != '')" v-html="cards1.buttontext" />
+              <div class="button-link" @click.stop="buttonlink(cards1)">
+                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards1.buttonlink != '')" v-html="cards1.buttontext" />
               </div>
             </div>
           </div>
         </div>
         <div class="twin-container pl30 col-sm-6 col-xs-6 cl-black">
-          <div class="card-image-right w-100" v-lazy:background-image="cards2.image" @click="link(cards2.link)">
+          <div class="card-image-right w-100" v-lazy:background-image="cards2.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + cards2.image : cards2.image" @click="link(cards2)">
             <div class="card-content">
               <h1 class="title" data-testid="cardTitle" v-html="cards2.title" />
-              <div class="button-link" @click.stop="buttonlink(cards2.link)">
-                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards2.link.buttonlink != '')" v-html="cards2.buttontext" />
+              <div class="button-link" @click.stop="buttonlink(cards2)">
+                <button-full class="button uppercase" v-if="(componentData.data.showbutton == 'true') && (cards2.buttonlink != '')" v-html="cards2.buttontext" />
               </div>
             </div>
           </div>
@@ -53,36 +53,18 @@ export default {
   },
   data () {
     return {
+      config: config
     }
   },
   computed: {
     cards0 () {
-      let banner = {
-        'image': this.componentData['data']['cards'][0]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][0]['image'] : this.componentData['data']['cards'][0]['image'],
-        'title': this.componentData['data']['cards'][0]['title'],
-        'subtitle': this.componentData['data']['cards'][0]['text'],
-        'link': this.componentData['data']['cards'][0],
-        'buttontext': this.componentData['data']['cards'][0]['buttontext']
-      }
-      return banner
+      return this.componentData['data']['cards'][0]
     },
     cards1 () {
-      let banner = {
-        'image': this.componentData['data']['cards'][1]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][1]['image'] : this.componentData['data']['cards'][1]['image'],
-        'title': this.componentData['data']['cards'][1]['title'],
-        'link': this.componentData['data']['cards'][1],
-        'buttontext': this.componentData['data']['cards'][1]['buttontext']
-      }
-      return banner
+      return this.componentData['data']['cards'][1]
     },
     cards2 () {
-      let banner = {
-        'image': this.componentData['data']['cards'][2]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][2]['image'] : this.componentData['data']['cards'][2]['image'],
-        'title': this.componentData['data']['cards'][2]['title'],
-        'link': this.componentData['data']['cards'][2],
-        'buttontext': this.componentData['data']['cards'][2]['buttontext']
-      }
-      return banner
+      return this.componentData['data']['cards'][2]
     }
   },
   mixins: [LinkMixin]
