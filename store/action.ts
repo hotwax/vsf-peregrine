@@ -26,6 +26,19 @@ export const actions: ActionTree<CmsState, any> = {
       )
     })
   },
+  async getCmsBlogComponents ({ commit }, url) {
+    let cmsBlogComponents = {};
+
+    await fetch(`${config.cms_peregrine.endpoint}/blogs/${url.id}.data.json`, {
+      method: 'GET'
+    }).then(resp => resp.json()).then(resp => {
+      cmsJsonParser(resp).then(
+        (data) => {
+          cmsBlogComponents = data
+        }
+      )
+    })
+  },
   async getCmsHomeComponents ({ commit }) {
     let cmsHomeComponents = {};
     cmsHomeComponents = await Vue.prototype.$db.cmsHomeCollection.getItem('index');
