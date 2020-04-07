@@ -11,7 +11,8 @@ export const mutations: MutationTree<any> = {
     Vue.prototype.$db.cmsHomeCollection.setItem('index', state.cmsHomeComponents).catch((reason) => {
       console.error(reason) // it doesn't work on SSR
     })
-    
+  },
+  [types.GET_CMS_BLOG_COMPONENTS] (state, payload) {
+    state.cmsBlogComponents = payload
   }
-
 }

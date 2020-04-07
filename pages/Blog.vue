@@ -1,8 +1,10 @@
 <template>
   <section>
-    <div class="container">
-      Blogs: {{ this.$route.path }}
-      <!-- <SimpleText :componentData="cmsBlogComponents" /> -->
+    <div v-if="cmsBlogComponents">
+      <div class="container">
+        Blogs: {{ this.$route.path }}
+        <SimpleText :componentData="cmsBlogComponents" />
+      </div>
     </div>
   </section>
 </template>
@@ -15,6 +17,11 @@ import config from 'config'
 export default {
   components: {
     SimpleText
+  },
+  computed: {
+    ...mapGetters({
+      cmsBlogComponents: 'cmsstore/getBlogComponents'
+    })
   }
 }
 </script>

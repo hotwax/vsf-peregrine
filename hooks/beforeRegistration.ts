@@ -25,6 +25,12 @@ export function beforeRegistration ({ Vue, config, store, isServer }) {
     driver: localForage[config.localForage.defaultDrivers['cmsstore']]
   }));
 
+  Vue.prototype.$db.cmsBlogCollection = new UniversalStorage(localForage.createInstance({
+    name: (config.storeViews.commonCache ? '' : dbNamePrefix) + 'shop',
+    storeName: 'cmsstore',
+    driver: localForage[config.localForage.defaultDrivers['cmsstore']]
+  }));
+
   Vue.prototype.$db.cmsStaticCollection = new UniversalStorage(localForage.createInstance({
     name: (config.storeViews.commonCache ? '' : dbNamePrefix) + 'shop',
     storeName: 'cmsstore',
