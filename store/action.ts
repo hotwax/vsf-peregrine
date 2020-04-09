@@ -37,8 +37,9 @@ export const actions: ActionTree<CmsState, any> = {
         (data) => {
           cmsBlogComponents = data
           Vue.prototype.$db.cmsBlogCollection.setItem(url.id, cmsBlogComponents).catch((reason) => {
-            console.error(reason) // it doesn't work on SSR
+            console.error(reason)
           })
+          console.log(cmsBlogComponents)
           commit(types.GET_CMS_BLOG_COMPONENTS, cmsBlogComponents)
         }
       )
