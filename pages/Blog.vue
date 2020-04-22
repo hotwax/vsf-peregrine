@@ -1,27 +1,24 @@
 <template>
-  <no-ssr>
-    <section class="blog">
-      <div v-if="cmsBlogComponents">
-        <div class="bg-cl-secondary py35">
-          <div class="row">
-            <div class="container">
-              <div class="blog-image">
-                <img class="profile-image" :src="config.cms_peregrine.image_endpoint + cmsBlogComponents.components[1]['data']['image']">
-              </div>
-              <div class="blog-content">
-                <RichText :componentData="cmsBlogComponents.components[0]" />
-                <SimpleText class="text-content" :componentData="cmsBlogComponents.components[2]" />
-              </div>
+  <section class="blog">
+    <div v-if="cmsBlogComponents">
+      <div class="bg-cl-secondary py35">
+        <div class="row">
+          <div class="container">
+            <div class="blog-image">
+              <img class="profile-image" :src="config.cms_peregrine.image_endpoint + cmsBlogComponents.components[1]['data']['image']">
+            </div>
+            <div class="blog-content">
+              <RichText :componentData="cmsBlogComponents.components[0]" />
+              <SimpleText class="text-content" :componentData="cmsBlogComponents.components[2]" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </no-ssr>
+    </div>
+  </section>
 </template>
 
 <script>
-import NoSSR from 'vue-no-ssr'
 import SimpleText from '../components/SimpleText'
 import RichText from '../components/RichText'
 import { mapGetters } from 'vuex'
@@ -30,8 +27,7 @@ import config from 'config'
 export default {
   components: {
     SimpleText,
-    RichText,
-    'no-ssr': NoSSR
+    RichText
   },
   data () {
     return {
