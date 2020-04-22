@@ -2,16 +2,15 @@
   <no-ssr>
     <section class="blog">
       <div v-if="cmsBlogComponents">
-        <div v-for="(component, index) in cmsBlogComponents.components" :key="index">
-          <div class="bg-cl-secondary py35">
-            <div class="row">
-              <div class="container">
-                <div class="blog-image">
-                  <img class="profile-image" :src="config.cms_peregrine.image_endpoint + component['data']['image']">
-                </div>
-                <div class="blog-content">
-                  <RichText :componentData="component" />
-                </div>
+        <div class="bg-cl-secondary py35">
+          <div class="row">
+            <div class="container">
+              <div class="blog-image">
+                <img class="profile-image" :src="config.cms_peregrine.image_endpoint + cmsBlogComponents.components[1]['data']['image']">
+              </div>
+              <div class="blog-content">
+                <RichText :componentData="cmsBlogComponents.components[0]" />
+                <SimpleText class="text-content" :componentData="cmsBlogComponents.components[2]" />
               </div>
             </div>
           </div>
@@ -30,6 +29,7 @@ import config from 'config'
 
 export default {
   components: {
+    SimpleText,
     RichText,
     'no-ssr': NoSSR
   },
@@ -79,6 +79,11 @@ export default {
   {
     margin-top: 0px;
     margin-bottom: 0px;
+  }
+
+  .text-content {
+    font-size: 20px;
+    font-weight: normal;
   }
 }
 </style>
