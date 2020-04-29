@@ -29,9 +29,10 @@ export default {
   },
   computed: {
     ...mapGetters(
-      {cmsHomeComponents: 'cmsstore/getHomeComponents'},
-      'user',
-      ['isLoggedIn']
+      {
+        cmsHomeComponents: 'cmsstore/getHomeComponents',
+        isLoggedIn: 'user/isLoggedIn'
+      }
     ),
     categories () {
       return this.getCategories
