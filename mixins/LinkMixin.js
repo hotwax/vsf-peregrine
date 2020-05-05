@@ -2,7 +2,7 @@ export default {
   methods: {
     link (componentData) {
       if (componentData.link && componentData.linkType !== '') {
-        if (componentData.linkType === 'link' || componentData.linkType === 'internalLink') {
+        if (componentData.linkType === 'internalLink') {
           let splittedlink = componentData.link.split('/');
           let linkRoute = splittedlink[splittedlink.length - 1];
           this.$router.push(this.localizedRoute(`/${linkRoute}`))
