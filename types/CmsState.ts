@@ -3,4 +3,5 @@
 export interface CmsState {
   cmsComponents: Object;
   cmsHomeComponents: Object;
+  cmsBlogComponents: Object;
 }
