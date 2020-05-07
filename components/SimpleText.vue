@@ -1,15 +1,11 @@
 <template>
-  <no-ssr v-if="componentData">
+  <div v-if="componentData">
     <h2 class="fs-big" v-html="componentData.data.text" />
-  </no-ssr>
+  </div>
 </template>
 
 <script>
-import NoSSR from 'vue-no-ssr'
 export default {
-  components: {
-    'no-ssr': NoSSR
-  },
   props: {
     componentData: {
       type: Object
