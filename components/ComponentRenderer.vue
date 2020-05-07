@@ -1,15 +1,12 @@
 <template>
-  <no-ssr>
-    <div v-if="cmsObject">
-      <div v-for="(component, index) in cmsObject.components" :key="index">
-        <component v-bind:is="cmsComponent[component.type]" :componentData ="component" v-if="component.type !=='simpletext'" />
-      </div>
+  <div v-if="cmsObject">
+    <div v-for="(component, index) in cmsObject.components" :key="index">
+      <component v-bind:is="cmsComponent[component.type]" :componentData ="component" v-if="component.type !=='simpletext'" />
     </div>
-  </no-ssr>
+  </div>
 </template>
 
 <script>
-import NoSSR from 'vue-no-ssr'
 
 import i18n from '@vue-storefront/i18n'
 const SimpleText = () => import('./SimpleText')
@@ -30,9 +27,6 @@ const VerticalGrid = () => import('./VerticalGrid')
 const AppStore = () => import('./AppStore')
 
 export default {
-  components: {
-    'no-ssr': NoSSR
-  },
   computed: {
   },
   props: {

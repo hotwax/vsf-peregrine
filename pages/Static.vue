@@ -1,19 +1,17 @@
 <template>
-  <no-ssr>
-    <div v-if="cmsComponents">
-      <div v-for="(component, index) in cmsComponents.components" :key="index">
-        <div class="bg-cl-secondary py35 pl20" v-if="component.type=='simpletext'">
-          <div class="container">
-            <breadcrumbs :routes="[{name: 'Homepage', route_link: '/'}]" :active-route="$props.title" />
-            <SimpleText :componentData="component" />
-          </div>
+  <div v-if="cmsComponents">
+    <div v-for="(component, index) in cmsComponents.components" :key="index">
+      <div class="bg-cl-secondary py35 pl20" v-if="component.type=='simpletext'">
+        <div class="container">
+          <breadcrumbs :routes="[{name: 'Homepage', route_link: '/'}]" :active-route="$props.title" />
+          <SimpleText :componentData="component" />
         </div>
       </div>
-      <div>
-        <ComponentRenderer :cmsObject="cmsComponents" />
-      </div>
     </div>
-  </no-ssr>
+    <div>
+      <ComponentRenderer :cmsObject="cmsComponents" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -23,13 +21,12 @@ import config from 'config'
 import { mapGetters } from 'vuex'
 import SimpleText from '../components/SimpleText'
 import ComponentRenderer from '../components/ComponentRenderer'
-import NoSSR from 'vue-no-ssr'
+
 export default {
   components: {
     Breadcrumbs,
     SimpleText,
-    ComponentRenderer,
-    'no-ssr': NoSSR
+    ComponentRenderer
   },
   data () {
     return {
