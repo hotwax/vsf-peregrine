@@ -54,7 +54,7 @@ export default {
 }
 .newsletter-container {
   height: 202px;
-  background-size: contain;
+  background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
 
