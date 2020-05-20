@@ -1,4 +1,4 @@
-## release1.2
+## release1.2.0
 
 ### Added
 - BannerLeft component for CMS [#32](https://github.com/hotwax/vsf-peregrine/pull/32)
