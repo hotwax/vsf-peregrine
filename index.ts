@@ -10,10 +10,10 @@ export const KEY = 'cmsstore'
 export const PeregrineStore: StorefrontModule = function ({app, store, router, moduleConfig, appConfig}) {
   store.registerModule(KEY, module)
   router.beforeEach(beforeEach)
-  beforeRegistration.afterAppInit(() => {
+  beforeRegistration.afterAppInit(async () => {
     console.log('beforeRegistration hook registered...')
   })
-  afterRegistration.afterAppInit(() => {
+  afterRegistration.afterAppInit(async () => {
     console.log('afterRegistration hook registered...')
   })
 }
