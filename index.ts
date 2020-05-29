@@ -10,10 +10,8 @@ export const KEY = 'cmsstore'
 export const PeregrineStore: StorefrontModule = function ({app, store, router, moduleConfig, appConfig}) {
   store.registerModule(KEY, module)
   router.beforeEach(beforeEach)
-  beforeRegistration.afterAppInit(async () => {
-    console.log('beforeRegistration hook registered...')
-  })
-  afterRegistration.afterAppInit(async () => {
-    console.log('afterRegistration hook registered...')
-  })
+  // eslint-disable-next-line no-unused-expressions
+  beforeRegistration
+  // eslint-disable-next-line no-unused-expressions
+  afterRegistration
 }
