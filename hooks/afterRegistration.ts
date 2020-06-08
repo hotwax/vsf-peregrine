@@ -1,3 +1,4 @@
+import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
 /**
  *
  * AfterRegistartion hook runs after mutation sets the state in vues store.
@@ -5,13 +6,13 @@
  *
  * AfterRegistartion hooks also need to be added in Vuex module in index.ts file
  */
-export function afterRegistration ({ Vue, config, store, isServer }) {
+export function afterRegistration ({ store }) {
   store.subscribe((mutation, state) => {
     const type = mutation.type
     if (
       type.endsWith(type.GET_CMS_HOME_COMPONENTS)
     ) {
-      Vue.prototype.$db.cmsHomeCollection.setItem('index', state.cmsHomeComponents).catch((reason) => {
+      StorageManager.get('cmsHomeCollection').setItem('index', state.cmsHomeComponents).catch((reason) => {
         console.error(reason) // it doesn't work on SSR
       }) // populate cache
     }

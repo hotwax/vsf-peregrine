@@ -1,6 +1,7 @@
 import * as localForage from 'localforage'
 import UniversalStorage from '@vue-storefront/core/lib/store/storage'
 import { currentStoreView } from '@vue-storefront/core/lib/multistore'
+import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
 /**
  *
  * Creates localforage Instance before setting state in mutations.ts
@@ -15,19 +16,19 @@ import { currentStoreView } from '@vue-storefront/core/lib/multistore'
  * beforeRegistration hooks also need to be added in Vuex module in index.ts file
  */
 
-export function beforeRegistration ({ Vue, config, store, isServer }) {
+export function beforeRegistration ({ config }) {
   const storeView = currentStoreView()
   const dbNamePrefix = storeView.storeCode ? storeView.storeCode + '-' : ''
 
-  Vue.prototype.$db.cmsHomeCollection = new UniversalStorage(localForage.createInstance({
+  StorageManager.set('cmsHomeCollection', new UniversalStorage(localForage.createInstance({
     name: (config.storeViews.commonCache ? '' : dbNamePrefix) + 'shop',
     storeName: 'cmsstore',
     driver: localForage[config.localForage.defaultDrivers['cmsstore']]
-  }));
+  })));
 
-  Vue.prototype.$db.cmsStaticCollection = new UniversalStorage(localForage.createInstance({
+  StorageManager.set('cmsStaticCollection', new UniversalStorage(localForage.createInstance({
     name: (config.storeViews.commonCache ? '' : dbNamePrefix) + 'shop',
     storeName: 'cmsstore',
     driver: localForage[config.localForage.defaultDrivers['cmsstore']]
-  }));
+  })));
 }

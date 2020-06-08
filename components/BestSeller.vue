@@ -29,14 +29,14 @@ export default {
   },
   async created () {
     let productList = []
-    if (this.$store.state.homepage.best_seller.length == 0) {
+    if (this.$store.state.homepage.bestsellers.length == 0) {
       await fetch(this.componentData.data.url, {method: 'GET'}).then(data => data.json()).then(resp => productList = resp['hits']['hits'])
-      this.$store.state.homepage.best_seller = productList.map(ele => ele._source);
+      this.$store.state.homepage.bestsellers = productList.map(ele => ele._source);
     }
   },
   computed: {
     bestSeller () {
-      return this.$store.state.homepage.best_seller
+      return this.$store.state.homepage.bestsellers
     }
   }
 }

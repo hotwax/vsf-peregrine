@@ -1,6 +1,6 @@
 import { MutationTree } from 'vuex'
 import * as types from './mutation-types'
-import Vue from 'vue'
+import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
 
 export const mutations: MutationTree<any> = {
   [types.GET_CMS_COMPONENTS] (state, payload) {
@@ -8,7 +8,7 @@ export const mutations: MutationTree<any> = {
   },
   [types.GET_CMS_HOME_COMPONENTS] (state, payload) {
     state.cmsHomeComponents = payload;
-    Vue.prototype.$db.cmsHomeCollection.setItem('index', state.cmsHomeComponents).catch((reason) => {
+    StorageManager.get('cmsHomeCollection').setItem('index', state.cmsHomeComponents).catch((reason) => {
       console.error(reason) // it doesn't work on SSR
     })
     
