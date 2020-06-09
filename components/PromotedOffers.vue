@@ -60,6 +60,11 @@ export default {
   components: {
     'no-ssr': NoSSR
   },
+  data () {
+    return {
+      config: config
+    }
+  },
   props: {
     // eslint-disable-next-line vue/require-default-prop
     componentData: {
