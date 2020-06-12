@@ -4,11 +4,11 @@
       <div class="row">
         <div
           class="offer-container col-xs-12 col-sm-6 pb15 pointer"
-          @click="link(componentData.data.cards.cards0)"
+          @click="link(main_banner)"
         >
           <div
             class="offer"
-            v-lazy:background-image="main_banner.image"
+            v-lazy:background-image="main_banner.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + main_banner.image : main_banner.image"
           >
             <h2 class="title m0 h1" v-html="main_banner.title" />
             <p class="subtitle m0 serif h3 uppercase" v-html="main_banner.subtitle" />
@@ -18,11 +18,11 @@
         <div class="col-xs-12 col-sm-6">
           <div
             class="offer-container pb15 pointer"
-            @click="link(componentData.data.cards.cards1)"
+            @click="link(small_banner1)"
           >
             <div
               class="offer offer-small border-box p5 flex bg-cl-th-accent"
-              v-lazy:background-image="small_banner1.image"
+              v-lazy:background-image="small_banner1.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + small_banner1.image : small_banner1.image"
             >
               <h2 class="title m0 h1" v-html="small_banner1.title" />
               <p class="subtitle m0 serif h3 uppercase" v-html="small_banner1.subtitle" />
@@ -30,11 +30,11 @@
           </div>
           <div
             class="offer-container pb15 pointer"
-            @click="link(componentData.data.cards.cards2)"
+            @click="link(small_banner2)"
           >
             <div
               class="offer offer-small border-box p5 flex bg-cl-th-accent"
-              v-lazy:background-image="small_banner2.image"
+              v-lazy:background-image="small_banner2.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + small_banner2.image : small_banner2.image"
             >
               <h2 class="title m0 h1" v-html="small_banner2.title" />
               <p class="subtitle m0 serif h3 uppercase" v-html="small_banner2.subtitle" />
@@ -55,6 +55,11 @@ export default {
   components: {
     'no-ssr': NoSSR
   },
+  data () {
+    return {
+      config: config
+    }
+  },
   props: {
     // eslint-disable-next-line vue/require-default-prop
     componentData: {
@@ -64,28 +69,13 @@ export default {
   mixins: [LinkMixin],
   computed: {
     main_banner () {
-      let banner = {
-        'image': this.componentData['data']['cards'][0]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][0]['image'] : this.componentData['data']['cards'][0]['image'],
-        'title': this.componentData['data']['cards'][0]['title'],
-        'subtitle': this.componentData['data']['cards'][0]['text']
-      }
-      return banner
+      return this.componentData['data']['cards'][0]
     },
     small_banner1 () {
-      let banner = {
-        'image': this.componentData['data']['cards'][1]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][1]['image'] : this.componentData['data']['cards'][1]['image'],
-        'title': this.componentData['data']['cards'][1]['title'],
-        'subtitle': this.componentData['data']['cards'][1]['text']
-      }
-      return banner
+      return this.componentData['data']['cards'][1]
     },
     small_banner2 () {
-      let banner = {
-        'image': this.componentData['data']['cards'][2]['imageLinkType'] === 'internalLink' ? config.cms_peregrine.image_endpoint + this.componentData['data']['cards'][2]['image'] : this.componentData['data']['cards'][2]['image'],
-        'title': this.componentData['data']['cards'][2]['title'],
-        'subtitle': this.componentData['data']['cards'][2]['text']
-      }
-      return banner
+      return this.componentData['data']['cards'][2]
     }
   }
 }
