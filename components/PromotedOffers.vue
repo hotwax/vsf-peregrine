@@ -11,7 +11,7 @@
             v-lazy:background-image="main_banner.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + main_banner.image : main_banner.image"
           >
             <h2 class="title m0 h1" v-html="main_banner.title" />
-            <p class="subtitle m0 serif h3 uppercase" v-html="main_banner.subtitle" />
+            <p class="subtitle m0 serif h3 uppercase" v-html="main_banner.text" />
           </div>
         </div>
 
@@ -25,7 +25,7 @@
               v-lazy:background-image="small_banner1.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + small_banner1.image : small_banner1.image"
             >
               <h2 class="title m0 h1" v-html="small_banner1.title" />
-              <p class="subtitle m0 serif h3 uppercase" v-html="small_banner1.subtitle" />
+              <p class="subtitle m0 serif h3 uppercase" v-html="small_banner1.text" />
             </div>
           </div>
           <div
@@ -37,7 +37,7 @@
               v-lazy:background-image="small_banner2.imageLinkType === 'internalLink' ? config.cms_peregrine.image_endpoint + small_banner2.image : small_banner2.image"
             >
               <h2 class="title m0 h1" v-html="small_banner2.title" />
-              <p class="subtitle m0 serif h3 uppercase" v-html="small_banner2.subtitle" />
+              <p class="subtitle m0 serif h3 uppercase" v-html="small_banner2.text" />
             </div>
           </div>
         </div>
