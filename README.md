@@ -4,7 +4,10 @@ Headless Peregrine CMS integration with VueStorefront
 
 ## Requirements
 
-[Vue Storefront 1.10.3](https://github.com/DivanteLtd/vue-storefront/releases/tag/v1.10.3)
+[Vue Storefront 1.12.0](https://github.com/DivanteLtd/vue-storefront/releases/tag/v1.12.0)
+
+Note: For Vue Storefront 1.10.3 version, please use the release1.2 of this module 
+[VSF Peregrine release1.2](https://github.com/hotwax/vsf-peregrine/tree/release1.2)
 
 
 ## Installation
@@ -14,7 +17,7 @@ OR
 use command 
 `git clone https://github.com/hotwax/vsf-peregrine.git peregrine-cms`
 
-Note: as per the below instruction the Peredrin CMS modules are considered to be in `peregrine-cms` folder
+Note: as per the below instruction the Peregrine CMS modules are considered to be in `peregrine-cms` folder
 
 Add the following to `vue-storefront/src/modules/index.ts`
 
