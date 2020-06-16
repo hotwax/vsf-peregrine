@@ -1,4 +1,4 @@
-## release1.2 (compatible with Vue Storefront 1.10.3)
+## release1.2
 
 ### Added
 - BannerLeft component for CMS [#32](https://github.com/hotwax/vsf-peregrine/pull/32)
