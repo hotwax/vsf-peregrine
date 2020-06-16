@@ -7,7 +7,7 @@ Headless Peregrine CMS integration with VueStorefront
 [Vue Storefront 1.12.0](https://github.com/DivanteLtd/vue-storefront/releases/tag/v1.12.0)
 
 Note: For Vue Storefront 1.10.3 version, please use the release1.2 of this module 
-[VSF Peregrine release1.2] https://github.com/hotwax/vsf-peregrine/tree/release1.2
+[VSF Peregrine release1.2](https://github.com/hotwax/vsf-peregrine/tree/release1.2)
 
 
 ## Installation
