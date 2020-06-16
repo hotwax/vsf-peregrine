@@ -1,0 +1,378 @@
+:toc:
+
+= CMS Components
+
+== Banner Left
+
+image::images/BannerLeft.png[Banner Left]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "title":"COCKTAIL & PARTY",
+  "link":"/content/sites/vuestorefront/returns",
+  "image":"/content/assets/themecleanflex/vuestorefront/image3.png",
+  "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
+  "showbutton":"true",
+  "buttontext":"BUTTON",
+  "buttonlink":"/content/sites/vuestorefront/privacy",
+  "linkType":"internalLink",
+  "imageLinkType":"internalLink",
+  "buttonLinkType":"internalLink",
+  "component":"vuestorefront-components-bannerleft",
+  "path":"/jcr:content/n15ae3062-4978-4836-ab0b-78894710a76a"
+}
+----
+
+== Banner Right
+
+image::images/BannerRight.png[Banner Right]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "title":"ECO SANDALS",
+  "image":"/content/assets/themecleanflex/vuestorefront/Banner3.png",
+  "link":"",
+  "text":"The collection features formal and casual comfort shoes with a Danish design focus. Made from premium leathers and comfort.",
+  "showbutton":"true",
+  "buttontext":"View",
+  "buttonlink":"",
+  "linkType":"internalLink",
+  "imageLinkType":"internalLink",
+  "buttonLinkType":"internalLink",
+  "component":"vuestorefront-components-bannerright",
+  "path":"/jcr:content/n355852fd-2d41-4112-a666-582efcc3fa69"
+}
+----
+
+== Vertical Banner Grid
+
+image::images/VerticalGrid.png[Vertical Banner Grid]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "showbutton":"true",
+  "cards":[
+  {
+    "name":"cards0",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c/cards/cards0",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"/content/sites/vuestorefront/about-us",
+    "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
+    "image":"/content/assets/themecleanflex/vuestorefront/image3.1.png",
+    "title":"COCKTAIL & PARTY",
+    "buttonlink":"/content/sites/vuestorefront/returns",
+    "buttontext":"Button",
+    "jcr:lastModified":1584941617242,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards1",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c/cards/cards1",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
+    "image":"/content/assets/themecleanflex/vuestorefront/image2.4.png",
+    "title":"LINEN DRESSES",
+    "buttonlink":"",
+    "buttontext":"Button",
+    "jcr:lastModified":1584941617243,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards2",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c/cards/cards2",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"/content/sites/vuestorefront/size-guide",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/Banner3.1.png",
+    "title":"THE OFFICE LIFE",
+    "buttonlink":"",
+    "buttontext":"Button",
+    "jcr:lastModified":1584941617245,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards3",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c/cards/cards3",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"/content/sites/vuestorefront/privacy",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/Banner1.1.png",
+    "title":"ECO SANDALS",
+    "buttonlink":"",
+    "buttontext":"Button",
+    "jcr:lastModified":1584941617246,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  }],
+  "component":"vuestorefront-components-verticalbannergrid",
+  "path":"/jcr:content/nf37a9ca5-8e48-4173-ae1e-bbdf79570a1c"
+}
+----
+
+== T Grid
+
+image::images/TGrid.png[T Grid]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "showbutton":"true",
+  "cards":[
+  {
+    "name":"cards0",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/ndf68d954-e8dd-4e99-93a5-39e9a528561e/cards/cards0","jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
+    "image":"/content/assets/themecleanflex/vuestorefront/image3.png",
+    "title":"COCKTAIL & PARTY",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585029168694,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards1",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/ndf68d954-e8dd-4e99-93a5-39e9a528561e/cards/cards1","jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image2.png",
+    "title":"THE OFFICE LIFE",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585029168696,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards2",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/ndf68d954-e8dd-4e99-93a5-39e9a528561e/cards/cards2","jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image5.1.png",
+    "title":"ECO SANDALS",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585029168697,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  }],
+  "component":"vuestorefront-components-tgrid",
+  "path":"/jcr:content/ndf68d954-e8dd-4e99-93a5-39e9a528561e"
+}
+----
+
+== Newsletter
+
+image::images/Newsletter.png[Newsletter]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "author":null,
+  "collection":null,
+  "component":"vuestorefront-components-newsletter",
+  "path":"/jcr:content/n4d688d43-5ffb-40b3-93d7-5709f292e5f3",
+  "jcr:primaryType":"nt:unstructured",
+  "imageLinkType":"internalLink",
+  "jcr:lastModifiedBy":"admin",
+  "text":"Be aware of upcoming sales and events. Receive gifts and special offers!",
+  "image":"/content/assets/themecleanflex/vuestorefront/newsletter.png",
+  "title":"Subscribe to Newsletters",
+  "buttontext":"Subscribe",
+  "jcr:lastModified":1584506288055,
+  "sling:resourceType":"vuestorefront/components/newsletter",
+  "buttonLinkType":"internalLink"
+}
+----
+
+== App Store
+
+image::images/AppStore.png[App Store]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "title":"Download our application to your mobile",
+  "image":"/content/assets/themecleanflex/vuestorefront/mobile.png",
+  "playstoreurl":"",
+  "applestoreurl":"",
+  "imageLinkType":"internalLink",
+  "playStoreImage":"/content/assets/themecleanflex/vuestorefront/playstore.png",
+  "appleStoreImage":"/content/assets/themecleanflex/vuestorefront/applestore.png",
+  "component":"vuestorefront-components-appstore",
+  "path":"/jcr:content/n4e5ae06b-612e-427a-92ad-51f878c994c9"
+}
+----
+
+== Horizontal Twins
+
+image::images/HorizontalTwins.png[Horizontal Twins]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "showbutton":"true",
+  "cards":[
+  {
+    "name":"cards0",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/n61696585-96dc-432b-bdff-eff58817c58c/cards/cards0",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image2.png",
+    "title":"THE OFFICE LIFE",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1584693277252,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards1",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/n61696585-96dc-432b-bdff-eff58817c58c/cards/cards1",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image5.1.png",
+    "title":"ECO SANDALS",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1584693277253,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  }],
+  "component":"vuestorefront-components-horizontaltwins",
+  "path":"/jcr:content/n61696585-96dc-432b-bdff-eff58817c58c"
+}
+----
+
+== Four Card Layout
+
+image::images/FourCardLayout.png[Four Card Layout]
+
+=== JSON
+[source,json]
+----
+{
+  "experiences":null,
+  "showbutton":"true",
+  "cards":[
+  {
+    "name":"cards0",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a/cards/cards0",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
+    "image":"/content/assets/themecleanflex/vuestorefront/image3.1.png",
+    "title":"COCKTAIL & PARTY",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585203059589,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards1",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a/cards/cards1",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image2.4.png",
+    "title":"LINEN DRESSES",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585203059590,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards2",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a/cards/cards2",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/VerticalBanner2.png",
+    "title":"YOUR OFFICE",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585203059591,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  },
+  {
+    "name":"cards3",
+    "component":"nt:unstructured",
+    "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a/cards/cards3",
+    "jcr:primaryType":"nt:unstructured",
+    "imageLinkType":"internalLink",
+    "jcr:lastModifiedBy":"admin",
+    "link":"",
+    "text":"",
+    "image":"/content/assets/themecleanflex/vuestorefront/image.png",
+    "title":"ECO SANDALS",
+    "buttonlink":"",
+    "buttontext":"BUTTON",
+    "jcr:lastModified":1585203059591,
+    "linkType":"internalLink",
+    "buttonLinkType":"internalLink"
+  }],
+  "component":"vuestorefront-components-verticalset",
+  "path":"/jcr:content/nea51e49a-6e64-4a1e-b521-c10c473e287a"
+}
+----
