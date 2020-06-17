@@ -13,7 +13,6 @@
 import i18n from "@vue-storefront/i18n";
 
 export default {
-  computed: {},
   props: {
     cmsObject: {
       type: Object
@@ -21,11 +20,9 @@ export default {
   },
   data() {
     return {
-      comp: {},
       cmsComponent: {
       }
     };
-  },
-  method: {}
+  }
 };
 </script>
