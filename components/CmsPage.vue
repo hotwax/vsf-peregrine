@@ -11,6 +11,7 @@
 
 <script>
 import i18n from "@vue-storefront/i18n";
+const TextBlock = () => import('./organisms/o-text-block')
 
 export default {
   props: {
@@ -21,6 +22,7 @@ export default {
   data() {
     return {
       cmsComponent: {
+        'richtext': TextBlock
       }
     };
   }
