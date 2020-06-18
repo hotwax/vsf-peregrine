@@ -3,7 +3,7 @@
     <div v-for="(component, index) in cmsObject.components" :key="index">
       <component
         v-bind:is="cmsComponent[component.type]"
-        :componentData="component"
+        :componentData="component.data"
       />
     </div>
   </div>
