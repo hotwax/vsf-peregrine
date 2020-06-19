@@ -1,4 +1,4 @@
-import { module } from './store'
+import { peregrineStore } from './store'
 import { beforeRegistration } from './hooks/beforeRegistration'
 import { afterRegistration } from './hooks/afterRegistration'
 import { beforeEach } from './router/beforeEach'
@@ -9,7 +9,7 @@ export const PeregrineModule: StorefrontModule = function ({
   store,
   router
 }) {
-  store.registerModule(KEY, module)
+  store.registerModule(KEY, peregrineStore)
   router.beforeEach(beforeEach)
   beforeRegistration
   afterRegistration
