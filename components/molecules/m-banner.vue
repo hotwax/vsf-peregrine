@@ -1,7 +1,7 @@
 <template>
   <a v-if="componentData.link" @click="link(componentData)">
     <SfBanner
-      :class="customClass"
+      :class="banner"
       :title="componentData.title"
       :description="componentData.text"
       :button-text="componentData.buttontext"
@@ -10,7 +10,7 @@
   </a>
   <SfBanner
     v-else
-    :class="customClass"
+    :class="banner"
     :title="componentData.title"
     :description="componentData.text"
     :image="image"
@@ -41,7 +41,7 @@ export default {
       else
         return this.componentData.image
     },
-    customClass() {
+    banner() {
       if (this.componentType === "bannerright")
         return "sf-banner--right m-banner"
       else
