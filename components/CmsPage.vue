@@ -4,6 +4,7 @@
       <component
         v-bind:is="cmsComponent[component.type]"
         :componentData="component.data"
+        :componentType="component.type"
       />
     </div>
   </div>
@@ -12,6 +13,7 @@
 <script>
 import i18n from "@vue-storefront/i18n";
 const TextBlock = () => import('./organisms/o-text-block')
+const Banner = () => import('./molecules/m-banner')
 
 export default {
   props: {
@@ -22,7 +24,9 @@ export default {
   data() {
     return {
       cmsComponent: {
-        'richtext': TextBlock
+        'richtext': TextBlock,
+        'bannerleft': Banner,
+        'bannerright': Banner
       }
     };
   }
