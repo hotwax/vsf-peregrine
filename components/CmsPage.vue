@@ -12,6 +12,7 @@
 <script>
 import i18n from "@vue-storefront/i18n";
 const TextBlock = () => import('./organisms/o-text-block')
+const Newsletter = () => import('./organisms/o-newsletter')
 
 export default {
   props: {
@@ -22,7 +23,8 @@ export default {
   data() {
     return {
       cmsComponent: {
-        'richtext': TextBlock
+        'richtext': TextBlock,
+        'newsletter': Newsletter
       }
     };
   }
