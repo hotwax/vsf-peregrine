@@ -40,7 +40,7 @@ export default {
       if (this.componentType === "bannerright")
         return "sf-banner--right m-banner"
       else
-        return "m-banner";
+        return "m-banner"
     }
   },
   mixins: [LinkMixin, imageMixin]
