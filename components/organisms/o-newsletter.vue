@@ -3,7 +3,7 @@
     class="o-newsletter"
     :title="componentData.title"
     :description="componentData.text"
-    :image="image"
+    :image="image(componentData.imageLinkType, componentData.image)"
   >
     <template #button>
       <SfButton @click="buttonlink(componentData)">
@@ -17,6 +17,7 @@
 import { SfCallToAction, SfButton } from '@storefront-ui/vue';
 import config from 'config'
 import LinkMixin from '../../mixins/LinkMixin'
+import imageMixin from '../../mixins/imageMixin'
 
 export default {
   name: 'ONewsletter',
@@ -29,16 +30,7 @@ export default {
       type: Object
     }
   },
-  computed: {
-    image () {
-      if (this.componentData.imageLinkType === 'internalLink') {
-        return config.cms_peregrine.image_endpoint + this.componentData.image
-      } else {
-        return this.componentData.image
-      }
-    }
-  },
-  mixins: [LinkMixin]
+  mixins: [LinkMixin, imageMixin]
 }
 </script>
 
