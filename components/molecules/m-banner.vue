@@ -21,7 +21,7 @@
 import { SfBanner } from "@storefront-ui/vue"
 import config from "config"
 import LinkMixin from "../../mixins/LinkMixin"
-import imageMixin from "../../mixins/imageMixin";
+import imageMixin from "../../mixins/imageMixin"
 
 export default {
   components: {
