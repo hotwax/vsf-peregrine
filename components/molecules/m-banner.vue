@@ -5,7 +5,7 @@
       :title="componentData.title"
       :description="componentData.text"
       :button-text="componentData.buttontext"
-      :image="image"
+      :image="image(componentData.imageLinkType, componentData.image)"
     />
   </a>
   <SfBanner
@@ -13,7 +13,7 @@
     :class="banner"
     :title="componentData.title"
     :description="componentData.text"
-    :image="image"
+    :image="image(componentData.imageLinkType, componentData.image)"
   />
 </template>
 
@@ -21,6 +21,7 @@
 import { SfBanner } from "@storefront-ui/vue"
 import config from "config"
 import LinkMixin from "../../mixins/LinkMixin"
+import imageMixin from "../../mixins/imageMixin";
 
 export default {
   components: {
@@ -35,12 +36,6 @@ export default {
     }
   },
   computed: {
-    image() {
-      if (this.componentData.imageLinkType === "internalLink")
-        return config.cms_peregrine.image_endpoint + this.componentData.image
-      else
-        return this.componentData.image
-    },
     banner() {
       if (this.componentType === "bannerright")
         return "sf-banner--right m-banner"
@@ -48,7 +43,7 @@ export default {
         return "m-banner";
     }
   },
-  mixins: [LinkMixin]
+  mixins: [LinkMixin, imageMixin]
 };
 </script>
 
