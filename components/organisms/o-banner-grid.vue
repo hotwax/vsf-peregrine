@@ -1,5 +1,5 @@
 <template>
-  <SfBannerGrid :banner-grid="1" class="banner-grid">
+  <SfBannerGrid :banner-grid="bannerGrid" class="banner-grid">
     <template v-for="(banner, bannerIndex) in banners" #[slotName(bannerIndex)]>
       <a v-if="banner.link" @click="link(banner)">
         <SfBanner
@@ -34,11 +34,20 @@ export default {
   props: {
     componentData: {
       type: Object
+    },
+    componentType: {
+      type: String
     }
   },
   computed: {
     banners() {
       return this.componentData.cards;
+    },
+    bannerGrid() {
+      if (this.componentType === "verticalbannergrid")
+        return 1
+      else if (this.componentType === "verticalset")
+        return 2
     }
   },
   mixins: [LinkMixin, imageMixin],

@@ -28,7 +28,8 @@ export default {
         'richtext': TextBlock,
         'bannerleft': Banner,
         'bannerright': Banner,
-        'verticalbannergrid': BannerGrid
+        'verticalbannergrid': BannerGrid,
+        'verticalset': BannerGrid
       }
     };
   }
