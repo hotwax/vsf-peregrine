@@ -27,7 +27,7 @@ export default {
     return {
       cmsComponent: {
         'richtext': TextBlock,
-        'newsletter': Newsletter
+        'newsletter': Newsletter,
         'bannerleft': Banner,
         'bannerright': Banner,
         'verticalbannergrid': BannerGrid,
