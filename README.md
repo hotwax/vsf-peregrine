@@ -1,6 +1,6 @@
-# vsf-peregrine
-Headless Peregrine CMS integration with VueStorefront  
-[Peregrine](https://www.peregrine-cms.com/content/sites/peregrine.html) is an 'Apache Sling' based content management system embracing head optional and API driven approach.
+# Peregrine CMS Module for Vue Storefront
+
+[Peregrine CMS](https://www.peregrine-cms.com/content/sites/peregrine.html) is an 'Apache Sling' based content management system embracing head optional and API driven approach.
 
 ## Requirements
 
@@ -12,56 +12,67 @@ Note: For Vue Storefront 1.10.3 version, please use the release1.2 of this modul
 
 ## Installation
 
-Create `peregrine-cms` folder under `vue-storefront/src/modules` and copy the entire content to it  
-OR
-use command 
-`git clone https://github.com/hotwax/vsf-peregrine.git peregrine-cms`
+Clone the Peregine Module at `vue-storefront/src/modules`
+`git clone https://github.com/hotwax/vsf-peregrine.git`
 
-Note: as per the below instruction the Peregrine CMS modules are considered to be in `peregrine-cms` folder
 
-Add the following to `vue-storefront/src/modules/index.ts`
+### Register module in Vue Storefront theme
+
+Open the `modules.ts` file of your theme `vue-storefront/src/themes/<name-of-your-theme>/config/modules.ts`
+
 
 ```
-import { extendModule } from '@vue-storefront/core/lib/module'
-...
-import { PeregrineStore } from './peregrine-cms';
-...
+/* ... abridged */
+
+import { PeregrineModule } from 'src/modules/vsf-peregrine'
+
+/* ... abridged */
+
 export const registerModules: VueStorefrontModule[] = [
   ...
-  PeregrineStore
+  registerModule(PeregrineModule)
+  ...
 ]
 ```
 
-### Config
+### Update the routes to use Peregrine Module
+
+Open the `index.js` file of your theme `vue-storefront/src/themes/<name-of-your-theme>/router/index.js`
+
+Change the `import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static');`
+to
+`import(/* webpackChunkName: "vsf-static" */ 'src/modules/vsf-peregrine/pages/Static.vue')`
+
+
+### Add Peregrine CMS Configuration
+
+Add the following configuration in config file.
 
 ```
+/* ... abridged */
+
 "cms_peregrine": {
   "image_endpoint": "{YOUR-PEREGRINE-CMS-ENDPOINT}",
   "endpoint": "{YOUR-PEREGRINE-CMS-ENDPOINT}/content/sites/{YOUR SITE URL}",
 }
+
+/* ... abridged */
 ```
 
-Add cmsPeregrine config values under ```localForage``` > ```defaultDrivers```
+Add localForage config values for Peregrine CMS under ```localForage``` > ```defaultDrivers```
 
 ```
+/* ... abridged */
+
 "localForage": {
     "defaultDrivers": {
       ...
       "cmsstore": "LOCALSTORAGE"
     }
   },
+
+/* ... abridged */
 ```
-
-### Using CMS components
-
-
-Change route path of your CMS pages in `src/themes/default/router/index.js`  
-For example:  
-
-`const Home = () => import(/* webpackChunkName: "vsf-home" */ 'src/modules/peregrine-cms/pages/Home.vue')`
-
-In the above example, we have changed `Home` page with the cms component.
-
 
 ## Contributing
 Pull requests are  most welcomed.  
