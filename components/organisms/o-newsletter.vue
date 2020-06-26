@@ -15,7 +15,6 @@
 
 <script>
 import { SfCallToAction, SfButton } from '@storefront-ui/vue';
-import config from 'config'
 import LinkMixin from '../../mixins/LinkMixin'
 import imageMixin from '../../mixins/imageMixin'
 
