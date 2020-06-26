@@ -12,7 +12,7 @@ Note: For Vue Storefront 1.10.3 version, please use the release1.2 of this modul
 
 ## Installation
 
-Clone the Peregine Module at `vue-storefront/src/modules`
+Clone the Peregine Module at `vue-storefront/src/modules`  
 `git clone https://github.com/hotwax/vsf-peregrine.git`
 
 
