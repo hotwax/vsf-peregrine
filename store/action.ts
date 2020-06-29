@@ -1,7 +1,7 @@
 import * as types from './mutation-types'
 import { ActionTree } from 'vuex'
 import { CmsState } from '../types/CmsState'
-import config from 'config'
+import { PEREGRINE_CONFIG } from '../helper/PeregrineConfig'
 import fetch from 'isomorphic-fetch'
 import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
 
@@ -12,7 +12,7 @@ export const actions: ActionTree<CmsState, any> = {
     cmsComponents = await StorageManager.get('cmsStaticCollection').getItem(url.title);
     commit(types.GET_CMS_COMPONENTS, cmsComponents);
 
-    await fetch(`${config.cms_peregrine.endpoint}/${url.title}.data.json`, {
+    await fetch(`${PEREGRINE_CONFIG.endpoint}/${url.title}.data.json`, {
       method: 'GET'
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(
@@ -30,7 +30,7 @@ export const actions: ActionTree<CmsState, any> = {
     let cmsHomeComponents = {};
     cmsHomeComponents = await StorageManager.get('cmsHomeCollection').getItem('index');
     commit(types.GET_CMS_HOME_COMPONENTS, cmsHomeComponents);
-    await fetch(`${config.cms_peregrine.endpoint}/index.data.json`, {
+    await fetch(`${PEREGRINE_CONFIG.endpoint}/index.data.json`, {
       method: 'GET'
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(
