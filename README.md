@@ -86,9 +86,6 @@ For example:
 
 In the above example, we have changed `Home` page with the cms component.
 
-/* ... abridged */
-```
-
 ## Contributing
 Pull requests are  most welcomed.  
 If you discover any bug or have a suggestion, please feel free to create an issue.
