@@ -76,17 +76,8 @@ export const PEREGRINE_CONFIG = {
 }
 ```
 
-### Using CMS components
-
-Change route path of your CMS pages in `src/themes/default/router/index.js`  
-For example:  
-
-`const Home = () => import(/* webpackChunkName: "vsf-home" */ 'src/modules/peregrine-cms/pages/Home.vue')`
-
-In the above example, we have changed `Home` page with the cms component.
-
 ## Contributing
-Pull requests are  most welcomed.  
+Pull requests are most welcomed.
 If you discover any bug or have a suggestion, please feel free to create an issue.
 
 ## The license
