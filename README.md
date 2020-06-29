@@ -78,7 +78,6 @@ export const PEREGRINE_CONFIG = {
 
 ### Using CMS components
 
-
 Change route path of your CMS pages in `src/themes/default/router/index.js`  
 For example:  
 
