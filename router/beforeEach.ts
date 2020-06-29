@@ -5,9 +5,13 @@ import { Route } from 'vue-router'
  */
 const peregrineRoutes = ['returns', 'size-guide', 'about-us', 'contact', 'privacy', 'legal', 'customer-service', 'delivery']
 export async function beforeEach (to: Route, from: Route, next) {
-  let isCmsRoute = peregrineRoutes.findIndex(route => route === to.name)
+  let routeTo = to.name
+  if (routeTo === 'cms-page') {
+    routeTo = to.params.slug
+  }
+  let isCmsRoute = peregrineRoutes.findIndex(route => route === routeTo)
   if (isCmsRoute > -1) {
-    await store.dispatch('cmsstore/getCmsComponents', { title: to.name })
+    await store.dispatch('cmsstore/getCmsComponents', { title: routeTo })
   }
   next()
 }
