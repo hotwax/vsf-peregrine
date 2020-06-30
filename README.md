@@ -48,18 +48,8 @@ to
 
 Add the following configuration in config file.
 
-```
-/* ... abridged */
-
-"cms_peregrine": {
-  "image_endpoint": "{YOUR-PEREGRINE-CMS-ENDPOINT}",
-  "endpoint": "{YOUR-PEREGRINE-CMS-ENDPOINT}/content/sites/{YOUR SITE URL}",
-}
-
-/* ... abridged */
-```
-
-Add localForage config values for Peregrine CMS under ```localForage``` > ```defaultDrivers```
+#### Global Config
+Add cmsPeregrine config values under ```localForage``` > ```defaultDrivers```
 
 ```
 /* ... abridged */
@@ -74,8 +64,20 @@ Add localForage config values for Peregrine CMS under ```localForage``` > ```def
 /* ... abridged */
 ```
 
+#### Module Config
+Set the Peregrine CMS instance and image endpoint (URL).
+Open `vue-storefront/src/modules/vsf-peregrine/helper/PeregrineConfig.js`
+and update the endpoints.
+
+```
+export const PEREGRINE_CONFIG = {
+  endpoint: '{YOUR-PEREGRINE-CMS-ENDPOINT}/content/sites/{YOUR SITE URL}',
+  image_endpoint: '{YOUR-PEREGRINE-CMS-ENDPOINT}'
+}
+```
+
 ## Contributing
-Pull requests are  most welcomed.  
+Pull requests are most welcomed.
 If you discover any bug or have a suggestion, please feel free to create an issue.
 
 ## The license
