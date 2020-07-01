@@ -16,6 +16,7 @@ const TextBlock = () => import('./organisms/o-text-block')
 const Newsletter = () => import('./organisms/o-newsletter')
 const Banner = () => import('./molecules/m-banner')
 const BannerGrid = () => import('./organisms/o-banner-grid')
+const BannerGridT = () => import('./organisms/o-banner-grid-t')
 
 export default {
   props: {
@@ -31,7 +32,8 @@ export default {
         'bannerleft': Banner,
         'bannerright': Banner,
         'verticalbannergrid': BannerGrid,
-        'verticalset': BannerGrid
+        'verticalset': BannerGrid,
+        'tgrid': BannerGridT
       }
     };
   }
