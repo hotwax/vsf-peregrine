@@ -1,32 +1,32 @@
 <template>
   <div id="static" v-if="cmsComponents">
     <div>
-      <CmsPage :cmsObject="cmsComponents" />
+      <CmsPage :cms-object="cmsComponents" />
     </div>
   </div>
 </template>
 
 <script>
-import i18n from "@vue-storefront/i18n";
-import config from "config";
-import { mapGetters } from "vuex";
-import CmsPage from "../components/CmsPage";
+import i18n from '@vue-storefront/i18n';
+import config from 'config';
+import { mapGetters } from 'vuex';
+import CmsPage from '../components/CmsPage';
 
 export default {
   components: {
     CmsPage
   },
-  metaInfo() {
+  metaInfo () {
     return {
       title: this.$route.meta.title,
       meta: this.$route.meta.description
-        ? [{ vmid: "description", description: this.$route.meta.description }]
+        ? [{ vmid: 'description', description: this.$route.meta.description }]
         : []
     };
   },
   computed: {
     ...mapGetters({
-      cmsComponents: "cmsstore/getComponents"
+      cmsComponents: 'cmsstore/getComponents'
     })
   }
 };

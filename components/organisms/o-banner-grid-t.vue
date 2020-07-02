@@ -62,9 +62,9 @@
 </template>
 
 <script>
-import { SfBanner } from "@storefront-ui/vue";
-import LinkMixin from "../../mixins/LinkMixin";
-import imageMixin from "../../mixins/imageMixin";
+import { SfBanner } from '@storefront-ui/vue';
+import LinkMixin from '../../mixins/LinkMixin';
+import imageMixin from '../../mixins/imageMixin';
 
 export default {
   components: {
@@ -79,7 +79,7 @@ export default {
     }
   },
   computed: {
-    banners() {
+    banners () {
       return this.componentData.cards;
     }
   },

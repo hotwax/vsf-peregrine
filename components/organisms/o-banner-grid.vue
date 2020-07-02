@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import { SfBannerGrid, SfBanner } from "@storefront-ui/vue";
-import LinkMixin from "../../mixins/LinkMixin";
-import imageMixin from "../../mixins/imageMixin";
+import { SfBannerGrid, SfBanner } from '@storefront-ui/vue';
+import LinkMixin from '../../mixins/LinkMixin';
+import imageMixin from '../../mixins/imageMixin';
 
 export default {
   components: {
@@ -40,14 +40,11 @@ export default {
     }
   },
   computed: {
-    banners() {
+    banners () {
       return this.componentData.cards;
     },
-    bannerGrid() {
-      if (this.componentType === "verticalbannergrid")
-        return 1
-      else if (this.componentType === "verticalset")
-        return 2
+    bannerGrid () {
+      if (this.componentType === 'verticalbannergrid') { return 1 } else if (this.componentType === 'verticalset') { return 2 }
     }
   },
   mixins: [LinkMixin, imageMixin],
@@ -56,19 +53,19 @@ export default {
       Currently the CMS is not returning these attribute, thus slotName method is implemented.
       After the implementation of https://app.clickup.com/t/3dqt60, we can remove this method.
     */
-    slotName(bannerIndex) {
+    slotName (bannerIndex) {
       switch (bannerIndex) {
         case 0:
-          return "banner-A";
+          return 'banner-A';
           break;
         case 1:
-          return "banner-B";
+          return 'banner-B';
           break;
         case 2:
-          return "banner-C";
+          return 'banner-C';
           break;
         case 3:
-          return "banner-D";
+          return 'banner-D';
           break;
       }
     }
