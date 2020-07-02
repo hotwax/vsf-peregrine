@@ -39,6 +39,12 @@ export const registerModules: VueStorefrontModule[] = [
 
 Open the `index.js` file of your theme `vue-storefront/src/themes/<name-of-your-theme>/router/index.js`
 
+#### Home Page
+Change the `import(/* webpackChunkName: "vsf-home" */ 'theme/pages/Home');`
+to
+`import(/* webpackChunkName: "vsf-home" */ 'src/modules/vsf-peregrine/pages/Home.vue');`
+
+#### Static Page
 Change the `import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static');`
 to
 `import(/* webpackChunkName: "vsf-static" */ 'src/modules/vsf-peregrine/pages/Static.vue')`
