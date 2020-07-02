@@ -11,7 +11,6 @@ export const mutations: MutationTree<any> = {
     StorageManager.get('cmsHomeCollection').setItem('index', state.cmsHomeComponents).catch((reason) => {
       console.error(reason)
     })
-    
   }
 
 }

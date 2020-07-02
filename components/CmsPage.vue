@@ -2,16 +2,16 @@
   <div v-if="cmsObject">
     <div v-for="(component, index) in cmsObject.components" :key="index">
       <component
-        v-bind:is="cmsComponent[component.type]"
-        :componentData="component.data"
-        :componentType="component.type"
+        :is="cmsComponent[component.type]"
+        :component-data="component.data"
+        :component-type="component.type"
       />
     </div>
   </div>
 </template>
 
 <script>
-import i18n from "@vue-storefront/i18n";
+import i18n from '@vue-storefront/i18n';
 const TextBlock = () => import('./organisms/o-text-block')
 const Newsletter = () => import('./organisms/o-newsletter')
 const Banner = () => import('./molecules/m-banner')
@@ -24,7 +24,7 @@ export default {
       type: Object
     }
   },
-  data() {
+  data () {
     return {
       cmsComponent: {
         'richtext': TextBlock,

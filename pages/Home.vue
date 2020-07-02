@@ -1,7 +1,7 @@
 <template>
   <div id="home" v-if="cmsComponents">
     <div>
-      <CmsPage :cmsObject="cmsComponents" />
+      <CmsPage :cms-object="cmsComponents" />
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@ import { mapGetters } from 'vuex';
 import { Logger } from '@vue-storefront/core/lib/logger';
 import Home from '@vue-storefront/core/pages/Home';
 import { isServer } from '@vue-storefront/core/helpers';
-import CmsPage from "../components/CmsPage";
+import CmsPage from '../components/CmsPage';
 
 export default {
   name: 'Home',
@@ -41,7 +41,7 @@ export default {
     Logger.info('Calling asyncData in Home (theme)')();
 
     await Promise.all([
-      store.dispatch('homepage/fetchNewCollection'),
+      store.dispatch('homepage/fetchNewCollection')
     ]);
   },
   async created () {
