@@ -17,6 +17,7 @@ const Newsletter = () => import('./organisms/o-newsletter')
 const Banner = () => import('./molecules/m-banner')
 const BannerGrid = () => import('./organisms/o-banner-grid')
 const BannerGridT = () => import('./organisms/o-banner-grid-t')
+const NewBestSeller = () => import('./organisms/o-new-best-seller')
 
 export default {
   props: {
@@ -33,7 +34,9 @@ export default {
         'bannerright': Banner,
         'verticalbannergrid': BannerGrid,
         'verticalset': BannerGrid,
-        'tgrid': BannerGridT
+        'tgrid': BannerGridT,
+        'bestseller': NewBestSeller,
+        'newarrivalproducts': NewBestSeller
       }
     };
   }
