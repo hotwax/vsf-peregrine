@@ -21,6 +21,7 @@ const BannerGridT = () => import('./organisms/o-banner-grid-t')
 export default {
   props: {
     cmsObject: {
+      required: true,
       type: Object
     }
   },

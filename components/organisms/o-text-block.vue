@@ -14,6 +14,7 @@ export default {
   },
   props: {
     componentData: {
+      required: true,
       type: Object
     }
   }
