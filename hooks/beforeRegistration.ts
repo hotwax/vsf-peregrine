@@ -17,7 +17,7 @@ import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
  * beforeRegistration hooks also need to be added in Vuex module in index.ts file
  */
 
-export function beforeRegistration ({ config }) {
+export function beforeRegistration (config) {
   const storeView = currentStoreView()
   const dbNamePrefix = storeView.storeCode ? storeView.storeCode + '-' : ''
 
