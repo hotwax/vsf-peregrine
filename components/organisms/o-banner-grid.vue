@@ -34,9 +34,11 @@ export default {
   },
   props: {
     componentData: {
+      required: true,
       type: Object
     },
     componentType: {
+      required: true,
       type: String
     }
   },
