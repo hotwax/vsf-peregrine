@@ -17,6 +17,7 @@ const Newsletter = () => import('./organisms/o-newsletter')
 const Banner = () => import('./molecules/m-banner')
 const BannerGrid = () => import('./organisms/o-banner-grid')
 const BannerGridT = () => import('./organisms/o-banner-grid-t')
+const ImagesGrid = () => import('./organisms/o-images-grid')
 
 export default {
   props: {
@@ -34,7 +35,8 @@ export default {
         'bannerright': Banner,
         'verticalbannergrid': BannerGrid,
         'verticalset': BannerGrid,
-        'tgrid': BannerGridT
+        'tgrid': BannerGridT,
+        'cards': ImagesGrid
       }
     };
   }
