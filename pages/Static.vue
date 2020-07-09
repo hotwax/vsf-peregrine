@@ -26,8 +26,19 @@ export default {
   },
   computed: {
     ...mapGetters({
+      isLoggedIn: 'user/isLoggedIn',
       cmsComponents: 'cmsstore/getComponents'
     })
+  },
+  watch: {
+    isLoggedIn () {
+      const redirectObj = localStorage.getItem('redirect');
+      if (redirectObj) this.$router.push(redirectObj);
+      localStorage.removeItem('redirect');
+    }
+  },
+  mounted () {
+    if (!this.isLoggedIn && localStorage.getItem('redirect')) { this.$bus.$emit('modal-show', 'modal-signup'); }
   }
 };
 </script>
