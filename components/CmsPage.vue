@@ -18,7 +18,7 @@ const Banner = () => import('./molecules/m-banner')
 const BannerGrid = () => import('./organisms/o-banner-grid')
 const BannerGridT = () => import('./organisms/o-banner-grid-t')
 const ImagesGrid = () => import('./organisms/o-images-grid')
-const NewBestSeller = () => import('./organisms/o-new-best-seller')
+const ProductCarousel = () => import('./organisms/o-product-carousel')
 
 export default {
   props: {
@@ -38,8 +38,8 @@ export default {
         'verticalset': BannerGrid,
         'tgrid': BannerGridT,
         'cards': ImagesGrid,
-        'bestseller': NewBestSeller,
-        'newarrivalproducts': NewBestSeller
+        'bestseller': ProductCarousel,
+        'newarrivalproducts': ProductCarousel
       }
     };
   }
