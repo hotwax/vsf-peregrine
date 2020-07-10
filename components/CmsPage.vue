@@ -17,11 +17,13 @@ const Newsletter = () => import('./organisms/o-newsletter')
 const Banner = () => import('./molecules/m-banner')
 const BannerGrid = () => import('./organisms/o-banner-grid')
 const BannerGridT = () => import('./organisms/o-banner-grid-t')
+const ImagesGrid = () => import('./organisms/o-images-grid')
 const NewBestSeller = () => import('./organisms/o-new-best-seller')
 
 export default {
   props: {
     cmsObject: {
+      required: true,
       type: Object
     }
   },
@@ -35,6 +37,7 @@ export default {
         'verticalbannergrid': BannerGrid,
         'verticalset': BannerGrid,
         'tgrid': BannerGridT,
+        'cards': ImagesGrid,
         'bestseller': NewBestSeller,
         'newarrivalproducts': NewBestSeller
       }

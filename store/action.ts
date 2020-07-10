@@ -5,6 +5,23 @@ import { PEREGRINE_CONFIG } from '../helper/PeregrineConfig'
 import fetch from 'isomorphic-fetch'
 import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
 
+let cmsJsonParser = (resp) => {
+  return new Promise((resolve, reject) => {
+    let cmsParsedComponents = {
+      'title': resp['title'] || '',
+      'components': resp.children.map((ob: any) => {
+        let componentName = ob.component.split('-')
+        let obj = {
+          type: componentName[componentName.length - 1],
+          data: ob
+        }
+        return obj;
+      })
+    }
+    resolve(cmsParsedComponents)
+  })
+}
+
 export const actions: ActionTree<CmsState, any> = {
 
   async getCmsComponents ({ commit }, url) {
@@ -46,21 +63,4 @@ export const actions: ActionTree<CmsState, any> = {
       }
     )
   }
-}
-
-let cmsJsonParser = (resp) => {
-  return new Promise((resolve, reject) => {
-    let cmsParsedComponents = {
-      'title': resp['title'] || '',
-      'components': resp.children.map((ob: any) => {
-        let componentName = ob.component.split('-')
-        let obj = {
-          type: componentName[componentName.length - 1],
-          data: ob
-        }
-        return obj;
-      })
-    }
-    resolve(cmsParsedComponents)
-  })
 }
