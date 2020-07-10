@@ -7,10 +7,11 @@ import { StorefrontModule } from '@vue-storefront/core/lib/modules';
 export const KEY = 'cmsstore'
 export const PeregrineModule: StorefrontModule = function ({
   store,
-  router
+  router,
+  appConfig
 }) {
   store.registerModule(KEY, peregrineStore)
   router.beforeEach(beforeEach)
-  beforeRegistration
-  afterRegistration
+  beforeRegistration(appConfig)
+  afterRegistration(store)
 };

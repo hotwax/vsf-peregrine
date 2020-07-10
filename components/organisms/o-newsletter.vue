@@ -1,6 +1,5 @@
 <template>
   <SfCallToAction
-    class="o-newsletter"
     :title="componentData.title"
     :description="componentData.text"
     :image="image(componentData.imageLinkType, componentData.image)"
@@ -26,20 +25,10 @@ export default {
   },
   props: {
     componentData: {
+      required: true,
       type: Object
     }
   },
   mixins: [LinkMixin, imageMixin]
 }
 </script>
-
-<style lang="scss" scoped>
-@import "~@storefront-ui/shared/styles/helpers/breakpoints";
-.o-newsletter {
-  margin: var(--spacer-xl) 0;
-  box-sizing: border-box;
-  @include for-desktop {
-    margin: calc(var(--spacer-2xl) * 2) 0;
-  }
-}
-</style>

@@ -1,7 +1,7 @@
 <template>
   <SfBannerGrid :banner-grid="bannerGrid" class="banner-grid">
     <template v-for="(banner, bannerIndex) in banners" #[slotName(bannerIndex)]>
-      <a v-if="banner.link" @click="link(banner)">
+      <a v-if="banner.link" @click="link(banner)" :key="bannerIndex">
         <SfBanner
           :subtitle="banner.subtitle"
           :title="banner.title"
@@ -12,6 +12,7 @@
       </a>
       <SfBanner
         v-else
+        :key="bannerIndex"
         :subtitle="banner.subtitle"
         :title="banner.title"
         :description="banner.text"
@@ -22,9 +23,9 @@
 </template>
 
 <script>
-import { SfBannerGrid, SfBanner } from "@storefront-ui/vue";
-import LinkMixin from "../../mixins/LinkMixin";
-import imageMixin from "../../mixins/imageMixin";
+import { SfBannerGrid, SfBanner } from '@storefront-ui/vue';
+import LinkMixin from '../../mixins/LinkMixin';
+import imageMixin from '../../mixins/imageMixin';
 
 export default {
   components: {
@@ -33,21 +34,20 @@ export default {
   },
   props: {
     componentData: {
+      required: true,
       type: Object
     },
     componentType: {
+      required: true,
       type: String
     }
   },
   computed: {
-    banners() {
+    banners () {
       return this.componentData.cards;
     },
-    bannerGrid() {
-      if (this.componentType === "verticalbannergrid")
-        return 1
-      else if (this.componentType === "verticalset")
-        return 2
+    bannerGrid () {
+      if (this.componentType === 'verticalbannergrid') { return 1 } else if (this.componentType === 'verticalset') { return 2 } return 1
     }
   },
   mixins: [LinkMixin, imageMixin],
@@ -56,21 +56,23 @@ export default {
       Currently the CMS is not returning these attribute, thus slotName method is implemented.
       After the implementation of https://app.clickup.com/t/3dqt60, we can remove this method.
     */
-    slotName(bannerIndex) {
+    slotName (bannerIndex) {
+      let slot = '';
       switch (bannerIndex) {
         case 0:
-          return "banner-A";
+          slot = 'banner-A';
           break;
         case 1:
-          return "banner-B";
+          slot = 'banner-B';
           break;
         case 2:
-          return "banner-C";
+          slot = 'banner-C';
           break;
         case 3:
-          return "banner-D";
+          slot = 'banner-D';
           break;
       }
+      return slot
     }
   }
 };

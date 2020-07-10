@@ -1,10 +1,10 @@
-import config from 'config'
+import { PEREGRINE_CONFIG } from '../helper/PeregrineConfig'
 
 export default {
   methods: {
     image (type, path) {
       if (type === 'internalLink') {
-        return config.cms_peregrine.image_endpoint + path
+        return PEREGRINE_CONFIG.image_endpoint + path
       } else {
         return path
       }

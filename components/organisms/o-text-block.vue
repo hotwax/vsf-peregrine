@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { SfHeading } from "@storefront-ui/vue";
+import { SfHeading } from '@storefront-ui/vue';
 
 export default {
   components: {
@@ -14,6 +14,7 @@ export default {
   },
   props: {
     componentData: {
+      required: true,
       type: Object
     }
   }

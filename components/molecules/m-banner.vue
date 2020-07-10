@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import { SfBanner } from "@storefront-ui/vue"
-import config from "config"
-import LinkMixin from "../../mixins/LinkMixin"
-import imageMixin from "../../mixins/imageMixin"
+import { SfBanner } from '@storefront-ui/vue'
+import config from 'config'
+import LinkMixin from '../../mixins/LinkMixin'
+import imageMixin from '../../mixins/imageMixin'
 
 export default {
   components: {
@@ -29,18 +29,17 @@ export default {
   },
   props: {
     componentData: {
+      required: true,
       type: Object
     },
     componentType: {
+      required: true,
       type: String
     }
   },
   computed: {
-    banner() {
-      if (this.componentType === "bannerright")
-        return "sf-banner--right m-banner"
-      else
-        return "m-banner"
+    banner () {
+      if (this.componentType === 'bannerright') { return 'sf-banner--right m-banner' } else { return 'm-banner' }
     }
   },
   mixins: [LinkMixin, imageMixin]
