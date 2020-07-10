@@ -19,7 +19,6 @@
 
 <script>
 import { SfHero } from '@storefront-ui/vue';
-import LinkMixin from '../../mixins/LinkMixin'
 import imageMixin from '../../mixins/imageMixin'
 
 export default {
@@ -37,13 +36,13 @@ export default {
      * This information will be passed by CMS.
      * Currently it is not supported it CMS thus for time being
      * We are positing text of even banner item at left and odd at right
-     * After the implementation of https://app.clickup.com/t/3dqt60, we can remove this method.
+     * After the implementation of https://app.clickup.com/t/3kvd99, we can remove this method.
      */
     bannerClass (i) {
       return i % 2 !== 0 ? 'sf-hero-item--align-right' : ''
     }
   },
-  mixins: [LinkMixin, imageMixin]
+  mixins: [imageMixin]
 }
 </script>
 
