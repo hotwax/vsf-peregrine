@@ -19,6 +19,7 @@ const BannerGrid = () => import('./organisms/o-banner-grid')
 const BannerGridT = () => import('./organisms/o-banner-grid-t')
 const ImagesGrid = () => import('./organisms/o-images-grid')
 const ProductCarousel = () => import('./organisms/o-product-carousel')
+const Carousel = () => import('./organisms/o-carousel')
 
 export default {
   props: {
@@ -39,7 +40,8 @@ export default {
         'tgrid': BannerGridT,
         'cards': ImagesGrid,
         'bestseller': ProductCarousel,
-        'newarrivalproducts': ProductCarousel
+        'newarrivalproducts': ProductCarousel,
+        'carousel': Carousel
       }
     };
   }
