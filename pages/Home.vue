@@ -9,7 +9,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import { Logger } from '@vue-storefront/core/lib/logger';
-// import Home from '@vue-storefront/core/pages/Home';
+import Home from '@vue-storefront/core/pages/Home';
 import { isServer } from '@vue-storefront/core/helpers';
 import CmsPage from '../components/CmsPage';
 
@@ -18,7 +18,7 @@ export default {
   components: {
     CmsPage
   },
-  // mixins: [Home],
+  mixins: [Home],
   data () {
     return {
       loading: true
@@ -60,12 +60,6 @@ export default {
       });
     } else {
       next();
-    }
-  },
-  metaInfo () {
-    return {
-      title: this.$route.meta.title || this.$i18n.t('Home Page'),
-      meta: this.$route.meta.description ? [{ vmid: 'description', name: 'description', content: this.$route.meta.description }] : []
     }
   }
 };
