@@ -1,5 +1,5 @@
 <template>
-  <div v-if="cmsObject">
+  <div v-if="cmsObject" id="static">
     <div v-for="(component, index) in cmsObject.components" :key="index">
       <component
         :is="cmsComponent[component.type]"
@@ -47,3 +47,22 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+@import "~@storefront-ui/shared/styles/helpers/breakpoints";
+
+#static {
+  box-sizing: border-box;
+  @include for-desktop {
+    max-width: 1272px;
+    margin: 0 auto;
+  }
+  padding: 0 var(--spacer-sm);
+  --content-pages-height: auto;
+  ::v-deep {
+    .sf-content-pages__content,
+    .sf-content-pages__sidebar {
+      height: min-content;
+    }
+  }
+}
+</style>
