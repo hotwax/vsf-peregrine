@@ -1,7 +1,7 @@
 # Peregrine CMS Module for Vue Storefront
 
 ## 2.0.0 (2020-08-13)
-- Upadted module structure as per VSF1.12
+- Updated module structure as per VSF1.12
 - Use Storefront-ui for components rendering
 - Code cleanup and removed unused and duplicate components
 
