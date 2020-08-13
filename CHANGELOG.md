@@ -1,4 +1,11 @@
-## release1.2
+# Peregrine CMS Module for Vue Storefront
+
+## 2.0.0 (2020-08-13)
+- Upadted module structure as per VSF1.12
+- Use Storefront-ui for components rendering
+- Code cleanup and removed unused and duplicate components
+
+## 1.2.0
 
 ### Added
 - BannerLeft component for CMS [#32](https://github.com/hotwax/vsf-peregrine/pull/32)
