@@ -1,0 +1,16 @@
+{
+    "name": "vsf-peregrine",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/main.js",
+    "scripts": {
+      "build": "webpack --config node_modules/@vue-storefront/core/lib/modules/tools/module-build.config.js",
+      "prePublishOnly": "yarn build"
+    },
+    "keywords": ["vue-storefront"],
+    "dependencies": {
+        "@storefront-ui/vue": "0.7.11",
+        "@storefront-ui/shared": "0.7.11"
+    }
+  }
+  
