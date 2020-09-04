@@ -72,7 +72,6 @@ export default {
   box-sizing: border-box;
   padding: 0 var(--spacer-sm);
   @include for-desktop {
-    padding: 0 var(--spacer-sm);
     max-width: 1272px;
     margin: 0 auto;
   }
