@@ -1,5 +1,5 @@
 <template>
-  <div id="static" v-if="cmsComponents">
+  <div id="static" class="global--max-width" v-if="cmsComponents">
     <div>
       <CmsPage :cms-object="cmsComponents" />
     </div>
@@ -49,7 +49,6 @@ export default {
 #static {
   box-sizing: border-box;
   @include for-desktop {
-    max-width: 1272px;
     padding: 0 var(--spacer-sm);
     margin: 0 auto;
   }
