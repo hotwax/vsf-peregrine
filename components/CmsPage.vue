@@ -1,5 +1,5 @@
 <template>
-  <div v-if="cmsObject" id="static">
+  <div v-if="cmsObject" id="static" class="global--max-width">
     <div v-for="(component, index) in cmsObject.components" :key="index">
       <component
         :is="cmsComponent[component.type]"
@@ -53,7 +53,6 @@ export default {
 #static {
   box-sizing: border-box;
   @include for-desktop {
-    max-width: 1272px;
     margin: 0 auto;
   }
   padding: 0 var(--spacer-sm);

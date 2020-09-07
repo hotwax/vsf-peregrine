@@ -1,5 +1,5 @@
 <template>
-  <div id="home" v-if="cmsComponents">
+  <div id="home" class="global--max-width" v-if="cmsComponents">
     <div>
       <CmsPage :cms-object="cmsComponents" />
     </div>
@@ -73,7 +73,6 @@ export default {
   padding: 0 var(--spacer-sm);
   @include for-desktop {
     padding: 0 var(--spacer-sm);
-    max-width: 1272px;
     margin: 0 auto;
   }
 }

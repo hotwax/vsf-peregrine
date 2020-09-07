@@ -93,12 +93,4 @@ export default {
 <style lang="scss" scoped>
 @import "~@storefront-ui/shared/styles/helpers/breakpoints";
 
-.section {
-  padding-left: var(--spacer-xl);
-  padding-right: var(--spacer-xl);
-  @include for-desktop {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
 </style>

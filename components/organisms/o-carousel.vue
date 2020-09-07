@@ -48,7 +48,6 @@ export default {
 
 <style lang="scss" scoped>
 .sf-hero-item {
-  --hero-item-height: 14rem;
   height: initial;
 }
 </style>
