@@ -4,6 +4,8 @@ import { CmsState } from '../types/CmsState'
 import { PEREGRINE_CONFIG } from '../helper/PeregrineConfig'
 import fetch from 'isomorphic-fetch'
 import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
+import { onlineHelper } from '@vue-storefront/core/helpers'
+import { TaskQueue } from '@vue-storefront/core/lib/sync'
 
 let cmsJsonParser = (resp) => {
   return new Promise((resolve, reject) => {
@@ -29,19 +31,28 @@ export const actions: ActionTree<CmsState, any> = {
     cmsComponents = await StorageManager.get('cmsStaticCollection').getItem(url.title);
     commit(types.GET_CMS_COMPONENTS, cmsComponents);
 
-    await fetch(`${PEREGRINE_CONFIG.endpoint}/${url.title}.data.json`, {
-      method: 'GET'
-    }).then(resp => resp.json()).then(resp => {
-      cmsJsonParser(resp).then(
-        (data) => {
-          cmsComponents = data
-          StorageManager.get('cmsStaticCollection').setItem(url.title, cmsComponents).catch((reason) => {
-            console.error(reason)
-          })
-          commit(types.GET_CMS_COMPONENTS, cmsComponents)
+    if(onlineHelper.isOnline) {
+      await fetch(`${PEREGRINE_CONFIG.endpoint}/${url.title}.data.json`, {
+        method: 'GET'
+      }).then(resp => resp.json()).then(resp => {
+        cmsJsonParser(resp).then(
+          (data) => {
+            cmsComponents = data
+            StorageManager.get('cmsStaticCollection').setItem(url.title, cmsComponents).catch((reason) => {
+              console.error(reason)
+            })
+            commit(types.GET_CMS_COMPONENTS, cmsComponents)
+          }
+        )
+      })
+    } else {
+      const task = await TaskQueue.queue({ url: `${PEREGRINE_CONFIG.endpoint}/${url.title}.data.json`,
+        payload: {
+          method: 'GET',
+          mode: 'cors'
         }
-      )
-    })
+      })
+    }
   },
   async getCmsHomeComponents ({ commit }) {
     let cmsHomeComponents = {};
