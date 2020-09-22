@@ -1,5 +1,5 @@
 <template>
-  <div id="static" class="main-content" v-if="cmsComponents">
+  <div id="static" class="global--max-width" v-if="cmsComponents">
     <div>
       <CmsPage :cms-object="cmsComponents" />
     </div>

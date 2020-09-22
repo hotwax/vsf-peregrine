@@ -1,5 +1,5 @@
 <template>
-  <div v-if="cmsObject" id="static" class="main-content">
+  <div v-if="cmsObject" id="static" class="global--max-width">
     <div v-for="(component, index) in cmsObject.components" :key="index">
       <component
         :is="cmsComponent[component.type]"
