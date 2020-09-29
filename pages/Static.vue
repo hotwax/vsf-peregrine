@@ -3,6 +3,7 @@
     <div>
       <CmsPage :cms-object="cmsComponents" />
     </div>
+    <EnalitoProducts :page-id="1" v-if="isHomePage"/>
   </div>
 </template>
 
@@ -11,10 +12,12 @@ import i18n from '@vue-storefront/i18n';
 import config from 'config';
 import { mapGetters } from 'vuex';
 import CmsPage from '../components/CmsPage';
+import EnalitoProducts from 'src/modules/vsf-enalito/components/EnalitoProducts';
 
 export default {
   components: {
-    CmsPage
+    CmsPage,
+    EnalitoProducts
   },
   metaInfo () {
     return {
@@ -28,7 +31,10 @@ export default {
     ...mapGetters({
       isLoggedIn: 'user/isLoggedIn',
       cmsComponents: 'cmsstore/getComponents'
-    })
+    }),
+    isHomePage () {
+      return this.$route.name === 'home';
+    }
   },
   watch: {
     isLoggedIn () {
