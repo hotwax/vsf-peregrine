@@ -1,9 +1,7 @@
 <template>
   <div id="static" class="main-content" v-if="cmsComponents">
-    <div>
-      <CmsPage :cms-object="cmsComponents" />
-    </div>
-    <EnalitoProducts :page-id="1" v-if="isHomePage"/>
+    <CmsPage :cms-object="cmsComponents" />
+    <EnalitoProducts :page-id="1" v-if="isHomePage" />
   </div>
 </template>
 
