@@ -14,7 +14,7 @@ export async function beforeEach (to: Route, from: Route, next) {
     if (routeTo === 'home') {
       routeTo = 'index'
     }
-    await store.dispatch('cmsstore/getCmsComponents', { title: routeTo })
+    await store.dispatch('cmspage/getCmsComponents', { title: routeTo })
   }
   next()
 }

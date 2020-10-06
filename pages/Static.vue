@@ -27,7 +27,7 @@ export default {
   computed: {
     ...mapGetters({
       isLoggedIn: 'user/isLoggedIn',
-      cmsComponents: 'cmsstore/getComponents'
+      cmsComponents: 'cmspage/getComponents'
     })
   },
   watch: {

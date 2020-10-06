@@ -63,7 +63,7 @@ Add cmsPeregrine config values under ```localForage``` > ```defaultDrivers```
 "localForage": {
     "defaultDrivers": {
       ...
-      "cmsstore": "LOCALSTORAGE"
+      "cmspage": "LOCALSTORAGE"
     }
   },
 
