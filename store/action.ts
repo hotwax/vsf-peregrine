@@ -32,9 +32,9 @@ export const actions: ActionTree<CmsState, any> = {
     commit(types.GET_CMS_COMPONENTS, cmsComponents);
 
     if(onlineHelper.isOnline) {
-      await CmsService.fetchData(url, 'cmsstore/fetch')
+      await CmsService.fetchData(url, 'cmspage/fetch')
     } else {
-      await CmsService.fetchUpdatedData(url,'cmsstore/fetch')
+      await CmsService.fetchUpdatedData(url,'cmspage/fetch')
     }
   },
   async fetch({ commit }, resp) {
