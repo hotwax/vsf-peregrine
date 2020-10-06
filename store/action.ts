@@ -32,12 +32,12 @@ export const actions: ActionTree<CmsState, any> = {
     commit(types.GET_CMS_COMPONENTS, cmsComponents);
 
     if(onlineHelper.isOnline) {
-      await CmsService.fetchData(url, 'cmspage/fetch')
+      await CmsService.fetchCmsData(url, 'cmspage/loadCmsData')
     } else {
-      await CmsService.fetchUpdatedData(url,'cmspage/fetch')
+      await CmsService.queueCmsData(url,'cmspage/loadCmsData')
     }
   },
-  async fetch({ commit }, resp) {
+  async loadCmsData({ commit }, resp) {
     cmsJsonParser(resp.result).then(
       (data) => {
         let cmsComponents = data
