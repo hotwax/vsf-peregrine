@@ -27,7 +27,7 @@ export default {
   computed: {
     ...mapGetters({
       isLoggedIn: 'user/isLoggedIn',
-      cmsComponents: 'cmsstore/getHomeComponents'
+      cmsComponents: 'cmspage/getHomeComponents'
     })
   },
   watch: {
@@ -46,7 +46,7 @@ export default {
     ]);
   },
   async created () {
-    await this.$store.dispatch('cmsstore/getCmsHomeComponents')
+    await this.$store.dispatch('cmspage/getCmsHomeComponents')
   },
   mounted () {
     if (!this.isLoggedIn && localStorage.getItem('redirect')) { this.$bus.$emit('modal-show', 'modal-signup'); }

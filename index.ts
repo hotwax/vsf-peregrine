@@ -4,7 +4,7 @@ import { afterRegistration } from './hooks/afterRegistration'
 import { beforeEach } from './router/beforeEach'
 import { StorefrontModule } from '@vue-storefront/core/lib/modules';
 
-export const KEY = 'cmsstore'
+export const KEY = 'cmspage'
 export const PeregrineModule: StorefrontModule = function ({
   store,
   router,

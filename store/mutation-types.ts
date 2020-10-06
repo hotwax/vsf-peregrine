@@ -1,3 +1,3 @@
-export const CMSSTORE = 'cmsstore'
+export const CMSSTORE = 'cmspage'
 export const GET_CMS_COMPONENTS = CMSSTORE + '/GET_CMS_COMPONENTS'
 export const GET_CMS_HOME_COMPONENTS = CMSSTORE + '/GET_CMS_HOME_COMPONENTS'
