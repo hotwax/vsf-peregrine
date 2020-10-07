@@ -46,7 +46,7 @@ export default {
   computed: {
     images () {
       let images = []
-      this.componentData.cards.forEach((card) => {
+      this.componentData.imagesgrid.forEach((card) => {
         images.push(this.image(card.imageLinkType, card.image))
       })
       return images

@@ -38,7 +38,7 @@ export default {
         'verticalbannergrid': BannerGrid,
         'verticalset': BannerGrid,
         'tgrid': BannerGridT,
-        'cards': ImagesGrid,
+        'imagesgrid': ImagesGrid,
         'bestseller': ProductCarousel,
         'newarrivalproducts': ProductCarousel,
         'carousel': Carousel
