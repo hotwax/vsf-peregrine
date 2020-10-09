@@ -10,9 +10,9 @@
       v-for="(slide, index) in componentData.slides"
       :key="index"
       :title="slide.title"
-      :subtitle="slide.text"
-      :image="image(slide.imageLinkType, slide.imagepath)"
-      :class="slideClass(index)"
+      :subtitle="slide.subtitle"
+      :image="image(slide.imageLinkType, slide.image)"
+      :class="'sf-hero-item--align-' + slide.aligntext"
     />
   </SfHero>
 </template>
@@ -29,17 +29,6 @@ export default {
     componentData: {
       required: true,
       type: Object
-    }
-  },
-  methods: {
-    /* The position of text is determine by the class on hero item
-     * This information will be passed by CMS.
-     * Currently it is not supported it CMS thus for time being
-     * We are positioning text of even number slide item at left and odd at right
-     * After the implementation of https://app.clickup.com/t/3kvd99, we can remove this method.
-     */
-    slideClass (slideIndex) {
-      return slideIndex % 2 !== 0 ? 'sf-hero-item--align-right' : ''
     }
   },
   mixins: [imageMixin]
