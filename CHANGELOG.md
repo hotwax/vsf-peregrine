@@ -1,5 +1,15 @@
 # Peregrine CMS Module for Vue Storefront
 
+## 2.2.0 (2020-10-13)
+- Updated code as per peregrine cms 2.0
+
+## 2.1.0 (2020-10-02)
+- Updated code to support offline mode
+- Updated the code to use cmspage as a storename instead of cmsstore
+- Added global max width on static page.
+- Implemented DataResolver for making the api calls
+- Removed: Overridden styling on home page
+
 ## 2.0.0 (2020-08-13)
 - Updated module structure as per VSF1.12
 - Use Storefront UI for components rendering
