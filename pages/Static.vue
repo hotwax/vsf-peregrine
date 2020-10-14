@@ -1,6 +1,6 @@
 <template>
-  <div id="static" class="main-content" v-if="cmsComponents">
-    <CmsPage :cms-object="cmsComponents" />
+  <div id="static" class="main-content">
+    <CmsPage :cms-object="cmsComponents" v-if="cmsComponents" />
   </div>
 </template>
 
