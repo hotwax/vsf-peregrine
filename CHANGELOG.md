@@ -2,6 +2,8 @@
 
 ## 2.2.0 (2020-10-13)
 - Updated code as per peregrine cms 2.0
+- Added wishlist icons in product card on product carousel
+- Fixed: Min height logic for static pages
 
 ## 2.1.0 (2020-10-02)
 - Updated code to support offline mode

@@ -16,7 +16,10 @@
               :regular-price="product.price.regular"
               :special-price="product.price.special"
               :link="product.link"
-              :wishlist-icon="false"
+              is-on-wishlist-icon="heart_fill"
+              :is-on-wishlist="isOnWishlist(product)"
+              wishlist-icon="heart"
+              @click:wishlist="toggleWishlist(product)"
               link-tag="router-link"
             />
           </SfCarouselItem>
@@ -30,6 +33,11 @@
 import { SfProductCard, SfCarousel, SfSection } from '@storefront-ui/vue';
 import fetch from 'isomorphic-fetch';
 import { prepareCategoryProduct } from 'theme/helpers';
+import { mapGetters, mapActions } from 'vuex';
+import { ModalList } from 'theme/store/ui/modals'
+import AAddToWishlist from 'theme/components/atoms/a-add-to-wishlist'
+import i18n from '@vue-storefront/i18n';
+import { htmlDecode } from '@vue-storefront/core/filters';
 
 export default {
   components: {
@@ -37,6 +45,7 @@ export default {
     SfCarousel,
     SfSection
   },
+  mixins: [AAddToWishlist],
   props: {
     componentData: {
       required: true,
@@ -70,7 +79,61 @@ export default {
       }
     }
   },
+  methods: {
+    ...mapActions({
+      openModal: 'ui/openModal'
+    }),
+    toggleWishlist (product) {
+      if (!this.isLoggedIn) {
+        this.openModal({ name: ModalList.Auth, payload: 'login' });
+        return;
+      }
+      const isProductOnWishlist = this.isOnWishlist(product);
+      if (!isProductOnWishlist) {
+        const token = this.getUserToken;
+        if (token) {
+          this.serverUpdateWishlist(product, token).then(resp => {
+            this.$store.dispatch(
+              'notification/spawnNotification',
+              {
+                type: 'success',
+                message: i18n.t('Product {productName} has been added to wishlist!', {
+                  productName: htmlDecode(product.title)
+                }),
+                action1: { label: i18n.t('OK') }
+              },
+              { root: true }
+            );
+            this.$store.dispatch('wishlist/addItem', product);
+          })
+        }
+      } else {
+        const token = this.getUserToken;
+        if (token) {
+          this.serverRemoveItemFromWishlist(product, token).then(resp => {
+            this.$store.dispatch(
+              'notification/spawnNotification',
+              {
+                type: 'success',
+                message: i18n.t(
+                  'Product {productName} has been removed from wishlist!',
+                  { productName: htmlDecode(product.title) }
+                ),
+                action1: { label: i18n.t('OK') }
+              },
+              { root: true }
+            );
+            this.$store.dispatch('wishlist/removeItem', product);
+          })
+        }
+      }
+    }
+  },
   computed: {
+    ...mapGetters({
+      isOnWishlist: 'wishlist/isOnWishlist',
+      isLoggedIn: 'user/isLoggedIn'
+    }),
     bestSeller () {
       return this.$store.state.homepage.bestsellers;
     },
