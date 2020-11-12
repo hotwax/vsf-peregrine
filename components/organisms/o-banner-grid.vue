@@ -62,4 +62,7 @@ export default {
     margin: var(--spacer-2xl) 0;
   }
 }
+.sf-banner-grid.banner-grid .sf-banner-grid__row:first-child .sf-banner {
+  background-position-y: bottom;
+}
 </style>
