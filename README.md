@@ -72,11 +72,11 @@ Add cmsPeregrine config values under ```localForage``` > ```defaultDrivers```
 
 #### Module Config
 Set the Peregrine CMS instance and image endpoint (URL).
-Open `vue-storefront/src/modules/vsf-peregrine/helper/PeregrineConfig.js`
+Open `vue-storefront/config/default.json`
 and update the endpoints.
 
 ```
-export const PEREGRINE_CONFIG = {
+peregrine_config: {
   endpoint: '{YOUR-PEREGRINE-CMS-ENDPOINT}/content/sites/{YOUR SITE URL}',
   image_endpoint: '{YOUR-PEREGRINE-CMS-ENDPOINT}'
 }
