@@ -9,10 +9,18 @@ import i18n from '@vue-storefront/i18n';
 import config from 'config';
 import { mapGetters } from 'vuex';
 import CmsPage from '../components/CmsPage';
+import { registerModule } from '@vue-storefront/core/lib/modules';
+import { PeregrineModule } from 'src/modules/peregrine';
 
 export default {
   components: {
     CmsPage
+  },
+  async beforeCreate () {
+    await registerModule(PeregrineModule)
+    if(this.$router.currentRoute.path === '/') {
+      await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index' })
+    }
   },
   metaInfo () {
     return {
