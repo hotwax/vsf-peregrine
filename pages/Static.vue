@@ -17,7 +17,6 @@ export default {
     CmsPage
   },
   async beforeCreate () {
-    console.log('working')
     await registerModule(PeregrineModule)
     if(this.$router.currentRoute.path === '/') {
       await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index' })
