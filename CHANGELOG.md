@@ -1,5 +1,8 @@
 # Peregrine CMS Module for Vue Storefront
 
+## 2.3.0 (Upcoming release)
+- Updated: the code to register the module on creation (#1nduw8)
+
 ## 2.2.0 (2020-10-13)
 - Updated code as per peregrine cms 2.0
 - Added wishlist icons in product card on product carousel
