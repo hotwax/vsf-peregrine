@@ -1,7 +1,11 @@
 # Peregrine CMS Module for Vue Storefront
 
-## 2.3.0 (Upcoming release)
+## 2.3.0 (2021-01-08)
 - Updated: the code to register the module on creation (#1nduw8)
+- Removed unused config file, as we moved configuration in local.josn file 
+- Moved the config parameters from the module to the root.
+- Improved: banner background postion for some banners in homepage
+- Added: Wishlist functionality on search results and on product carousels
 
 ## 2.2.0 (2020-10-13)
 - Updated code as per peregrine cms 2.0
