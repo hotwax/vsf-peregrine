@@ -1,5 +1,8 @@
 # Peregrine CMS Module for Vue Storefront
 
+## 2.3.1 (Upcoming Release)
+- Implemented: a custom carousel component to solve the duplicate image issue in best seller(#1qg127)
+
 ## 2.3.0 (2021-01-08)
 - Updated: the code to register the module on creation (#1nduw8)
 - Removed unused config file, as we moved configuration in local.josn file 
