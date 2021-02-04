@@ -2,7 +2,7 @@
   <div v-if="carouselProducts.length">
     <SfSection :title-heading="componentData.title" class="section">
       <div>
-        <SfCarousel
+        <MCarousel
           class="m-product-carousel"
           :settings="{
             animationDuration: 3000,
@@ -23,14 +23,15 @@
               link-tag="router-link"
             />
           </SfCarouselItem>
-        </SfCarousel>
+        </MCarousel>
       </div>
     </SfSection>
   </div>
 </template>
 
 <script>
-import { SfProductCard, SfCarousel, SfSection } from '@storefront-ui/vue';
+import { SfProductCard, SfSection } from '@storefront-ui/vue';
+import MCarousel from '../molecules/m-carousel'
 import fetch from 'isomorphic-fetch';
 import { prepareCategoryProduct } from 'theme/helpers';
 import { mapGetters, mapActions } from 'vuex';
@@ -42,8 +43,8 @@ import { htmlDecode } from '@vue-storefront/core/filters';
 export default {
   components: {
     SfProductCard,
-    SfCarousel,
-    SfSection
+    SfSection,
+    MCarousel
   },
   mixins: [AAddToWishlist],
   props: {
