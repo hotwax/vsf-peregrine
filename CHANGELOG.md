@@ -2,6 +2,7 @@
 
 ## 2.3.0 (Upcoming release)
 - Updated: the code to register the module on creation (#1nduw8)
+- Implemented: a custom carousel component to solve the duplicate image issue in best seller(#1qg127)
 
 ## 2.2.0 (2020-10-13)
 - Updated code as per peregrine cms 2.0
