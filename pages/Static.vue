@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import i18n from '@vue-storefront/i18n';
-import config from 'config';
 import { mapGetters } from 'vuex';
 import CmsPage from '../components/CmsPage';
 import { registerModule } from '@vue-storefront/core/lib/modules';

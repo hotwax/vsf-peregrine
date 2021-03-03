@@ -1,7 +1,7 @@
 import store from '../../../../core/store'
 import { Route } from 'vue-router'
 import { currentStoreView } from '@vue-storefront/core/lib/multistore'
-import config from 'config'
+
 /**
  * Add Route's name in peregrineRoutes whose data will come from peregrine cms
  */
