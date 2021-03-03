@@ -30,7 +30,10 @@ export const actions: ActionTree<CmsState, any> = {
     commit(types.GET_CMS_COMPONENTS, cmsComponents);
 
     await fetch(`${config.peregrine_config.endpoint}/${url.title}.data.json`, {
-      method: 'GET'
+      method: 'GET',
+      headers: {
+        'Accept-Language': url.locale
+      }
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(
         (data) => {

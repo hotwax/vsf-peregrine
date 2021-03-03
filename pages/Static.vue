@@ -11,6 +11,7 @@ import { mapGetters } from 'vuex';
 import CmsPage from '../components/CmsPage';
 import { registerModule } from '@vue-storefront/core/lib/modules';
 import { PeregrineModule } from 'src/modules/peregrine';
+import { currentStoreView } from '@vue-storefront/core/lib/multistore';
 
 export default {
   components: {
@@ -18,8 +19,9 @@ export default {
   },
   async beforeCreate () {
     await registerModule(PeregrineModule)
-    if(this.$router.currentRoute.path === '/') {
-      await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index' })
+    let storeView = currentStoreView()
+    if (this.$router.currentRoute.path === `/${storeView.storeCode}`) {
+      await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index', locale: storeView.i18n.defaultLocale })
     }
   },
   metaInfo () {
