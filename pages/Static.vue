@@ -18,8 +18,15 @@ export default {
   async beforeCreate () {
     await registerModule(PeregrineModule)
     let storeView = currentStoreView()
+    let routeTo = this.$route.name
+
     if (this.$router.currentRoute.path === `/${storeView.storeCode}`) {
       await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index', locale: storeView.i18n.defaultLocale })
+    } else {
+      if (routeTo.includes('it') || routeTo.includes('de')) {
+        routeTo = routeTo.substring(routeTo.indexOf('-') + 1)
+      }
+      this.$route.name === 'cms-page' ? await this.$store.dispatch('cmspage/getCmsComponents', { title: this.$route.params.slug, locale: storeView.i18n.defaultLocale }) : await this.$store.dispatch('cmspage/getCmsComponents', { title: routeTo, locale: storeView.i18n.defaultLocale })
     }
   },
   metaInfo () {
