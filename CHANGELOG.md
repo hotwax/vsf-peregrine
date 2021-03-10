@@ -2,6 +2,7 @@
 
 ## 2.3.1 (Upcoming Release)
 - Implemented: a custom carousel component to solve the duplicate image issue in best seller(#1qg127)
+- Improved: code to handle the multistore setup in VSF(#299cgq)
 
 ## 2.3.0 (2021-01-08)
 - Updated: the code to register the module on creation (#1nduw8)

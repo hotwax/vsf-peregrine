@@ -5,12 +5,11 @@
 </template>
 
 <script>
-import i18n from '@vue-storefront/i18n';
-import config from 'config';
 import { mapGetters } from 'vuex';
 import CmsPage from '../components/CmsPage';
 import { registerModule } from '@vue-storefront/core/lib/modules';
 import { PeregrineModule } from 'src/modules/peregrine';
+import { currentStoreView } from '@vue-storefront/core/lib/multistore';
 
 export default {
   components: {
@@ -18,11 +17,16 @@ export default {
   },
   async beforeCreate () {
     await registerModule(PeregrineModule)
-    if(this.$router.currentRoute.path === '/') {
-      await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index' })
-    } else {
-      this.$route.name === 'cms-page' ? await this.$store.dispatch('cmspage/getCmsComponents', { title: this.$route.params.slug }) : await this.$store.dispatch('cmspage/getCmsComponents', { title: this.$route.name })
+    let storeView = currentStoreView()
+    let routeTo = this.$route.name
 
+    if (this.$router.currentRoute.path === `/${storeView.storeCode}`) {
+      await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index', locale: storeView.i18n.defaultLocale })
+    } else {
+      if (routeTo.includes('it') || routeTo.includes('de')) {
+        routeTo = routeTo.substring(routeTo.indexOf('-') + 1)
+      }
+      this.$route.name === 'cms-page' ? await this.$store.dispatch('cmspage/getCmsComponents', { title: this.$route.params.slug, locale: storeView.i18n.defaultLocale }) : await this.$store.dispatch('cmspage/getCmsComponents', { title: routeTo, locale: storeView.i18n.defaultLocale })
     }
   },
   metaInfo () {
