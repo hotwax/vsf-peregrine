@@ -20,6 +20,9 @@ export default {
     await registerModule(PeregrineModule)
     if(this.$router.currentRoute.path === '/') {
       await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index' })
+    } else {
+      this.$route.name === 'cms-page' ? await this.$store.dispatch('cmspage/getCmsComponents', { title: this.$route.params.slug }) : await this.$store.dispatch('cmspage/getCmsComponents', { title: this.$route.name })
+
     }
   },
   metaInfo () {
