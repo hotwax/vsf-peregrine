@@ -1,6 +1,6 @@
 <template>
   <div id="static" class="main-content">
-    <CmsPage :cms-object="cmsComponents" v-if="cmsComponents" />
+    <CmsPage :cms-object="cmsComponents" :cms-component="cmsComponent" v-if="cmsComponents" />
   </div>
 </template>
 
@@ -11,7 +11,33 @@ import { registerModule } from '@vue-storefront/core/lib/modules';
 import { PeregrineModule } from 'src/modules/peregrine';
 import { currentStoreView } from '@vue-storefront/core/lib/multistore';
 
+const TextBlock = () => import('../components/organisms/o-text-block')
+const Newsletter = () => import('../components/organisms/o-newsletter')
+const Banner = () => import('../components/molecules/m-banner')
+const BannerGrid = () => import('../components/organisms/o-banner-grid')
+const BannerGridT = () => import('../components/organisms/o-banner-grid-t')
+const ImagesGrid = () => import('../components/organisms/o-images-grid')
+const ProductCarousel = () => import('../components/organisms/o-product-carousel')
+const Carousel = () => import('../components/organisms/o-carousel')
+
 export default {
+  data () {
+    return {
+      cmsComponent: {
+        'richtext': TextBlock,
+        'newsletter': Newsletter,
+        'bannerleft': Banner,
+        'bannerright': Banner,
+        'verticalbannergrid': BannerGrid,
+        'verticalset': BannerGrid,
+        'tgrid': BannerGridT,
+        'imagesgrid': ImagesGrid,
+        'bestseller': ProductCarousel,
+        'newarrivalproducts': ProductCarousel,
+        'carousel': Carousel
+      }
+    };
+  },
   components: {
     CmsPage
   },
