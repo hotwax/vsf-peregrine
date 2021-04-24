@@ -1,6 +1,11 @@
 # Peregrine CMS Module for Vue Storefront
 
-## 2.3.1 (Upcoming Release)
+## 2.3.2 (2021-04-24)
+- Improved: code to handle the multistore setup in VSF(#299cgq)
+- Improved: code to handle the direct access of static pages in peregrine module(#1nduw8)
+- Improved: code by defining CmsPage as functional and passing the components as a prop(#2bc303)
+
+## 2.3.1 (2021-02-05)
 - Implemented: a custom carousel component to solve the duplicate image issue in best seller(#1qg127)
 - Improved: code to handle the multistore setup in VSF(#299cgq)
 
