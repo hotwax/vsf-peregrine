@@ -10,7 +10,8 @@ export async function beforeEach (to: Route, from: Route, next) {
   let routeTo = to.name
   let storeView = currentStoreView()
 
-  if (routeTo.includes('it') || routeTo.includes('de')) {
+  // TODO: find a more efficient way to handle the multi-store setup
+  if (routeTo.indexOf('it') == 0 || routeTo.indexOf('de') == 0) {
     routeTo = routeTo.substring(routeTo.indexOf('-') + 1)
   }
   if (routeTo === 'cms-page') {

@@ -45,7 +45,7 @@ export default {
     await registerModule(PeregrineModule)
     let storeView = currentStoreView()
     let routeTo = this.$route.name
-    console.log(routeTo, this.$router.currentRoute)
+
     if (this.$router.currentRoute.path === `/${storeView.storeCode}` || this.$router.currentRoute.path === `/${storeView.storeCode}/`) {
       await this.$store.dispatch('cmspage/getCmsComponents', { title: 'index', locale: storeView.i18n.defaultLocale })
     } else {
