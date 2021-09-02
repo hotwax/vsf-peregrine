@@ -7,8 +7,6 @@
 <script>
 import { mapGetters } from 'vuex';
 import CmsPage from '../components/CmsPage';
-import { registerModule } from '@vue-storefront/core/lib/modules';
-import { PeregrineModule } from 'src/modules/peregrine';
 import { currentStoreView } from '@vue-storefront/core/lib/multistore';
 
 const TextBlock = () => import('../components/organisms/o-text-block')
@@ -42,7 +40,6 @@ export default {
     CmsPage
   },
   async beforeCreate () {
-    await registerModule(PeregrineModule)
     let storeView = currentStoreView()
     let routeTo = this.$route.name
 
@@ -52,7 +49,13 @@ export default {
       if (routeTo.indexOf('it') === 0 || routeTo.indexOf('de') === 0) {
         routeTo = routeTo.substring(routeTo.indexOf('-') + 1)
       }
-      this.$route.name === 'cms-page' ? await this.$store.dispatch('cmspage/getCmsComponents', { title: this.$route.params.slug, locale: storeView.i18n.defaultLocale }) : await this.$store.dispatch('cmspage/getCmsComponents', { title: routeTo, locale: storeView.i18n.defaultLocale })
+      if (this.$route.name === 'collections') {
+        await this.$store.dispatch('cmspage/getCmsBlogComponents', { title: this.$route.params.id, locale: storeView.i18n.defaultLocale });
+      } else if (this.$route.name === 'cms-page') {
+        await this.$store.dispatch('cmspage/getCmsComponents', { title: this.$route.params.slug, locale: storeView.i18n.defaultLocale });
+      } else {
+        await this.$store.dispatch('cmspage/getCmsComponents', { title: routeTo, locale: storeView.i18n.defaultLocale })
+      }
     }
   },
   metaInfo () {

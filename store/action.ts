@@ -46,6 +46,25 @@ export const actions: ActionTree<CmsState, any> = {
       )
     })
   },
+  async getCmsBlogComponents ({ commit }, url) {
+    let cmsComponents = {};
+    cmsComponents = await StorageManager.get('cmsStaticCollection').getItem(url.title);
+    commit(types.GET_CMS_COMPONENTS, cmsComponents);
+
+    await fetch(`${config.peregrine_config.endpoint}/collections/${url.title}.data.json`, {
+      method: 'GET'
+    }).then(resp => resp.json()).then(resp => {
+      cmsJsonParser(resp).then(
+        (data) => {
+          cmsComponents = data
+          StorageManager.get('cmsStaticCollection').setItem(url.title, cmsComponents).catch((reason) => {
+            console.error(reason)
+          })
+          commit(types.GET_CMS_COMPONENTS, cmsComponents)
+        }
+      )
+    })
+  },
   async getCmsHomeComponents ({ commit }) {
     let cmsHomeComponents = {};
     cmsHomeComponents = await StorageManager.get('cmsHomeCollection').getItem('index');

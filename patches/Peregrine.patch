@@ -1,5 +1,25 @@
+diff --git src/themes/notnaked/config/modules.ts src/themes/notnaked/config/modules.ts
+index c0483db..c592554 100644
+--- src/themes/notnaked/config/modules.ts
++++ src/themes/notnaked/config/modules.ts
+@@ -12,6 +12,7 @@ import { CmsModule } from '@vue-storefront/core/modules/cms'
+ import { NewsletterModule } from '@vue-storefront/core/modules/newsletter'
+ import { PaymentBackendMethodsModule } from 'src/modules/payment-backend-methods'
+ import { PaymentCashOnDeliveryModule } from 'src/modules/payment-cash-on-delivery'
++import { PeregrineModule } from 'src/modules/peregrine';
+ 
+ import { registerModule } from '@vue-storefront/core/lib/modules'
+ 
+@@ -30,6 +31,7 @@ export function registerClientModules () {
+   registerModule(CmsModule)
+   registerModule(NewsletterModule)
+   registerModule(WishlistModule)
++  registerModule(PeregrineModule)
+ }
+ 
+ // Deprecated API, will be removed in 2.0
 diff --git src/themes/notnaked/router/index.js src/themes/notnaked/router/index.js
-index 5e3b1cd6..d46df11f 100644
+index 5e3b1cd..60fe4d5 100644
 --- src/themes/notnaked/router/index.js
 +++ src/themes/notnaked/router/index.js
 @@ -1,7 +1,7 @@
@@ -12,8 +32,12 @@ index 5e3b1cd6..d46df11f 100644
  const ErrorPage = () =>
    import(/* webpackChunkName: "vsf-error" */ 'theme/pages/Error');
  const Product = () =>
-@@ -16,7 +16,7 @@ const Wishlist = () =>
+@@ -14,9 +14,11 @@ const MyAccount = () =>
+   import(/* webpackChunkName: "vsf-my-account" */ 'theme/pages/MyAccount');
+ const Wishlist = () =>
    import(/* webpackChunkName: "vsf-my-account" */ 'theme/pages/Wishlist');
++const Blog = () =>
++  import(/* webpackChunkName: "vsf-static" */ 'src/modules/peregrine/pages/Blog.vue');
  
  let routes = [
 -  { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
@@ -21,3 +45,13 @@ index 5e3b1cd6..d46df11f 100644
    { name: 'checkout', path: '/checkout', component: Checkout, meta: { layout: 'minimal' } },
    { name: 'legal', path: '/legal', component: Static },
    { name: 'privacy', path: '/privacy', component: Static },
+@@ -39,7 +41,8 @@ let routes = [
+   { name: 'configurable-product', path: '/p/:parentSku/:slug/:childSku', component: Product },
+   { name: 'product', path: '/p/:parentSku/:slug/:childSku', component: Product },
+   { name: 'category', path: '/c/:slug', component: Category },
+-  { name: 'cms-page', path: '/i/:slug', component: Static }
++  { name: 'cms-page', path: '/i/:slug', component: Static },
++  { name: 'collections', path: '/collections/:id', component: Blog }
+ ];
+ 
+ export default routes;
