@@ -47,19 +47,20 @@ export const actions: ActionTree<CmsState, any> = {
     })
   },
   async getCmsBlogComponents ({ commit }, url) {
-    let cmsBlogComponents = {};
-    cmsBlogComponents = await StorageManager.get('cmsBlogCollection').getItem(url.id);
-    commit(types.GET_CMS_BLOG_COMPONENTS, cmsBlogComponents);
-    await fetch(`${config.peregrine_config.endpoint}/collections/${url.id}.data.json`, {
+    let cmsComponents = {};
+    cmsComponents = await StorageManager.get('cmsStaticCollection').getItem(url.title);
+    commit(types.GET_CMS_COMPONENTS, cmsComponents);
+
+    await fetch(`${config.peregrine_config.endpoint}/collections/${url.title}.data.json`, {
       method: 'GET'
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(
         (data) => {
-          cmsBlogComponents = data
-          StorageManager.get('cmsBlogCollection').setItem(url.id, cmsBlogComponents).catch((reason) => {
+          cmsComponents = data
+          StorageManager.get('cmsStaticCollection').setItem(url.title, cmsComponents).catch((reason) => {
             console.error(reason)
           })
-          commit(types.GET_CMS_BLOG_COMPONENTS, cmsBlogComponents)
+          commit(types.GET_CMS_COMPONENTS, cmsComponents)
         }
       )
     })
