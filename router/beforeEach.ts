@@ -24,8 +24,8 @@ export async function beforeEach (to: Route, from: Route, next) {
       routeTo = 'index'
     }
     await store.dispatch('cmspage/getCmsComponents', { title: routeTo, locale: storeView.i18n.defaultLocale })
-  } else if (to.name === 'blog') {
-    await store.dispatch('cmsstore/getCmsBlogComponents', { id: to.params.id })
+  } else if (to.name === 'collections') {
+    await store.dispatch('cmspage/getCmsBlogComponents', { id: to.params.id })
   }
   next()
 }

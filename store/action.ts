@@ -50,7 +50,7 @@ export const actions: ActionTree<CmsState, any> = {
     let cmsBlogComponents = {};
     cmsBlogComponents = await StorageManager.get('cmsBlogCollection').getItem(url.id);
     commit(types.GET_CMS_BLOG_COMPONENTS, cmsBlogComponents);
-    await fetch(`${config.cms_peregrine.endpoint}/blogs/${url.id}.data.json`, {
+    await fetch(`${config.peregrine_config.endpoint}/collections/${url.id}.data.json`, {
       method: 'GET'
     }).then(resp => resp.json()).then(resp => {
       cmsJsonParser(resp).then(

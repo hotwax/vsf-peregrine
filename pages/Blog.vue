@@ -4,12 +4,12 @@
       <div class="bg-cl-secondary py35">
         <div class="row">
           <div class="container">
-            <div class="blog-image">
-              <img class="profile-image" :src="config.cms_peregrine.image_endpoint + cmsBlogComponents.components[1]['data']['image']">
+            <div class="blog-image" v-if="cmsBlogComponents.components[1]">
+              <img class="profile-image" :src="config.peregrine_config.image_endpoint + cmsBlogComponents.components[1]['data']['image']">
             </div>
             <div class="blog-content">
-              <RichText :componentData="cmsBlogComponents.components[0]" />
-              <SimpleText class="text-content" :componentData="cmsBlogComponents.components[2]" />
+              <MRichText :componentData="cmsBlogComponents.components[0]" />
+              <MSimpleText class="text-content" :componentData="cmsBlogComponents.components[2]" />
             </div>
           </div>
         </div>
@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import SimpleText from '../components/SimpleText'
-import RichText from '../components/RichText'
+import MSimpleText from '../components/molecules/m-simple-text.vue'
+import MRichText from '../components/molecules/m-rich-text.vue'
 import { mapGetters } from 'vuex'
 import config from 'config'
 export default {
   components: {
-    SimpleText,
-    RichText
+    MSimpleText,
+    MRichText
   },
   data () {
     return {
@@ -35,11 +35,11 @@ export default {
   },
   computed: {
     ...mapGetters({
-      cmsBlogComponents: 'cmsstore/getBlogComponents'
+      cmsBlogComponents: 'cmspage/getBlogComponents'
     })
   },
   beforeRouteUpdate (to, from, next) {
-    this.$store.dispatch('cmsstore/getCmsBlogComponent', { id: to.params.id })
+    this.$store.dispatch('cmspage/getCmsBlogComponent', { id: to.params.id })
     next()
   }
 }

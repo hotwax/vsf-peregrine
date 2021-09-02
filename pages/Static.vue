@@ -7,8 +7,6 @@
 <script>
 import { mapGetters } from 'vuex';
 import CmsPage from '../components/CmsPage';
-import { registerModule } from '@vue-storefront/core/lib/modules';
-import { PeregrineModule } from 'src/modules/peregrine';
 import { currentStoreView } from '@vue-storefront/core/lib/multistore';
 
 const TextBlock = () => import('../components/organisms/o-text-block')
@@ -42,7 +40,6 @@ export default {
     CmsPage
   },
   async beforeCreate () {
-    await registerModule(PeregrineModule)
     let storeView = currentStoreView()
     let routeTo = this.$route.name
 
