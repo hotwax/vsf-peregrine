@@ -1,15 +1,15 @@
 diff --git src/themes/notnaked/config/modules.ts src/themes/notnaked/config/modules.ts
-index c0483db..c592554 100644
+index c0483db..18a4697 100644
 --- src/themes/notnaked/config/modules.ts
 +++ src/themes/notnaked/config/modules.ts
-@@ -12,6 +12,7 @@ import { CmsModule } from '@vue-storefront/core/modules/cms'
- import { NewsletterModule } from '@vue-storefront/core/modules/newsletter'
- import { PaymentBackendMethodsModule } from 'src/modules/payment-backend-methods'
+@@ -14,6 +14,7 @@ import { PaymentBackendMethodsModule } from 'src/modules/payment-backend-methods
  import { PaymentCashOnDeliveryModule } from 'src/modules/payment-cash-on-delivery'
-+import { PeregrineModule } from 'src/modules/peregrine';
  
  import { registerModule } from '@vue-storefront/core/lib/modules'
++import { PeregrineModule } from 'src/modules/peregrine'
  
+ // TODO:distributed across proper pages BEFORE 1.11
+ export function registerClientModules () {
 @@ -30,6 +31,7 @@ export function registerClientModules () {
    registerModule(CmsModule)
    registerModule(NewsletterModule)
@@ -19,25 +19,23 @@ index c0483db..c592554 100644
  
  // Deprecated API, will be removed in 2.0
 diff --git src/themes/notnaked/router/index.js src/themes/notnaked/router/index.js
-index 5e3b1cd..60fe4d5 100644
+index 5e3b1cd..244228f 100644
 --- src/themes/notnaked/router/index.js
 +++ src/themes/notnaked/router/index.js
-@@ -1,7 +1,7 @@
+@@ -1,7 +1,9 @@
  const Home = () =>
 -  import(/* webpackChunkName: "vsf-home" */ 'theme/pages/Home');
 +  import(/* webpackChunkName: "vsf-home" */ 'src/modules/peregrine/pages/Home.vue');
  const Static = () =>
 -  import(/* webpackChunkName: "vsf-static" */ 'theme/pages/Static');
 +  import(/* webpackChunkName: "vsf-static" */ 'src/modules/peregrine/pages/Static.vue');
++const Blog = () =>
++  import(/* webpackChunkName: "vsf-static" */ 'src/modules/peregrine/pages/Blog.vue');
  const ErrorPage = () =>
    import(/* webpackChunkName: "vsf-error" */ 'theme/pages/Error');
  const Product = () =>
-@@ -14,9 +14,11 @@ const MyAccount = () =>
-   import(/* webpackChunkName: "vsf-my-account" */ 'theme/pages/MyAccount');
- const Wishlist = () =>
+@@ -16,7 +18,7 @@ const Wishlist = () =>
    import(/* webpackChunkName: "vsf-my-account" */ 'theme/pages/Wishlist');
-+const Blog = () =>
-+  import(/* webpackChunkName: "vsf-static" */ 'src/modules/peregrine/pages/Blog.vue');
  
  let routes = [
 -  { name: 'home', path: '/', component: Home, alias: '/pwa.html' },
