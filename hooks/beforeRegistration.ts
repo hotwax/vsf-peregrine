@@ -32,4 +32,10 @@ export function beforeRegistration (config) {
     storeName: 'cmspage',
     driver: localForage[config.localForage.defaultDrivers['cmspage']]
   })));
+
+  StorageManager.set('cmsBlogCollection', new UniversalStorage(localForage.createInstance({
+    name: (config.storeViews.commonCache ? '' : dbNamePrefix) + 'shop',
+    storeName: 'cmsstore',
+    driver: localForage[config.localForage.defaultDrivers['cmsstore']]
+  })));
 }
