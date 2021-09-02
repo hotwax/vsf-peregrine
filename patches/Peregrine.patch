@@ -49,7 +49,7 @@ index 5e3b1cd..244228f 100644
    { name: 'category', path: '/c/:slug', component: Category },
 -  { name: 'cms-page', path: '/i/:slug', component: Static }
 +  { name: 'cms-page', path: '/i/:slug', component: Static },
-+  { name: 'collections', path: '/collections/:id', component: Blog }
++  { name: 'collections', path: '/collections/:id', component: Static }
  ];
  
  export default routes;
