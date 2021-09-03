@@ -1,0 +1,6 @@
+---
+title: Updated code to handle the cms component links properly
+ticket_id: "#9512zk"
+merge_request: 115
+author: Yash Maheshwari
+type: fixed
