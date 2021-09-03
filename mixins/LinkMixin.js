@@ -1,25 +1,21 @@
 export default {
   methods: {
     link (componentData) {
-      if (componentData.link && componentData.linkType !== '') {
-        if (componentData.linkType === 'link' || componentData.linkType === 'internalLink') {
-          let splittedlink = componentData.link.split('/');
-          let linkRoute = splittedlink[splittedlink.length - 1];
-          this.$router.push(this.localizedRoute(`/${linkRoute}`))
-        } else {
-          let url = componentData.link.match(/^https?:/) ? componentData.link : 'https://' + componentData.link;
-          window.open(url, '_self');
-        }
-      }
+      this.handleLink(componentData.link, componentData.linkType)
     },
     buttonlink (componentData) {
-      if (componentData.buttonlink && componentData.buttonLinkType !== '') {
-        if (componentData.buttonLinkType === 'internalLink') {
-          let splittedlink = componentData.buttonlink.split('/');
+      this.handleLink(componentData.buttonlink, componentData.buttonLinkType)
+    },
+    // TODO: need to use this common method instead of using the above two separate methods for handling links
+    handleLink (link, linkType) {
+      if (link) {
+        if (linkType === 'link' || linkType === 'internalLink') {
+          let splittedlink = link.split('/');
           let linkRoute = splittedlink[splittedlink.length - 1];
           this.$router.push(this.localizedRoute(`/${linkRoute}`))
-        } else {
-          let url = componentData.buttonlink.match(/^https?:/) ? componentData.buttonlink : 'https://' + componentData.buttonlink;
+          // condition handles the link types of url and external link
+        } else if (linkType !== '') {
+          let url = link.match(/^https?:/) ? link : 'https://' + link;
           window.open(url, '_self');
         }
       }
