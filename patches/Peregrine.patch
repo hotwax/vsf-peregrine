@@ -1,5 +1,5 @@
 diff --git src/themes/notnaked/config/modules.ts src/themes/notnaked/config/modules.ts
-index c0483db..18a4697 100644
+index c0483dbd..928cece6 100644
 --- src/themes/notnaked/config/modules.ts
 +++ src/themes/notnaked/config/modules.ts
 @@ -14,6 +14,7 @@ import { PaymentBackendMethodsModule } from 'src/modules/payment-backend-methods
@@ -10,16 +10,16 @@ index c0483db..18a4697 100644
  
  // TODO:distributed across proper pages BEFORE 1.11
  export function registerClientModules () {
-@@ -30,6 +31,7 @@ export function registerClientModules () {
+@@ -29,6 +30,7 @@ export function registerClientModules () {
+   registerModule(BreadcrumbsModule)
    registerModule(CmsModule)
    registerModule(NewsletterModule)
-   registerModule(WishlistModule)
 +  registerModule(PeregrineModule)
+   registerModule(WishlistModule)
  }
  
- // Deprecated API, will be removed in 2.0
 diff --git src/themes/notnaked/router/index.js src/themes/notnaked/router/index.js
-index 5e3b1cd..244228f 100644
+index 5e3b1cd6..9b78d7f2 100644
 --- src/themes/notnaked/router/index.js
 +++ src/themes/notnaked/router/index.js
 @@ -1,7 +1,9 @@
