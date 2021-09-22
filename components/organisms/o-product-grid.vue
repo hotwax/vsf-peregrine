@@ -1,19 +1,13 @@
 <template>
-  <lazy-hydrate :trigger-hydration="!loading">
-    <transition-group
-      appear
-      name="products__slide"
-      tag="div"
-      class="products__grid"
-    >
+<div>
       <SfProductCard
-        v-for="product in products"
+        v-for="product in productList"
         :key="product.id"
         :title="product.title"
         :image="product.image"
         :regular-price="product.price.regular"
         :special-price="product.price.special"
-        :link="product.link"
+        :link="product.link"  
         link-tag="router-link"
         is-on-wishlist-icon="heart_fill"
         :is-on-wishlist="isOnWishlist(product)"
@@ -34,8 +28,7 @@
           </router-link>
         </template>
       </SfProductCard>
-    </transition-group>
-  </lazy-hydrate>
+</div>
 </template>
 
 <script>
@@ -43,6 +36,7 @@ import LazyHydrate from 'vue-lazy-hydration';
 import {
   SfProductCard
 } from '@storefront-ui/vue';
+import AAddToWishlist from 'theme/components/atoms/a-add-to-wishlist';
 
 export default {
   components: {
@@ -51,21 +45,24 @@ export default {
   },
   data () {
     return {
-      loading: true
+      productList: []
     }
   },
-  async created () {
-    if (this.componentType === '') {
-      if (this.$store.state.homepage.bestsellers.length === 0) {
-        let productList = [];
-        await fetch(this.componentData.url, { method: 'GET' })
-          .then(data => data.json())
-          .then(resp => (productList = resp['hits']['hits']));
-        this.$store.state.homepage.bestsellers = productList.map(
-          ele => ele._source
-        );
-      }
+  mixins: [AAddToWishlist],
+  props: {
+    componentData: {
+      required: true,
+      type: Object
+    },
+    componentType: {
+      required: true,
+      type: String
     }
+  },
+  async mounted () {
+    await fetch(this.componentData.url, { method: 'GET' })
+      .then(data => data.json())
+      .then(resp => (this.productList = resp['hits']['hits']));
   }
 }
 </script>
