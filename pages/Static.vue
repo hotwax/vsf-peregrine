@@ -17,6 +17,7 @@ const BannerGridT = () => import('../components/organisms/o-banner-grid-t')
 const ImagesGrid = () => import('../components/organisms/o-images-grid')
 const ProductCarousel = () => import('../components/organisms/o-product-carousel')
 const Carousel = () => import('../components/organisms/o-carousel')
+const ProductGrid = () =>  import('../components/organisms/o-product-grid.vue')
 
 export default {
   data () {
@@ -32,7 +33,8 @@ export default {
         'imagesgrid': ImagesGrid,
         'bestseller': ProductCarousel,
         'newarrivalproducts': ProductCarousel,
-        'carousel': Carousel
+        'carousel': Carousel,
+        'collection': ProductGrid
       }
     };
   },
