@@ -1,40 +1,22 @@
 <template>
   <div class="banner-grid sf-banner-grid">
     <div class="sf-banner-grid__row">
-      <div class="sf-banner-grid__col">
-        <a v-if="banners[0].link" @click="link(banners[0])">
+      <div class="sf-banner-grid__col" v-for="banner in banners" :key="banner.title">
+        <a v-if="banner.link" @click="link(banner)">
           <SfBanner
-            :subtitle="banners[0].subtitle"
-            :title="banners[0].title"
-            :description="banners[0].text"
-            :button-text="banners[0].buttontext"
-            :image="image(banners[0].imageLinkType, banners[0].image)"
+            :subtitle="banner.subtitle"
+            :title="banner.title"
+            :description="banner.text"
+            :button-text="banner.buttontext"
+            :image="image(banner.imageLinkType, banner.image)"
           />
         </a>
         <SfBanner
           v-else
-          :subtitle="banners[0].subtitle"
-          :title="banners[0].title"
-          :description="banners[0].text"
-          :image="image(banners[0].imageLinkType, banners[0].image)"
-        />
-      </div>
-      <div class="sf-banner-grid__col">
-        <a v-if="banners[1].link" @click="link(banners[1])">
-          <SfBanner
-            :subtitle="banners[1].subtitle"
-            :title="banners[1].title"
-            :description="banners[1].text"
-            :button-text="banners[1].buttontext"
-            :image="image(banners[1].imageLinkType, banners[1].image)"
-          />
-        </a>
-        <SfBanner
-          v-else
-          :subtitle="banners[1].subtitle"
-          :title="banners[1].title"
-          :description="banners[1].text"
-          :image="image(banners[1].imageLinkType, banners[1].image)"
+          :subtitle="banner.subtitle"
+          :title="banner.title"
+          :description="banner.text"
+          :image="image(banner.imageLinkType, banner.image)"
         />
       </div>
     </div>
