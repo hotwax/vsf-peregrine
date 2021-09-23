@@ -44,7 +44,8 @@ export default {
   },
   computed: {
     banners () {
-      console.log(this.componentType);
+      console.log('Type', this.componentType);
+      console.log('Data', this.componentData)
       return this.componentData.cards;
     }
   },

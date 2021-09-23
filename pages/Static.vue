@@ -82,6 +82,7 @@ export default {
     }
   },
   mounted () {
+    console.log('CMS components',this.cmsComponents)
     if (!this.isLoggedIn && localStorage.getItem('redirect')) { this.$bus.$emit('modal-show', 'modal-signup'); }
   }
 };

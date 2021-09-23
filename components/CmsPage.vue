@@ -6,6 +6,7 @@
         :component-data="component.data"
         :component-type="component.type"
       />
+      {{ component.type }}
     </div>
   </div>
 </template>
