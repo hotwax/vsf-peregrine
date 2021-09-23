@@ -2,7 +2,6 @@
   <div v-if="props.cmsObject">
     <div v-for="(component, index) in props.cmsObject.components" :key="index">
       <component
-        :class="{ 'rich-text' : component.type === 'richtext'}"
         :is="props.cmsComponent[component.type]"
         :component-data="component.data"
         :component-type="component.type"
@@ -40,11 +39,5 @@ export default {
       height: min-content;
     }
   }
-}
-
-.rich-text {
-  max-width: 100vw;
-  overflow: hidden;
-  padding: 0 var(--spacer-sm);
 }
 </style>
