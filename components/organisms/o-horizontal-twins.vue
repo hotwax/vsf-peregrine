@@ -4,8 +4,8 @@
       <div class="sf-banner-grid__col" v-for="banner in banners" :key="banner.title">
         <a v-if="banner.link" @click="link(banner)">
           <SfBanner
-            :subtitle="banner.subtitle"
-            :title="banner.title"
+            subtitle="Subtitle"
+            title="SHOP NOW"
             :description="banner.text"
             :button-text="banner.buttontext"
             :image="image(banner.imageLinkType, banner.image)"
@@ -13,8 +13,8 @@
         </a>
         <SfBanner
           v-else
-          :subtitle="banner.subtitle"
-          :title="banner.title"
+          subtitle="Subtitle"
+          :title="'SHOP NOW'"
           :description="banner.text"
           :image="image(banner.imageLinkType, banner.image)"
         />
@@ -44,6 +44,7 @@ export default {
   },
   computed: {
     banners () {
+      console.log(this.componentType);
       return this.componentData.cards;
     }
   },
