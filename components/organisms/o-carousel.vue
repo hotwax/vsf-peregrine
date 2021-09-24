@@ -13,6 +13,7 @@
       :subtitle="slide.subtitle"
       :image="image(slide.imageLinkType, slide.image)"
       :class="'sf-hero-item--align-' + slide.aligntext"
+      :style="{ '--hero-item-title-color':  slide.textColor, '--hero-item-subtitle-color':  slide.textColor}"
     />
   </SfHero>
 </template>

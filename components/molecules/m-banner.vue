@@ -6,6 +6,7 @@
       :description="componentData.text"
       :button-text="componentData.buttontext"
       :image="image(componentData.imageLinkType, componentData.image)"
+      :style="{ '--banner-title-color':  textColor, '--banner-description-color':  textColor}"
     />
   </a>
   <SfBanner
@@ -14,6 +15,7 @@
     :title="componentData.title"
     :description="componentData.text"
     :image="image(componentData.imageLinkType, componentData.image)"
+    :style="{ '--banner-title-color':  textColor, '--banner-description-color':  textColor}"
   />
 </template>
 
@@ -27,6 +29,11 @@ export default {
   components: {
     SfBanner
   },
+  data () {
+    return {
+      textColor: 'black'
+    }
+  },
   props: {
     componentData: {
       required: true,
@@ -39,6 +46,9 @@ export default {
   },
   computed: {
     banner () {
+      if (this.componentData.textColor) {
+        this.textColor = this.componentData.textColor;
+      }
       if (this.componentType === 'bannerright') { return 'sf-banner--right m-banner' } else { return 'm-banner' }
     }
   },
@@ -48,8 +58,14 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@storefront-ui/shared/styles/helpers/breakpoints";
+
 .m-banner {
   margin: var(--spacer-xl) 0;
   box-sizing: border-box;
+  background-position: center;
+
+  @include for-desktop {
+    height: 500px;
+  }
 }
 </style>
