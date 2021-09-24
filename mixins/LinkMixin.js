@@ -25,7 +25,7 @@ export default {
           // condition handles the link type of url and also checks for empty link
         } else if (linkType !== '') {
           let url = link.match(/^https?:/) ? link : 'https://' + link;
-          window.open(url, '_self');
+          window.open(url, '_blank');
         }
       }
     }
