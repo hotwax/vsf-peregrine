@@ -64,7 +64,9 @@ export default {
   }
 }
 
-//  copied styling of sf-banner-grid and sf-banner from storefront ui
+// TODO: remove the styling once the production related css issue gets resolved
+// copied styling of sf-banner-grid and sf-banner from storefront ui
+// >>>>>> starts here
 .sf-banner {
   box-sizing: border-box;
   display: var(--banner-display, flex);
@@ -225,4 +227,6 @@ export default {
     }
   }
 }
+
+// <<<<<< ends here
 </style>
