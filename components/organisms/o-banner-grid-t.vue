@@ -9,7 +9,7 @@
             :description="banners[0].text"
             :button-text="banners[0].buttontext"
             :image="image(banners[0].imageLinkType, banners[0].image)"
-            :style="{ '--banner-title-color':  banner.textColor, '--banner-description-color':  banner.textColor}"
+            :style="{ '--banner-title-color':  banners[0].textColor, '--banner-description-color':  banners[0].textColor, '--banner-subtitle-color':  banners[0].textColor}"
           />
         </a>
         <SfBanner
@@ -18,7 +18,7 @@
           :title="banners[0].title"
           :description="banners[0].text"
           :image="image(banners[0].imageLinkType, banners[0].image)"
-          :style="{ '--banner-title-color':  banner.textColor, '--banner-description-color':  banner.textColor}"
+          :style="{ '--banner-title-color':  banners[0].textColor, '--banner-description-color':  banners[0].textColor, '--banner-subtitle-color':  banners[0].textColor}"
         />
       </div>
     </div>
@@ -31,7 +31,7 @@
             :description="banners[1].text"
             :button-text="banners[1].buttontext"
             :image="image(banners[1].imageLinkType, banners[1].image)"
-            :style="{ '--banner-title-color':  banner.textColor, '--banner-description-color':  banner.textColor}"
+            :style="{ '--banner-title-color':  banners[1].textColor, '--banner-description-color':  banners[1].textColor, '--banner-subtitle-color':  banners[1].textColor}"
           />
         </a>
         <SfBanner
@@ -40,7 +40,7 @@
           :title="banners[1].title"
           :description="banners[1].text"
           :image="image(banners[1].imageLinkType, banners[1].image)"
-          :style="{ '--banner-title-color':  banner.textColor, '--banner-description-color':  banner.textColor}"
+          :style="{ '--banner-title-color':  banners[1].textColor, '--banner-description-color':  banners[1].textColor, '--banner-subtitle-color':  banners[1].textColor}"
         />
       </div>
       <div class="sf-banner-grid__col">
@@ -51,7 +51,7 @@
             :description="banners[2].text"
             :button-text="banners[2].buttontext"
             :image="image(banners[2].imageLinkType, banners[2].image)"
-            :style="{ '--banner-title-color':  banner.textColor, '--banner-description-color':  banner.textColor}"
+            :style="{ '--banner-title-color':  banners[2].textColor, '--banner-description-color':  banners[2].textColor, '--banner-subtitle-color':  banners[2].textColor}"
           />
         </a>
         <SfBanner
@@ -60,7 +60,7 @@
           :title="banners[2].title"
           :description="banners[2].text"
           :image="image(banners[2].imageLinkType, banners[2].image)"
-          :style="{ '--banner-title-color':  banner.textColor, '--banner-description-color':  banner.textColor}"
+          :style="{ '--banner-title-color':  banners[2].textColor, '--banner-description-color':  banners[2].textColor, '--banner-subtitle-color':  banners[2].textColor}"
         />
       </div>
     </div>
