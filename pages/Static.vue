@@ -1,6 +1,15 @@
 <template>
   <div id="static" class="main-content">
     <CmsPage :cms-object="cmsComponents" :cms-component="cmsComponent" v-if="cmsComponents" />
+    <div v-if="$router.currentRoute.path === '/'">
+      <div v-for="component in cmsComponents.components" :key="component.type">
+        <TGridBanner
+          v-if="component.type === 'tgrid'"
+          :component-data="component.data"
+          :component-type="component.type"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -8,6 +17,7 @@
 import { mapGetters } from 'vuex';
 import CmsPage from '../components/CmsPage';
 import { currentStoreView } from '@vue-storefront/core/lib/multistore';
+import TGridBanner from '../components/organisms/o-banner-grid-t'
 
 const TextBlock = () => import('../components/organisms/o-text-block')
 const Newsletter = () => import('../components/organisms/o-newsletter')
@@ -39,7 +49,8 @@ export default {
     };
   },
   components: {
-    CmsPage
+    CmsPage,
+    TGridBanner
   },
   async beforeCreate () {
     let storeView = currentStoreView()
