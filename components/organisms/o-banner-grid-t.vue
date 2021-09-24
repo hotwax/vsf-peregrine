@@ -5,7 +5,7 @@
         <a v-if="banners[0].link" @click="link(banners[0])">
           <SfBanner
             :subtitle="banners[0].subtitle"
-            :title="banners[0].title"
+            title="TITLE"
             :description="banners[0].text"
             :button-text="banners[0].buttontext"
             :image="image(banners[0].imageLinkType, banners[0].image)"
@@ -14,7 +14,7 @@
         <SfBanner
           v-else
           :subtitle="banners[0].subtitle"
-          :title="banners[0].title"
+          title="TITLE"
           :description="banners[0].text"
           :image="image(banners[0].imageLinkType, banners[0].image)"
         />
@@ -25,7 +25,7 @@
         <a v-if="banners[1].link" @click="link(banners[1])">
           <SfBanner
             :subtitle="banners[1].subtitle"
-            :title="banners[1].title"
+            title="COL 1"
             :description="banners[1].text"
             :button-text="banners[1].buttontext"
             :image="image(banners[1].imageLinkType, banners[1].image)"
@@ -34,7 +34,7 @@
         <SfBanner
           v-else
           :subtitle="banners[1].subtitle"
-          :title="banners[1].title"
+          title="COL 1"
           :description="banners[1].text"
           :image="image(banners[1].imageLinkType, banners[1].image)"
         />
@@ -43,7 +43,7 @@
         <a v-if="banners[2].link" @click="link(banners[2])">
           <SfBanner
             :subtitle="banners[2].subtitle"
-            :title="banners[2].title"
+            title="COL 2"
             :description="banners[2].text"
             :button-text="banners[2].buttontext"
             :image="image(banners[2].imageLinkType, banners[2].image)"
@@ -52,7 +52,7 @@
         <SfBanner
           v-else
           :subtitle="banners[2].subtitle"
-          :title="banners[2].title"
+          title="COL 2"
           :description="banners[2].text"
           :image="image(banners[2].imageLinkType, banners[2].image)"
         />
@@ -82,6 +82,7 @@ export default {
   },
   computed: {
     banners () {
+      console.log('Banner T Grid');
       return this.componentData.cards;
     }
   },
