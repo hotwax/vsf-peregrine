@@ -5,7 +5,7 @@
         <a v-if="banner.link" @click="link(banner)">
           <SfBanner
             subtitle="Subtitle"
-            title="SHOP NOW"
+            title="SHOP SALE"
             :description="banner.text"
             :button-text="banner.buttontext"
             :image="image(banner.imageLinkType, banner.image)"
