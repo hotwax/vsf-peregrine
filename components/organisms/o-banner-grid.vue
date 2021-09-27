@@ -8,6 +8,7 @@
           :description="banner.text"
           :button-text="banner.buttontext"
           :image="image(banner.imageLinkType, banner.image)"
+          :style="{ '--banner-title-color':  banner.textColor, '--banner-description-color':  banner.textColor, '--banner-subtitle-color':  banner.textColor}"
         />
       </a>
       <SfBanner
@@ -17,6 +18,7 @@
         :title="banner.title"
         :description="banner.text"
         :image="image(banner.imageLinkType, banner.image)"
+        :style="{ '--banner-title-color':  banner.textColor, '--banner-description-color':  banner.textColor, '--banner-subtitle-color':  banner.textColor}"
       />
     </template>
   </SfBannerGrid>

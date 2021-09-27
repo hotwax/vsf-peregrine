@@ -3,6 +3,7 @@
     :title="componentData.title"
     :description="componentData.text"
     :image="image(componentData.imageLinkType, componentData.image)"
+    :style="{ '--call-to-action-title-color':  componentData.textColor, '--call-to-action-description-color':  componentData.textColor }"
   >
     <template #button>
       <SfButton @click="showNewsletterPopup">
