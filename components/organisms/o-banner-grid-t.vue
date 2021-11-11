@@ -121,7 +121,7 @@ export default {
     var(--_banner-background-color, transparent),
     var(--_banner-background-image)
   );
-  --banner-background-position: 60%;
+  background-position: center center;
   &__wrapper {
     display: flex;
     flex-direction: column;

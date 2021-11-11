@@ -65,6 +65,6 @@ export default {
   }
 }
 .sf-banner-grid.banner-grid .sf-banner-grid__row:first-child .sf-banner {
-  background-position-y: bottom;
+  background-position: center center;
 }
 </style>
